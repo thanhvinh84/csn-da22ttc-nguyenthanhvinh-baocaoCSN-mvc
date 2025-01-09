@@ -1,0 +1,384 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+    body {
+             font-family: 'Roboto', sans-serif;
+         }
+         .hover-orange:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7f00;
+      color: white;
+      border-color: #ff7f00;
+    }
+    /* Add smooth transition for all interactive elements */
+    button, input[type="text"] {
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    /* Hover and active feedback for add to cart and buy now buttons */
+    .btn-action:hover {
+      background-color: #e06800;
+      transform: scale(1.05);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+    /* Focus and hover effects for quantity buttons */
+    .quantity-btn:focus, .quantity-btn:hover {
+      background-color: #f3f3f3;
+    }
+   </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="container mx-auto py-4">
+    <div class="text-sm text-gray-600">
+        <span>Trang chủ</span>
+        <span class="mx-2">/</span>
+        <span>Dụng cụ cầu lông chính hãng, đa dạng giá tốt tại Fbshop</span>
+        <span class="mx-2">/</span>
+        <span>Giày cầu lông</span>
+        <span class="mx-2">/</span>
+        <span class="text-orange-500">
+  Giày Cầu Lông Kumpoo KH-E301 Xanh | Thoải mái khi di chuyển</span>
+    </div>
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+<div class="container mx-auto p-4">
+    <div class="flex flex-col md:flex-row">
+      <!-- Left Section: Image Gallery -->
+      <div class="w-full md:w-1/2">
+        <div class="relative">
+          <img alt="A pair of white Yonex Eclipsion Z3 Men 2024 shoes" class="w-full" height="400" src="https://static.fbshop.vn/wp-content/uploads/2024/03/f6da3fda4fa04fbeb0b292dfb99640d4.jpg" width="600"/>
+          <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-200">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-200">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="flex mt-4 space-x-2">
+          <img alt="Thumbnail of Yonex Eclipsion Z3 Men 2024 shoes" class="w-1/4 border-2 border-orange-500" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/03/f6da3fda4fa04fbeb0b292dfb99640d4.jpg" width="100"/>
+          <img alt="Thumbnail of Yonex Eclipsion Z3 Men 2024 shoes" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/03/dcb1890a8c8d4c48a8a86c0e6546d87f.jpg" width="100"/>
+        </div>
+      </div>
+
+      <!-- Right Section: Product Details -->
+      <div class="w-full md:w-1/2 md:pl-8">
+        <h1 class="text-2xl font-bold"> Giày Cầu Lông Kumpoo KH-E301 Xanh  </h1>
+        <h1 class="text-2xl font-bold">  | Thoải mái khi di chuyển  </h1>
+        <div class="flex items-center mt-2">
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="ml-2 text-gray-600">0 đánh giá</span>
+          <span class="ml-2 text-gray-600">lượt mua</span>
+        </div>
+        <div class="flex items-center space-x-4">
+          <span class="text-3xl font-bold text-orange-500">750.000đ</span>
+      </div>
+        <div class="mt-4">
+          <span class="text-gray-600">Chọn Size:</span>
+          <div class="flex space-x-2 mt-2" id="size-options">
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">37</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">38</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">39</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">40</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">41</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">42</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">43</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">44</button>
+          </div>
+        </div>
+        <div class="max-w-4xl mx-auto p-4">
+        <div class="text-lg mb-4">
+        <div class="flex items-center ml-4">
+            <span class="text-gray-700">
+                Số lượng:
+               </span>
+            <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="decreaseQuantity()">
+             -
+            </button>
+            <input class="w-12 text-center border border-gray-300 mx-2" id="quantity" type="text" value="01"/>
+            <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="increaseQuantity()">
+             +
+            </button>
+           </div>
+           </div>
+           
+           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <button class="btn-action bg-orange-500 text-white px-6 py-3 rounded"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('  Giày Cầu Lông Kumpoo KH-E301 Xanh | Thoải mái khi di chuyển','750.000đ')">Thêm vào giỏ</a></button>
+          </div>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+       <script src="js/scripts.js"></script>
+        </div>
+        <div class="bg-white border border-orange-300 rounded-lg p-6 shadow-md max-w-lg">
+          <h2 class="text-orange-500 font-bold text-lg mb-4">
+           Ưu đãi
+          </h2>
+          <ul class="space-y-3">
+           <li class="flex items-center">
+            <i class="fas fa-fire text-orange-500 mr-2">
+            </i>
+            <span>
+             Tặng tất cầu lông (tất dài hoặc ngắn)
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-gift text-orange-500 mr-2">
+            </i>
+            <span>
+             Bảo hành 1 tháng lỗi từ nhà sản xuất
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-shipping-fast text-orange-500 mr-2">
+            </i>
+            <span>
+             Ship toàn quốc, nhận hàng kiểm tra thanh toán
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-truck text-orange-500 mr-2">
+            </i>
+            <span>
+             Freeship khi chuyển khoản trước với đơn hàng trên 1 triệu
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-certificate text-orange-500 mr-2">
+            </i>
+            <span>
+             Cam kết sản phẩm chính hãng chất lượng
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-tags text-orange-500 mr-2">
+            </i>
+            <span>
+             Cơ hội nhận voucher cho những đơn hàng tiếp theo
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-phone-alt text-orange-500 mr-2">
+            </i>
+            <span>
+             Vô vàn các dịch vụ hỗ trợ miễn phí khác
+            </span>
+           </li>
+          </ul>
+          <div class="flex justify-end mt-6">
+           <img alt="Two badminton rackets" class="w-16 h-16" height="100" src="https://storage.googleapis.com/a1aa/image/MwwPXrMYmYaBFFJQN7KrrxZ7WBRC1o1xLNjmPq9SgKEJex2JA.jpg" width="100"/>
+          </div>
+         </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+       document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+    function increaseQuantity() {
+    var quantityInput = document.getElementById('quantity');
+    var currentValue = parseInt(quantityInput.value);
+    if (!isNaN(currentValue)) {
+      quantityInput.value = (currentValue + 1).toString().padStart(2, '0');
+    }
+  }
+
+  function decreaseQuantity() {
+    var quantityInput = document.getElementById('quantity');
+    var currentValue = parseInt(quantityInput.value);
+    if (!isNaN(currentValue) && currentValue > 1) {
+      quantityInput.value = (currentValue - 1).toString().padStart(2, '0');
+    }
+  }
+    document.addEventListener('DOMContentLoaded', function() {
+      const sizeButtons = document.querySelectorAll('#size-options button');
+      sizeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          sizeButtons.forEach(btn => btn.classList.remove('selected'));
+          this.classList.add('selected');
+          localStorage.setItem('selectedSize', this.innerText);
+        });
+      });
+
+      const selectedSize = localStorage.getItem('selectedSize');
+      if (selectedSize) {
+        sizeButtons.forEach(button => {
+          if (button.innerText === selectedSize) {
+            button.classList.add('selected');
+          }
+        });
+      }
+    });
+</script>
+<div class="bg-[#fceae8]">
+    <div class="max-w-4xl mx-auto p-4">
+        <div class="flex space-x-4 border-b-2 border-gray-200 pb-2">
+            <div class="text-xl font-bold text-[#f97316]">
+             Mô tả sản phẩm
+            </div>
+            <div class="text-xl font-bold text-[#1f2937]">
+             Đánh giá 5
+             <i class="fas fa-star text-[#f97316]">
+             </i>
+            </div>
+           </div>
+           <h1 class="text-2xl font-bold mb-4">
+            1. Giới thiệu Giày Cầu Lông Kumpoo KH-E301 Xanh
+           </h1>
+           <p class="text-lg mb-4">
+            <span class="font-bold text-red-600">
+             Giày Cầu Lông Kumpoo KH-E301 Xanh
+            </span>
+            được đánh giá là một trong những đôi giày bền bỉ, mọi đường chỉ may, vết dán keo vô cùng chắc chắn. Không những thế, đôi giày được thiết kế từ chất liệu da Pu, bề mặt ngoài của giày đem lại sự chắc chắn, ổn định cho người đi. Mặt trong được bổ sung các lớp đệm xốp êm, mang lại sự êm ái, và giúp chống sốc cho người đi. Giày được thiết kế với tông màu nổi bật chính là màu trắng chủ đạo kết hợp với các đường lưỡi gà tạo điểm nhấn nổi bật khi người chơi mang vào. Với tông màu này, chắc rằng đây sẽ là một đôi giày thích hợp với những bạn thích sự nổi bật, có cá tính mạnh mẽ và đặc biệt sẽ rất thu hút trên sân cầu.
+           </p>
+           <div class="flex justify-center">
+            <img alt="Giày Cầu Lông Kumpoo KH-E301 Xanh" class="rounded-lg" height="400" src="https://static.fbshop.vn/wp-content/uploads/2024/03/dcb1890a8c8d4c48a8a86c0e6546d87f.jpg" width="600"/>
+           </div>
+           <p class="text-center text-sm mt-2">
+            Giày Cầu Lông Kumpoo KH-E301 Xanh
+           </p>
+           <h2 class="text-2xl font-bold mb-4">2. Thông số Giày Cầu Lông Kumpoo KH-E301 Xanh</h2>
+           <ul class="list-disc pl-6 mb-8">
+               <li>Chất liệu: Da PU cao cấp</li>
+               <li>Màu sắc: Xanh Dương/ Xanh Ngọc</li>
+               <li>Size: 37 – 44</li>
+               <li>Thương hiệu: Kumpoo</li>
+           </ul>
+           <h2 class="text-2xl font-bold mb-4">3. Mô tả chi tiết Giày Cầu Lông Kumpoo KH-E301 Xanh</h2>
+           <ul class="list-disc pl-6">
+               <li><span class="font-bold">Giày Kumpoo KH-E301 Xanh</span> là mẫu giày vừa được ra mắt trong năm 2024, với thiết kế tông màu trắng pha lẫn màu xanh tạo thêm sự cá tính và thanh lịch. Thuộc phân khúc giày giá trung bình nhưng vẫn được hãng Kumpoo trang bị công nghệ êm ái đảm bảo trải nghiệm tốt nhất cho các lông thủ khi di chuyển trên sân đấu.</li>
+               <li>Kumpoo luôn là sản phẩm để chọn khi giá thành không quá cao nhưng chất lượng sản phẩm luôn đạt tiêu chuẩn nhất định so với các dòng giày cầu lông khác ở cùng phân khúc của mình. Với nhiều công nghệ hiện đại như đệm đà hồi EVA, GCT Grip tạo độ êm ái và đảm bảo an toàn khi bật nhảy cho người sử dụng.</li>
+               <li>Form giày cứng cáp vừa vặn cho khả năng giữ form ổn định và có tính bền cao, mang không có cảm giác khó chịu, nhất là khi di chuyển liên tục trên sân đấu.</li>
+               <li>Các đường may rất tỉ mỉ, miệng giày được cố định giúp khi mang vào được thoải mái hơn. Đế giày được gia công cẩn thận giúp bảo đảm độ bám, độ bền khi di chuyển người chơi sẽ linh hoạt hơn.</li>
+               <li class="mb-2">Khả năng hấp thụ sốc và các lực tác động, giải phóng các lực này một cách thoải mái và đều đặn, đồng thời còn chuyển các lực này sang chuyển động tiếp theo để trợ lực một cách dễ dàng. Với các đặc điểm nổi bật trên người chơi có thể hoàn toàn tin tưởng để rinh ngay về thử và cảm nhận mã giày chất lượng này.</li>
+               <li>Phù hợp với người chơi cầu lông phong trào tầm trung, các bạn học sinh, sinh viên, người mới chơi cầu lông đang tìm kiếm cho mình một đôi giày giá rẻ, bền bỉ, chất lượng tốt.</li>
+           </ul>
+           <div class="max-w-4xl mx-auto p-4"></div>
+           <h2 class="text-2xl font-bold mb-4">4. Công nghệ nổi bật trên Giày Cầu Lông Kumpoo KH-E301 Xanh</h2>
+           <p class="mb-2"><span class="font-bold">Đệm đàn hồi EVA:</span> Tích hợp một phần đệm tròn ở phần gót chân giúp tăng độ êm ái và giảm chấn trên từng bước di chuyển đặc biệt là sau những pha bật nhảy.</p>
+           <p class="mb-2"><span class="font-bold">RCT Grip:</span> Thiết kế mới trên phần đế giày giúp tăng độ bám sàn siêu tốt.</p>
+           <p class="mb-2"><span class="font-bold">DYNAMIC CUSHION:</span> Lớp đệm giữa được tích hợp thêm Q-BOUNCE ở lòng bàn chân và DOT-FOAM ở gót chân tăng cường độ êm ái tối đa trên từng bước chạy khi sử dụng Giày Cầu Lông Kumpoo KH-E301 Xanh trên sân đấu.</p>
+           <p class="mb-2"><span class="font-bold">EXTRAHEXA SYSTEM:</span> Công nghệ đế siêu cao cấp được chia thành 3 phần gồm Đế Cao Su Lục Giác cho độ bám sàn siêu tốt; Lớp nhựa cứng TPU giúp tăng sự kết nối giữa lòng bàn chân và gót chân; Tấm 3D CARBON ở điểm trung tâm giúp tăng cường độ ổn định cũng giảm thiểu trọng lượng tối đa của giày.</p>
+           <p class="mb-2"><span class="font-bold"> SHIELD HEEL:</span> Phía dưới cùng Giày Cầu Lông Kumpoo KH-E301 Xanh được chèn thêm Tấm Chắn bằng Nhựa Cứng bọc lại hoàn toàn gót chân sau giúp cho đôi chân của các lông thủ lúc nào cũng thẳng, không bị móp mép trong các pha di chuyển ngang dọc, hạn chế tối đa các chấn thương lật cổ chân không mong muốn.</p>
+           <p class="mb-2"><span class="font-bold"> KPU WRAPPING:</span> Lớp nhựa cứng KPU ở mũi giày được cấu tạo đến 4 lớp không những giúp các ngón chân của bạn trong suốt quá trình di chuyển được êm ái mà còn hạn chế trầy xước mũi trong các pha di chuyển hất cầu trên lưới.</p>
+    </div>
+</div>
+ </body>
+</html>

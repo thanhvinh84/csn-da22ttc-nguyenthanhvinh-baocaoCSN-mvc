@@ -1,0 +1,396 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+    body {
+             font-family: 'Roboto', sans-serif;
+         }
+         .hover-orange:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7f00;
+      color: white;
+      border-color: #ff7f00;
+    }
+    /* Add smooth transition for all interactive elements */
+    button, input[type="text"] {
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    /* Hover and active feedback for add to cart and buy now buttons */
+    .btn-action:hover {
+      background-color: #e06800;
+      transform: scale(1.05);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+    /* Focus and hover effects for quantity buttons */
+    .quantity-btn:focus, .quantity-btn:hover {
+      background-color: #f3f3f3;
+    }
+   </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="container mx-auto py-4">
+    <nav class="text-gray-600 text-sm">
+        <span>Trang chủ</span>
+        <span class="mx-2">/</span>
+        <span>Dụng cụ cầu lông chính hãng, đa dạng giá tốt tại Fbshop</span>
+        <span class="mx-2">/</span>
+        <span>Vợt cầu lông</span>
+        <span class="mx-2">/</span>
+        <span class="text-orange-500 font-semibold">Vợt cầu lông Yonex Nanoflare 700 Pro | Điều cầu nhẹ nhàng thanh thoát</span>
+    </nav>
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+<div class="container mx-auto p-4">
+  <div class="flex flex-col md:flex-row">
+   <!-- Left Column: Product Image and Thumbnails -->
+   <div class="flex-1">
+    <div class="mb-4">
+     <img alt="Yonex Nanoflare 700 Pro Badminton Racket" class="w-full h-auto" height="800" src="https://static.fbshop.vn/wp-content/uploads/2024/08/50545c096378c5269c69.jpg" width="600"/>
+    </div>
+    <div class="flex mt-4 space-x-2">
+      <img alt="Side view of Pink Yonex Aerus Z2 Women shoe" class="border border-orange-500 p-1" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/08/b4e8f4b1cbc06d9e34d1.jpg" width="100"/>
+      <img alt="Bottom view of Pink Yonex Aerus Z2 Women shoe" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/08/50545c096378c5269c69.jpg" width="100"/>
+      <img alt="Top view of Pink Yonex Aerus Z2 Women shoe" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/08/d6811edb21aa87f4debb.jpg" width="100"/>
+     </div>
+   </div>
+   <!-- Right Column: Product Details -->
+   <div class="flex-1 ml-0 md:ml-8">
+    <h1 class="text-3xl font-bold text-gray-800">
+     Vợt cầu lông Yonex Nanoflare 700 Pro | Điều cầu nhẹ nhàng thanh thoát
+    </h1>
+    <div class="flex items-center mt-2">
+     <span class="text-yellow-500 text-xl">
+      <i class="fas fa-star">
+      </i>
+      <i class="fas fa-star">
+      </i>
+      <i class="fas fa-star">
+      </i>
+      <i class="fas fa-star">
+      </i>
+      <i class="fas fa-star">
+      </i>
+     </span>
+     <span class="ml-2 text-gray-600">
+      3 đánh giá
+     </span>
+     <span class="ml-2 text-gray-600">
+      lượt mua
+     </span>
+    </div>
+    <div class="text-3xl text-orange-500 font-bold mt-4">
+     3.729.000đ
+    </div>
+    <div class="max-w-4xl mx-auto p-4"></div>
+    <div class="max-w-4xl mx-auto p-4">
+      <div class="text-lg mb-4">
+      <div class="flex items-center ml-4">
+          <span class="text-gray-700">
+              Số lượng:
+             </span>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="decreaseQuantity()">
+           -
+          </button>
+          <input class="w-12 text-center border border-gray-300 mx-2" id="quantity" type="text" value="01"/>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="increaseQuantity()">
+           +
+          </button>
+         </div>
+         </div>
+         
+         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <button class="btn-action bg-orange-500 text-white px-6 py-3 rounded"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('  Vợt cầu lông Yonex Nanoflare 700 Pro | Điều cầu nhẹ nhàng thanh thoát','  3.729.000đ')">Thêm vào giỏ</a></button>
+        </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="js/scripts.js"></script>
+      </div>
+    <div class="mt-8 border-t border-orange-500 pt-4">
+     <h2 class="text-xl font-bold text-gray-800">
+      Ưu đãi
+     </h2>
+     <ul class="mt-2 space-y-2">
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng cước và căng cước vợt cầu lông miễn phí
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng bao nhung/bao đơn bảo vệ vợt cầu lông
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng quấn cán vợt cầu lông
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Freeship khi chuyển khoản trước với đơn hàng trên 1 triệu
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Yên tâm với quy trình nhận hàng kiểm tra trước thanh toán sau
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Bảo hành với 90 ngày lỗi 1 đổi 1 lỗi nhà sản xuất
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Cơ hội nhận voucher cho các đơn hàng tiếp theo
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Vô vàn dịch vụ hỗ trợ miễn phí khác
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </div>
+ <script>
+     document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+  function increaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue)) {
+    quantityInput.value = (currentValue + 1).toString().padStart(2, '0');
+  }
+}
+
+function decreaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue) && currentValue > 1) {
+    quantityInput.value = (currentValue - 1).toString().padStart(2, '0');
+  }
+}
+  document.addEventListener('DOMContentLoaded', function() {
+    const sizeButtons = document.querySelectorAll('#size-options button');
+    sizeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        sizeButtons.forEach(btn => btn.classList.remove('selected'));
+        this.classList.add('selected');
+        localStorage.setItem('selectedSize', this.innerText);
+      });
+    });
+
+    const selectedSize = localStorage.getItem('selectedSize');
+    if (selectedSize) {
+      sizeButtons.forEach(button => {
+        if (button.innerText === selectedSize) {
+          button.classList.add('selected');
+        }
+      });
+    }
+  });
+</script>
+ <div class="bg-[#FFF1E9] font-roboto">
+  <div class="max-w-4xl mx-auto p-4">
+   <div class="flex border-b-2 border-gray-200 mb-4">
+    <button class="text-orange-600 font-bold text-lg px-4 py-2 border-b-4 border-orange-600">
+     Mô tả sản phẩm
+    </button>
+    <button class="text-gray-800 font-bold text-lg px-4 py-2">
+     Đánh giá 0
+     <i class="fas fa-star text-yellow-500">
+     </i>
+    </button>
+   </div>
+   <div class="bg-[#FFF1E9] font-roboto">
+   <div class="mt-4">
+    <h1 class="text-2xl font-bold">
+     1. Giới thiệu Vợt cầu lông Yonex Nanoflare 700 Pro
+    </h1>
+    <p class="mt-2 text-lg">
+     <span class="text-red-500 font-bold">
+      Vợt cầu lông
+     </span>
+     Yonex Nanoflare 700 Pro phiên bản nâng cấp của
+     <span class="text-red-500 font-bold">
+      dòng Nanoflare
+     </span>
+     , là biểu tượng của sự đổi mới và tinh hoa trong công nghệ sản xuất vợt. Được thiết kế với sự chú trọng tỉ mỉ vào từng chi tiết, Yonex Nanoflare 700 Pro mang đến sự kết hợp hoàn hảo giữa trọng lượng nhẹ và sức mạnh tối ưu. NANOFALRE 700 không chỉ là một cây vợt khác mà là một tác phẩm nghệ thuật lấy cảm hứng từ tiềm năng vô hạn của bầu trời. Khung vợt bóng bẩy, khí động học của nó phản ánh sự tự do và rộng lớn của bầu trời. Các mẫu
+     <span class="text-red-500 font-bold">
+      700 PRO, 700 TOUR, 700 GAME
+     </span>
+     và
+     <span class="text-red-500 font-bold">
+      700 PLAY
+     </span>
+     có màu Tím nửa đêm và các mẫu TOUR, GAME và PLAY có thêm phối màu Bạc/Xanh da trời. Với công nghệ tiên tiến và vật liệu cao cấp, vợt này hứa hẹn sẽ nâng tầm trải nghiệm chơi cầu lông của bạn, giúp bạn đạt được những cú đánh mạnh mẽ và chính xác hơn bao giờ hết.
+    </p>
+    <div class="max-w-4xl mx-auto p-4"></div>
+    <div class="mt-4">
+        <div class="flex justify-center">
+     <img alt="Yonex Nanoflare 700 Pro badminton racket" class="rounded-lg" height="400" src="https://static.fbshop.vn/wp-content/uploads/2024/08/b4e8f4b1cbc06d9e34d1-1152x1536.jpg" width="600"/>
+    </div>
+    </div>
+   </div>
+  </div>
+  <div class="max-w-4xl mx-auto p-4"></div>
+  <div class="list-none space-y-2">
+  <div class="bg-[#FFF1E9] font-roboto">
+    <h1 class="text-2xl font-bold">2. Thông số kỹ thuật Vợt cầu lông Yonex Nanoflare 700 Pro</h1>
+  <ul class="list-none space-y-2">
+      <li>– Độ cứng: Cứng</li>
+      <li>– Cấu tạo khung: HM Graphite, NANOMETRIC DR, M40X, EX-HYPER MG</li>
+      <li>– Cấu tạo đũa: HM Graphite, SUPER HMG, ULTRA PE FIBER</li>
+      <li>– Khớp nối: NEW Built-in T-Joint</li>
+      <li>– Trọng lượng: 4U(85gram); 5U(80.4gram)</li>
+      <li>– Swing: 4u(82kg/cm2); 5u(81.5 kg/cm2)</li>
+      <li>– Điểm cân bằng: 4u(290mm); 5u(298mm)</li>
+      <li>– Mức căng: 28 LBS ~ 12.7kg(4u); 27lbs-12kg(5u)</li>
+  </ul>
+  </div>
+  </div>
+  <div class="max-w-4xl mx-auto p-4"></div>
+  <div class="list-none space-y-2">
+  <div class="bg-[#FFF1E9] font-roboto">
+    <h1 class="text-2xl font-bold">3. Mô tả chi tiết Vợt Yonex Nanoflare 700 Pro  </h1>
+    <div class="list-none space-y-2">
+        <p class="text-black text-lg leading-8">
+            – Về thông số với trọng lượng 4U trung bình và thân vợt trung bình, có thể thấy Yonex Nanoflare 700 Pro là cây vợt thiên về lối chơi điều cầu tạo ra những cú đánh thanh thoát, nhanh nhẹn. Với phiên bản 5U với điểm cân bằng 298mm giúp trợ lực cho người chơi, phiên bản 4U với điểm cân bằng 290mm tạo cảm giác điều cầu thanh thoát hơn. Ngoài ra, mức chịu lực căng dây của cây vợt tối đa lên tới 28 LBS, người chơi có thể thoải mái lựa chọn mức căng thích hợp với trình độ chơi và lực cổ tay của mình.
+        </p>
+        <p class="text-black text-lg leading-8 mt-4">
+            – Thiết kế khung được tích hợp công nghệ AERO FRAME được vát tròn để tạo ra cấu trúc khung hình oval để giảm lực cản của không khí để tăng khả năng cơ động để thực hiện những pha phản tạt nhanh. Đưa vợt được làm siêu mỏng với công nghệ Super Slim Shaft, tối đa khả năng cắt gió để tăng tốc độ vung vợt trong không khí, kết hợp với công nghệ mũ chụp ENERGY BOOST CAP PLUS làm tăng cường tính đàn hồi, hạn chế khả năng rung lắc.
+        </p>
+        <p class="text-black text-lg leading-8 mt-4">
+            – Ở phiên bản này, vợt còn được tích hợp thêm công nghệ đó là Enhanced Sonic Flare System là công nghệ thông qua sự kết hợp cẩn thận của vật liệu graphite cao cấp EX-HYPER MG ở đầu khung và chất liệu graphite mạnh mẽ nhưng đàn hồi M40X ở gốc khung.
+        </p>
+        <p class="text-black text-lg leading-8 mt-4">
+            – Ngoài ra còn cung cấp khả năng đàn hồi cao, các thông số trọng lượng, điểm cân bằng được kết hợp cẩn thận để mang lại độ ổn định và kiểm soát cao. Vợt còn được có thêm 1 công nghệ mới là SERVO FILTER giúp giảm rung chấn lên tới 6 lần, được tinh chỉnh cẩn thận, tăng độ kiểm soát lên tối đa.
+        </p>
+    </div>
+    <div class="max-w-4xl mx-auto p-4"></div>
+    <h1 class="text-2xl font-bold">4. Công nghệ nổi bật Vợt cầu lông Yonex Nanoflare 700 Pro</h1>
+    <div class="max-w-4xl mx-auto p-4"></div>
+    <div class="text-base">
+        <span class="font-bold">– ISOMETRIC:</span> là công nghệ được phát minh bởi Yonex để tối đa hoá vùng đánh cầu hiệu quả và giờ nó trở thành tính năng hàng đầu thế giới đối với vợt cầu lông của Yonex. Đầu vợt có hình dạng vuông có nghĩa là có nhiều dây hơn cắt nhau ở các góc vợt, làm cho khu vực đánh cầu hiệu quả lớn hơn. Yonex tiếp tục phát triển và nâng cao sức mạnh của ISOMETRIC giảm bớt khu vực “chết” xung quanh mép ở các cây vợt thông thường. Tạo ra vùng chạm cầu hiệu quả lớn hơn nhiều so với các loại vợt khác.
+    </div>
+    </div>
+    </div>
+ </body>
+</html>

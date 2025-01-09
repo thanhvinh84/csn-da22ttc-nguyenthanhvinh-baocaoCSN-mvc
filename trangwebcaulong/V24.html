@@ -1,0 +1,385 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+    body {
+             font-family: 'Roboto', sans-serif;
+         }
+         .hover-orange:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7f00;
+      color: white;
+      border-color: #ff7f00;
+    }
+    /* Add smooth transition for all interactive elements */
+    button, input[type="text"] {
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    /* Hover and active feedback for add to cart and buy now buttons */
+    .btn-action:hover {
+      background-color: #e06800;
+      transform: scale(1.05);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+    /* Focus and hover effects for quantity buttons */
+    .quantity-btn:focus, .quantity-btn:hover {
+      background-color: #f3f3f3;
+    }
+   </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="container mx-auto py-4">
+    <div class="text-sm text-gray-600">
+        <span>Trang chủ</span>
+        <span class="mx-2">/</span>
+        <span>Dụng cụ cầu lông chính hãng, đa dạng giá tốt tại Fbshop</span>
+        <span class="mx-2">/</span>
+        <span>Vợt cầu lông</span>
+        <span class="mx-2">/</span>
+        <span class="text-orange-500 font-semibold">Vợt Cầu Lông The 3rd Game Top Speed II | Phiên bản cao cấp</span>
+    </div>
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+<div class="max-w-6xl mx-auto p-4">
+  <div class="flex">
+   <!-- Left Section: Image and Thumbnails -->
+   <div class="w-1/2">
+    <img alt="A badminton racket" class="w-full mb-4" height="600" src="https://static.fbshop.vn/wp-content/uploads/2024/06/z5560522975339_d936a07914016fb4ce8b4d65f5737e59.jpg" width="600"/>
+    <div class="flex mt-4 space-x-2">
+      <img alt="Thumbnail 1" class="w-1/4 border-2 border-orange-500" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/06/z5560522975339_d936a07914016fb4ce8b4d65f5737e59-2048x2048.jpg" width="100"/>
+      <img alt="Thumbnail 2" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/06/z5560522976615_557d60a7bcb3f05aa505123a846820b6-2048x2048.jpg" width="100"/>
+      <img alt="Thumbnail 3" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/06/z5560522999009_f3bae1546d138c2dcd5bf1bd6d85f3ad-2048x2048.jpg" width="100"/>
+      <img alt="Thumbnail 4" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/06/z5560522747007_08c336c48db832ab2ee2083f8d556e15-2048x2048.jpg" width="100"/>
+     </div>
+   </div>
+   <!-- Right Section: Product Details -->
+   <div class="w-1/2 pl-8">
+    <h1 class="text-3xl font-bold text-gray-900">
+     Vợt Cầu Lông The 3rd Game Top Speed II | Phiên bản cao cấp
+    </h1>
+    <div class="flex items-center mt-2">
+     <div class="flex items-center">
+      <span class="text-yellow-500">
+       <i class="fas fa-star">
+       </i>
+      </span>
+      <span class="text-yellow-500">
+       <i class="fas fa-star">
+       </i>
+      </span>
+      <span class="text-yellow-500">
+       <i class="fas fa-star">
+       </i>
+      </span>
+      <span class="text-yellow-500">
+       <i class="fas fa-star">
+       </i>
+      </span>
+      <span class="text-yellow-500">
+       <i class="fas fa-star">
+       </i>
+      </span>
+     </div>
+     <span class="ml-2 text-gray-500">
+      0 đánh giá
+     </span>
+     <span class="ml-2 text-gray-500">
+      |
+     </span>
+     <span class="ml-2 text-gray-500">
+      lượt mua
+     </span>
+    </div>
+    <div class="text-3xl text-orange-600 font-bold mt-4">
+     1.750.000đ
+    </div>
+    <div class="max-w-4xl mx-auto p-4">
+      <div class="text-lg mb-4">
+      <div class="flex items-center ml-4">
+          <span class="text-gray-700">
+              Số lượng:
+             </span>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="decreaseQuantity()">
+           -
+          </button>
+          <input class="w-12 text-center border border-gray-300 mx-2" id="quantity" type="text" value="01"/>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="increaseQuantity()">
+           +
+          </button>
+         </div>
+         </div>
+         
+         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <button class="btn-action bg-orange-500 text-white px-6 py-3 rounded"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('  Vợt Cầu Lông The 3rd Game Top Speed II | Phiên bản cao cấp','  1.750.000đ')">Thêm vào giỏ</a></button>
+        </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="js/scripts.js"></script>
+      </div>
+    <div class="mt-8 border border-orange-200 p-4 rounded">
+     <h2 class="text-xl font-bold text-gray-900 mb-4">
+      Ưu đãi
+     </h2>
+     <ul class="space-y-2">
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng cước và căng cước vợt cầu lông miễn phí
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng bao nhung/bao đơn bảo vệ vợt cầu lông
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng quấn cán vợt cầu lông
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Freeship khi chuyển khoản trước với đơn hàng trên 1 triệu
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Yên tâm với quy trình nhận hàng kiểm tra trước thanh toán sau
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Bảo hành với 90 ngày lỗi 1 đổi 1 lỗi nhà sản xuất
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Cơ hội nhận voucher cho các đơn hàng tiếp theo
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Vô vàn dịch vụ hỗ trợ miễn phí khác
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </div>
+ <script>
+     document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+  function increaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue)) {
+    quantityInput.value = (currentValue + 1).toString().padStart(2, '0');
+  }
+}
+
+function decreaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue) && currentValue > 1) {
+    quantityInput.value = (currentValue - 1).toString().padStart(2, '0');
+  }
+}
+  document.addEventListener('DOMContentLoaded', function() {
+    const sizeButtons = document.querySelectorAll('#size-options button');
+    sizeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        sizeButtons.forEach(btn => btn.classList.remove('selected'));
+        this.classList.add('selected');
+        localStorage.setItem('selectedSize', this.innerText);
+      });
+    });
+
+    const selectedSize = localStorage.getItem('selectedSize');
+    if (selectedSize) {
+      sizeButtons.forEach(button => {
+        if (button.innerText === selectedSize) {
+          button.classList.add('selected');
+        }
+      });
+    }
+  });
+</script>
+    <div class="max-w-4xl mx-auto p-4"></div>
+   <div class="bg-[#fceae6]">
+ <div class="max-w-4xl mx-auto">
+  <div class="flex space-x-4 border-b-2 border-gray-200 pb-2">
+    <div class="text-orange-500 font-bold text-lg border-b-4 border-orange-500">
+     Mô tả sản phẩm
+    </div>
+    <div class="text-gray-800 font-bold text-lg">
+     Thông số kỹ thuật
+    </div>
+    <div class="text-gray-800 font-bold text-lg">
+     Đánh giá 0
+     <i class="fas fa-star text-yellow-500">
+     </i>
+    </div>
+   </div>
+   </div>
+  <div class="bg-[#fceae6]">
+    <div class="max-w-4xl mx-auto p-8">
+    <h2 class="text-2xl font-bold mb-4">1. Giới thiệu Vợt Cầu Lông The 3rd Game Top Speed II</h2>
+      <p>
+          <span class="font-bold">Vợt cầu lông The 3rd Game Top Speed II</span> là một trong những cây vợt thuộc phân khúc tầm trung của <span class="text-red-500">thương hiệu The 3rd Game</span>. Vợt The 3rd Game Top Speed II là phiên bản mới được nâng cấp của cây <span class="text-red-500">vợt Top Speed</span>, với phiên bản nâng cấp lần này Top Speed II khoác lên mình lớp sơn chủ đạo là đen cùng với màu đỏ sẫm – một màu chủ đạo của năm 2024 mang sự mạnh mẽ, khỏe khoắn, mang đến cho người chơi tràn đầy năng lượng khi ra sân. The 3rd Game Top Speed II được dự đoán sẽ là một cây <span class="text-red-500">vợt cầu lông</span> rất hot trong thời gian sắp tới, hội tụ các yếu tố của một siêu phẩm vợt tầm trung mà bất cứ lông thủ nào cũng nên sở hữu.
+      </p>
+  </div>
+  </div>
+  <div class="bg-[#fceae6]">
+    <div class="max-w-4xl mx-auto p-8">
+        <h2 class="text-2xl font-bold mb-4">2. Thông số Vợt Cầu Lông The 3rd Game Top Speed II</h2>
+        <ul class="space-y-2">
+            <li>Thương Hiệu: The 3rd Game</li>
+            <li>Vật liệu khung: Hamill Carbon Technology</li>
+            <li>Vật liệu trục: Nano high Graphite Technology</li>
+            <li>Điểm cân bằng: 290mm</li>
+            <li>Swing: 83.5 kg/cm2</li>
+            <li>Chiều dài tổng thể: 675mm</li>
+            <li>Trọng lượng: 4U (83.5g)</li>
+            <li>Chu vi cán vợt: G6</li>
+            <li>Sức căng: 30 lbs (13,6kg)</li>
+            <li>Độ cứng: Hơi cứng</li>
+        </ul>
+        <p class="mt-4"><span class="font-bold">Kết luận:</span> Nhìn chung với chỉ số cân bằng cùng với các công nghệ nổi bật cho thấy <span class="font-bold">The 3rd Game Top Speed II</span> hướng tới các người chơi yêu thích lối đánh <span class="font-bold">công thủ toàn diện</span>, linh hoạt trong các pha cầu. Phù hợp với những bạn có lực cổ tay chưa được tốt, những người mới tập chơi cũng có thể dễ dàng làm quen và điều khiển vợt.</p>
+    </div>
+    </div>
+    <div class="bg-[#fceae6]">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold mb-4">3. Mô tả Vợt The 3rd Game Top Speed II</h2>
+        <p class="mb-4">– The 3rd Game Top Speed II mang trên mình thiết kế đẹp, độ bền bỉ cùng khả năng chơi cầu mạnh mẽ và tốc độ. Dành cho người chơi phân khúc tầm trung, là các tay vợt phong trào, vận động viên bán chuyên, chuyên nghiệp, The 3rd Game Top Speed II được sản xuất kĩ công giúp đáp ứng tốt nhất mọi yêu cầu khắt khe của các tay vợt từ lối chơi, tốc độ xử lý khi chơi cho tới sức mạnh và độ bền vợt.</p>
+        <p>– Vợt thuộc phân khúc tầm trung của nhà The 3rd Game, sử dụng hoàn toàn từ vật liệu carbon cao cấp với khả năng đàn hồi và chịu va đập tốt, khung vợt khỏe, cực bền với khả năng cung cấp cho người chơi mức căng dây tối đa lên tới 30lbs. Bạn thoải mái lựa chọn mức căng phù hợp với trình độ, lực cổ tay của mình.</p>
+        <p>– Vợt The 3rd Game Top Speed II với điểm cân bằng là 290mm phù hợp với những ai đang tìm một cây vợt với lối đánh công thủ toàn diện, linh hoạt ứng biến trong từng pha cầu, xoay chuyển tình huống phòng thủ sang tấn công một cách nhanh chóng.</p>
+        <p>– Công nghệ Isometric, Solid Feel Core... cùng thân vợt cứng giúp cho tốc độ và độ ổn định vợt được nâng cao, toàn diện hơn khả năng kiểm soát vợt cầu lông trên sân cho các pha điều cầu, phòng cầu thoát tay và chuẩn xác, dễ dàng kiểm soát thế trận không chỉ bằng các cú smash, đập cầu mà khi thực hiện đập gõ, bỏ nhỏ cũng cực hiệu quả. Cây vợt mới này dự đoán sẽ là một cây vợt rất hot trong thời gian sắp tới, hội tụ các yếu tố của một siêu phẩm vợt trung cấp mà bất cứ tay vợt nào cũng nên sở hữu!</p>
+
+        <h2 class="text-2xl font-bold mb-4">4. Công nghệ nổi bật trên Vợt The 3rd Game Top Speed II</h2>
+        <p class="mb-2"><span class="highlight">–  ISOMETRIC:</span> Khung vợt cầu lông <span class="highlight">The 3rd</span> Game Top Speed II được thiết kế với phần đầu hơi vuông, giúp tăng giao điểm giữa dây dọc và dây ngang trên mặt khung, tối ưu diện tích vùng điểm ngọt đều ra các phía cho người chơi độ chính xác cao hơn, hướng và lực cầu chuẩn xác.</p>
+        <p class="mb-2"><span class="font-bold">– NANO HIGH GRAPHITE:</span> Chất liệu carbon sử dụng công nghệ xử lý hiện đại, tăng mật độ phân tử trong bó sợi cho vợt khả năng bền bỉ và chịu lực cao hơn, tăng cường hiệu suất đàn hồi, khả năng chống xoắn và phục hồi nhanh sau va chạm.</p>
+        <p><span class="font-bold">– TB NANO:</span> Công nghệ phủ trực tiếp các phân tử nhựa siêu nhỏ xen kẽ vào những khoảng trống trong bó sợi carbon, giúp tăng liên kết bền bỉ hơn, chặt chẽ hơn, nâng cao đáng kể sức mạnh khung vợt cầu lông The 3rd Game Top Speed II.</p>
+        <p class="mb-4">
+            <span class="font-bold">– HAMILL CARBON TECHNOLOGY:</span> Vật liệu carbon độc quyền tới từ The 3rd Game giúp khung vợt cứng hơn 25% và có độ bền cao hơn 20% so với các chất liệu thông thường. Công nghệ này cũng giúp người chơi tăng cường sự ổn định, kiểm soát vợt tốt, nâng cao hiệu suất chơi cầu.
+        </p>
+        <p>
+            <span class="font-bold">– SOLID FEEL CORE TECHNOLOGY:</span> Công nghệ này thường thấy trên các cây vợt cao cấp của Yonex, cung cấp khả năng hấp thụ rung chấn tốt, tăng ổn định vợt sau va chạm giúp người chơi xử lý tốt hơn, cảm giác cầu tốt cùng độ chính xác vượt trội.
+        </p>
+    </div>
+    </div>
+ </body>
+</html>

@@ -1,0 +1,647 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    .hover-underline-animation {
+    position: relative;
+    color: #e3342f;
+    transition: color 0.25s ease-out;
+  }
+  .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f97316;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .hover-underline-animation:active::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #f97316;
+    z-index: -1;
+    transition: background-color 0.25s ease-out;
+  }
+  .hover-underline-animation:active {
+    color: white;
+  }
+</style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+          const productLink = document.getElementById('product-link');
+          const dropdownMenu = document.getElementById('dropdown-menu');
+
+          productLink.addEventListener('click', function (event) {
+              event.preventDefault();
+              dropdownMenu.classList.toggle('hidden');
+          });
+      });
+</script>
+  <div class="max-w-4xl mx-auto p-4"></div>
+  <div class="max-w-4xl mx-auto p-4"></div>
+  <div class="max-w-4xl mx-auto p-4"></div>
+  <main class="mt-4">
+   <div class="relative">
+    <div class="flex overflow-x-auto space-x-4">
+     <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-orange-500 text-white p-2 rounded-full z-10">
+      <i class="fas fa-chevron-left">
+      </i>
+     </button>
+     <img alt="Yonex bag" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/ofGIDCdnyaQqMiHuKj80KhCzXDRGTURVaotuvKrAiaAYC90JA.jpg" width="300"/>
+     <img alt="Yonex shoes and racket" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/CtMY66x5LJZxJVockfG5y8xeqizIyemc88ePsjxOW3EETonOB.jpg" width="300"/>
+     <img alt="Yonex bag" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/ofGIDCdnyaQqMiHuKj80KhCzXDRGTURVaotuvKrAiaAYC90JA.jpg" width="300"/>
+     <img alt="Yonex shuttlecock tube" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/QRUSms3UopYENBgVoIb8eeDew2JFuzYKu78MitLewQ9VTonOB.jpg" width="300"/>
+     <img alt="Yonex clothing" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/edfH6GpF24nARk3iXSnekZf4xfNj47pngSPdej98zBnpOhe0JA.jpg" width="300"/>
+     <img alt="Yonex racket" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/OAzgvTwe9U1OBafPUIRzanuBuCboXoBKeNFI2uFkhTgmJ0TnA.jpg" width="300"/>
+     <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-orange-500 text-white p-2 rounded-full z-10">
+      <i class="fas fa-chevron-right">
+      </i>
+     </button>
+    </div>
+   </div>
+  </main>
+  <div class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4">
+         Tất cả sản phẩm
+        </h1>
+        <div class="container mx-auto p-4">
+            <div class="grid grid-cols-3 gap-4">
+             <!-- Product 1 -->
+             <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+              <a href="V13.html"><img alt="Mizuno JPX Limited Edition Speed Badminton Racket" class="w-full h-48 object-contain mb-4" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/08/Vot-cau-long-53-400x400.jpg" width="200"/></a>
+              <div class="flex items-center mb-2">
+               <i class="fas fa-check-circle text-green-500">
+               </i>
+               <span class="ml-2 text-green-500">
+                Còn hàng
+               </span>
+              </div>
+              <div class="flex items-center mb-2">
+               <div class="flex text-yellow-400">
+                <i class="fas fa-star">
+                </i>
+                <i class="fas fa-star">
+                </i>
+                <i class="fas fa-star">
+                </i>
+                <i class="fas fa-star">
+                </i>
+                <i class="fas fa-star">
+                </i>
+               </div>
+               <span class="ml-2 text-gray-500">
+                (0)
+               </span>
+              </div>
+              <h2 class="text-lg font-bold mb-2">
+               <a href="V13.html"> Mizuno JPX Limited Edition Speed | Siêu phẩm cao cấp</a>
+              </h2>
+              <p class="mt-2 text-orange-500 text-xl font-bold">
+               Liên hệ
+              </p>
+             </div>
+             <!-- Product 2 -->
+             <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+              <a href="V14.html"><img alt="Lining Axforce Cannon Pro Badminton Racket" class="w-full h-48 object-contain mb-4" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/08/7a792024bcb019ee40a1-1-400x533.jpg" width="200"/></a>
+              <div class="flex items-center mb-2">
+               <i class="fas fa-check-circle text-green-500">
+               </i>
+               <span class="ml-2 text-green-500">
+                Còn hàng
+               </span>
+              </div>
+              <div class="flex items-center mb-2">
+               <div class="flex text-yellow-400">
+                <i class="fas fa-star">
+                </i>
+                <i class="fas fa-star">
+                </i>
+                <i class="fas fa-star">
+                </i>
+                <i class="fas fa-star">
+                </i>
+                <i class="fas fa-star">
+                </i>
+               </div>
+               <span class="ml-2 text-gray-500">
+                (0)
+               </span>
+              </div>
+              <h2 class="text-lg font-bold mb-2">
+              <a href="V14.html"> Vợt cầu lông Lining Axforce Cannon Pro | Phiên bản tiên tiến</a>
+              </h2>
+              <p class="mt-2 text-orange-500 text-xl font-bold">
+               1.680.000đ
+              </p>
+             </div>
+             <!-- Product 3 -->
+             <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+              <a href="V15.html"><img alt="Victor ARS LJH Badminton Racket" class="w-full h-48 object-contain mb-4" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/08/Vot-cau-long-22-400x400.jpg" width="200"/></a>
+              <div class="flex items-center mb-2">
+               <i class="fas fa-check-circle text-green-500">
+               </i>
+               <span class="ml-2 text-green-500">
+                Còn hàng
+               </span>
+              </div>
+              <div class="flex items-center mb-2">
+               <div class="flex text-yellow-400">
+                <i class="fas fa-star">
+                </i>
+                <i class="fas fa-star">
+                </i>
+                <i class="fas fa-star">
+                </i>
+                <i class="fas fa-star">
+                </i>
+                <i class="fas fa-star">
+                </i>
+               </div>
+               <span class="ml-2 text-gray-500">
+                (0)
+               </span>
+              </div>
+              <h2 class="text-lg font-bold mb-2">
+              <a href="V15.html"> Vợt Cầu Lông Victor ARS LJH | Siêu phẩm tốc độ</a>
+              </h2>
+              <p class="mt-2 text-orange-500 text-xl font-bold">
+               Liên hệ
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="container mx-auto p-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+             <!-- First Product Card -->
+             <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+              <a href="V16.html"><img alt="Two badminton rackets with a colorful background" class="rounded-t-lg w-full" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/08/382384459_166448533173168_1539917532535300680_n-400x513.jpg" width="300"/></a>
+              <div class="p-4">
+               <div class="flex items-center mb-2">
+                <i class="fas fa-check-circle text-green-500">
+                </i>
+                <span class="ml-2 bg-green-100 text-green-700 px-2 py-1 rounded">
+                 Còn hàng
+                </span>
+               </div>
+               <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                </div>
+                <span class="ml-2 text-gray-500">
+                 (0)
+                </span>
+               </div>
+               <h2 class="text-lg font-bold mb-2">
+                <a href="V16.html">Vợt cầu lông Kumpoo PC-77 Xanh | Diện mạo cuốn hút</a>
+               </h2>
+               <p class="mt-2 text-orange-500 text-xl font-bold">
+                Liên hệ
+               </p>
+              </div>
+             </div>
+             <!-- Second Product Card -->
+             <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+              <a href="V17.html"><img alt="A single badminton racket with a dark background" class="rounded-t-lg w-full" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/07/Vot-cau-long-11-400x400.jpg" width="300"/></a>
+              <div class="p-4">
+               <div class="flex items-center mb-2">
+                <i class="fas fa-check-circle text-green-500">
+                </i>
+                <span class="ml-2 bg-green-100 text-green-700 px-2 py-1 rounded">
+                 Còn hàng
+                </span>
+               </div>
+               <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                </div>
+                <span class="ml-2 text-gray-500">
+                 (0)
+                </span>
+               </div>
+               <h2 class="text-lg font-bold mb-2">
+               <a href="V17.html"> Vợt Victor Thruster TK-F Ultra 2024 | Mang đến trải nghiệm mới</a>
+               </h2>
+               <p class="mt-2 text-orange-500 text-xl font-bold">
+                3.400.000đ
+               </p>
+              </div>
+             </div>
+             <!-- Third Product Card -->
+             <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+              <a href="V18.html"><img alt="A badminton racket set with a blue background" class="rounded-t-lg w-full" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/07/453080443_346078151876871_794102230982616078_n-378x675.jpg" width="300"/></a>
+              <div class="p-4">
+               <div class="flex items-center mb-2">
+                <span class="bg-red-500 text-white px-2 py-1 rounded">
+                 -8%
+                </span>
+                <i class="fas fa-check-circle text-green-500 ml-2">
+                </i>
+                <span class="ml-2 bg-green-100 text-green-700 px-2 py-1 rounded">
+                 Còn hàng
+                </span>
+               </div>
+               <div class="flex items-center mb-2">
+                <div class="flex text-yellow-400">
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                </div>
+                <span class="ml-2 text-gray-500">
+                 (0)
+                </span>
+               </div>
+               <h2 class="text-lg font-bold mb-2">
+               <a href="V18.html"> SET Vợt Cầu Lông Yonex Astrox SV 2024 | Áp đảo đối thủ</a>
+               </h2>
+               <p class="mt-2 text-orange-500 text-xl font-bold">
+                3.550.000đ
+                <span class="line-through text-gray-500">
+                 3.850.000đ
+                </span>
+               </p>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="container mx-auto p-4">
+            <div class="grid grid-cols-3 gap-4">
+             <!-- First Product Card -->
+             <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+              <div class="flex justify-center">
+             <a href="V19.html"> <img alt="Set Vợt Yonex NanoFlare FL 2024 | Phong cách năng động" class="rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/07/453086864_346077831876903_4136345877637503897_n-400x581.jpg" width="300"/></a>
+             </div>
+              <div class="p-4">
+               <div class="flex items-center mb-2">
+                <span class="text-yellow-500">
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                </span>
+                <span class="text-gray-500 ml-2">
+                 (0)
+                </span>
+               </div>
+               <h2 class="text-lg font-bold mb-2">
+               <a href="V19.html"> Set Vợt Yonex NanoFlare FL 2024 | Phong cách năng động</a>
+               </h2>
+               <p class="mt-2 text-orange-500 text-xl font-bold">
+                3.550.000đ
+               </p>
+               <button class="bg-green-500 text-white px-4 py-2 rounded-full flex items-center">
+                <i class="fas fa-check mr-2">
+                </i>
+                Còn hàng
+               </button>
+              </div>
+             </div>
+             <!-- Second Product Card -->
+             <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+              <div class="relative">
+                <div class="flex justify-center">
+              <a href="V20.html"> <img alt="Vợt cầu lông VS ACE Power 11 Max | Công thủ cực đỉnh" class="rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/07/Tag-2-1-400x400.jpg" width="300"/></a>
+              </div>
+               <div class="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded-full">
+                -19%
+               </div>
+              </div>
+              <div class="p-4">
+               <div class="flex items-center mb-2">
+                <span class="text-yellow-500">
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                </span>
+                <span class="text-gray-500 ml-2">
+                 (0)
+                </span>
+               </div>
+               <h2 class="text-lg font-bold mb-2">
+               <a href="V20.html"> Vợt cầu lông VS ACE Power 11 Max | Công thủ cực đỉnh</a>
+               </h2>
+               <p class="mt-2 text-orange-500 text-xl font-bold">
+                650.000đ
+                <span class="line-through text-gray-500">
+                 800.000đ
+                </span>
+              </p>
+               <button class="bg-green-500 text-white px-4 py-2 rounded-full flex items-center">
+                <i class="fas fa-check mr-2">
+                </i>
+                Còn hàng
+               </button>
+              </div>
+             </div>
+             <!-- Third Product Card -->
+             <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+              <div class="flex justify-center">
+             <a href="V21.html"> <img alt="Vợt Cầu Lông Kawasaki P26 | Vẻ đẹp tinh tế" class="rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/07/Untitled-1-3-400x497.jpg" width="300"/></a>
+             </div>
+              <div class="p-4">
+               <div class="flex items-center mb-2">
+                <span class="text-yellow-500">
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                 <i class="fas fa-star">
+                 </i>
+                </span>
+                <span class="text-gray-500 ml-2">
+                 (0)
+                </span>
+               </div>
+               <h2 class="text-lg font-bold mb-2">
+               <a href="V21.html"> Vợt Cầu Lông Kawasaki P26 | Vẻ đẹp tinh tế</a>
+               </h2>
+               <p class="mt-2 text-orange-500 text-xl font-bold">
+                Liên hệ
+               </p>
+               <button class="bg-green-500 text-white px-4 py-2 rounded-full flex items-center">
+                <i class="fas fa-check mr-2">
+                </i>
+                Còn hàng
+               </button>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="container mx-auto p-4">
+            <div class="grid grid-cols-3 gap-4">
+             <!-- Card 1 -->
+             <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+              <a href="V22.html"><img alt="Two badminton rackets standing side by side" class="rounded-t-lg w-full" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/07/39fec346-77a6-488a-a265-69a63238866d-400x400.jpg" width="300"/></a>
+              <div class="p-4">
+               <div class="flex items-center mb-2">
+                <span class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                 Còn hàng
+                </span>
+                <span class="text-orange-500 ml-auto">
+                 <i class="fas fa-store">
+                 </i>
+                 FBSHOP
+                </span>
+               </div>
+               <div class="flex items-center mb-2">
+                <div class="flex items-center">
+                 <i class="fas fa-star text-yellow-500">
+                 </i>
+                 <i class="fas fa-star text-yellow-500">
+                 </i>
+                 <i class="fas fa-star text-yellow-500">
+                 </i>
+                 <i class="fas fa-star text-yellow-500">
+                 </i>
+                 <i class="fas fa-star text-yellow-500">
+                 </i>
+                </div>
+                <span class="text-gray-500 ml-2">
+                 (2)
+                </span>
+               </div>
+               <h2 class="text-lg font-bold mb-2">
+                <a href="V22.html">Vợt cầu lông VS Chibi | Đại chiến Xích Bích</a>
+               </h2>
+               <p class="mt-2 text-orange-500 text-xl font-bold">
+                Liên hệ
+               </p>
+              </div>
+             </div>
+             <!-- Card 2 -->
+             <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+              <a href="V23.html"><img alt="Single badminton racket" class="rounded-t-lg w-full" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/03/Vot-cau-long-Kawasaki-P37-chinh-hang-352x400.jpg" width="300"/></a>
+              <div class="p-4">
+               <div class="flex items-center mb-2">
+                <span class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                 Còn hàng
+                </span>
+                <span class="text-orange-500 ml-auto">
+                 <i class="fas fa-store">
+                 </i>
+                 FBSHOP
+                </span>
+               </div>
+               <div class="flex items-center mb-2">
+                <div class="flex items-center">
+                 <i class="fas fa-star text-gray-300">
+                 </i>
+                 <i class="fas fa-star text-gray-300">
+                 </i>
+                 <i class="fas fa-star text-gray-300">
+                 </i>
+                 <i class="fas fa-star text-gray-300">
+                 </i>
+                 <i class="fas fa-star text-gray-300">
+                 </i>
+                </div>
+                <span class="text-gray-500 ml-2">
+                 (0)
+                </span>
+               </div>
+               <h2 class="text-lg font-bold mb-2">
+               <a href="V23.html"> Vợt Cầu Lông Kawasaki P37 | Chinh phục mọi đối thủ</a>
+               </h2>
+               <p class="mt-2 text-orange-500 text-xl font-bold">
+                650.000đ
+               </p>
+              </div>
+             </div>
+             <!-- Card 3 -->
+             <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+             <a href="V24.html"> <img alt="Single badminton racket" class="rounded-t-lg w-full" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/06/z5560522975339_d936a07914016fb4ce8b4d65f5737e59-400x400.jpg" width="300"/></a>
+              <div class="p-4">
+               <div class="flex items-center mb-2">
+                <span class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
+                 Còn hàng
+                </span>
+                <span class="text-orange-500 ml-auto">
+                 <i class="fas fa-store">
+                 </i>
+                 FBSHOP
+                </span>
+               </div>
+               <div class="flex items-center mb-2">
+                <div class="flex items-center">
+                 <i class="fas fa-star text-gray-300">
+                 </i>
+                 <i class="fas fa-star text-gray-300">
+                 </i>
+                 <i class="fas fa-star text-gray-300">
+                 </i>
+                 <i class="fas fa-star text-gray-300">
+                 </i>
+                 <i class="fas fa-star text-gray-300">
+                 </i>
+                </div>
+                <span class="text-gray-500 ml-2">
+                 (0)
+                </span>
+               </div>
+               <h2 class="text-lg font-bold mb-2">
+                <a href="V24.html">Vợt cầu Lông The 3rd Game Top Speed II | Phiên bản cao cấp</a>
+               </h2>
+               <p class="mt-2 text-orange-500 text-xl font-bold">
+                1.750.000đ
+               </p>
+              </div>
+             </div>
+            </div>
+            <!-- Pagination -->
+            <div class="flex justify-center mt-4">
+             <nav aria-label="Page navigation">
+              <ul class="inline-flex items-center -space-x-px">
+               <li>
+                <a class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700" href="#">
+                 &lt;
+                </a>
+               </li>
+               <li>
+                <a class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700" href="Votcaulong.html">
+                    1
+                </a>
+               </li>
+               <li>
+                <a class="px-3 py-2 leading-tight text-white bg-orange-500 border border-gray-300 hover:bg-orange-600 hover:text-white" href="Votcaulong2.html">
+                    2
+                </a>
+               </li>
+               <li>
+                <a class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700" href="Votcaulong3.html">
+                   3
+                </a>
+               </li>
+               <li>
+                <a class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700" href="#">
+                 &gt;
+                </a>
+               </li>
+              </ul>
+             </nav>
+            </div>
+           </div>
+ </body>
+</html>

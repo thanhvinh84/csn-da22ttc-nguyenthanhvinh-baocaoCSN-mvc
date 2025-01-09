@@ -1,0 +1,374 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+    body {
+             font-family: 'Roboto', sans-serif;
+         }
+         .hover-orange:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7f00;
+      color: white;
+      border-color: #ff7f00;
+    }
+    /* Add smooth transition for all interactive elements */
+    button, input[type="text"] {
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    /* Hover and active feedback for add to cart and buy now buttons */
+    .btn-action:hover {
+      background-color: #e06800;
+      transform: scale(1.05);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+    /* Focus and hover effects for quantity buttons */
+    .quantity-btn:focus, .quantity-btn:hover {
+      background-color: #f3f3f3;
+    }
+   </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="container mx-auto py-4">
+    <div class="text-sm text-gray-600">
+        <span>Trang chủ</span>
+        <span class="mx-2">/</span>
+        <span>Dụng cụ cầu lông chính hãng, đa dạng giá tốt tại Fbshop</span>
+        <span class="mx-2">/</span>
+        <span>Vợt cầu lông</span>
+        <span class="mx-2">/</span>
+        <span class="text-orange-500 font-semibold">Vợt cầu lông Lining Axforce Cannon Pro | Phiên bản tiên tiến</span>
+    </div>
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+<div class="container mx-auto p-4">
+  <div class="flex flex-col md:flex-row">
+   <!-- Left Section: Images -->
+   <div class="md:w-1/2">
+    <img alt="Two badminton rackets standing side by side" class="w-full mb-4" height="600" src="https://static.fbshop.vn/wp-content/uploads/2024/08/7a792024bcb019ee40a1-1.jpg" width="600"/>
+    <div class="flex mt-4 space-x-2">
+      <img alt="Thumbnail 1" class="w-1/4 border-2 border-orange-500" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/08/7a792024bcb019ee40a1-1.jpg" width="100"/>
+      <img alt="Thumbnail 2" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/08/daa7fbce675ac2049b4b-1.jpg" width="100"/>
+      <img alt="Thumbnail 3" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/08/f69b1aa3863723697a26-1.jpg" width="100"/>
+      <img alt="Thumbnail 4" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/08/ebd8261abd8e18d0419f-1.jpg" width="100"/>
+     </div>
+   </div>
+   <!-- Right Section: Product Details -->
+   <div class="md:w-1/2 md:pl-8">
+    <h1 class="text-3xl font-bold text-gray-800">
+     Vợt cầu lông Lining Axforce Cannon Pro | Phiên bản tiên tiến
+    </h1>
+    <div class="flex items-center mt-2">
+     <div class="flex text-yellow-500">
+      <i class="fas fa-star">
+      </i>
+      <i class="fas fa-star">
+      </i>
+      <i class="fas fa-star">
+      </i>
+      <i class="fas fa-star">
+      </i>
+      <i class="fas fa-star">
+      </i>
+     </div>
+     <span class="ml-2 text-gray-600">
+      0 đánh giá
+     </span>
+     <span class="ml-2 text-gray-600">
+      lượt mua
+     </span>
+    </div>
+    <div class="text-3xl font-bold text-orange-500 mt-4">
+     1.680.000đ
+    </div>
+    <div class="max-w-4xl mx-auto p-4">
+      <div class="text-lg mb-4">
+      <div class="flex items-center ml-4">
+          <span class="text-gray-700">
+              Số lượng:
+             </span>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="decreaseQuantity()">
+           -
+          </button>
+          <input class="w-12 text-center border border-gray-300 mx-2" id="quantity" type="text" value="01"/>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="increaseQuantity()">
+           +
+          </button>
+         </div>
+         </div>
+         
+         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <button class="btn-action bg-orange-500 text-white px-6 py-3 rounded"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('  Vợt cầu lông Lining Axforce Cannon Pro | Phiên bản tiên tiến',' 1.680.000đ')">Thêm vào giỏ</a></button>
+        </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="js/scripts.js"></script>
+      </div>
+    <div class="mt-8 border border-orange-500 p-4 rounded">
+     <h2 class="text-xl font-bold text-gray-800">
+      Ưu đãi
+     </h2>
+     <ul class="mt-2 space-y-2">
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng cước và căng cước vợt cầu lông miễn phí
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng bao nhung/bao đơn bảo vệ vợt cầu lông
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng quấn cán vợt cầu lông
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Freeship khi chuyển khoản trước với đơn hàng trên 1 triệu
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Yên tâm với quy trình nhận hàng kiểm tra trước thanh toán sau
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Bảo hành vợt 90 ngày lỗi 1 đổi 1 lỗi nhà sản xuất
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Cơ hội nhận voucher cho các đơn hàng tiếp theo
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Vô vàn dịch vụ hỗ trợ miễn phí khác
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </div>
+ <script>
+     document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+  function increaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue)) {
+    quantityInput.value = (currentValue + 1).toString().padStart(2, '0');
+  }
+}
+
+function decreaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue) && currentValue > 1) {
+    quantityInput.value = (currentValue - 1).toString().padStart(2, '0');
+  }
+}
+  document.addEventListener('DOMContentLoaded', function() {
+    const sizeButtons = document.querySelectorAll('#size-options button');
+    sizeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        sizeButtons.forEach(btn => btn.classList.remove('selected'));
+        this.classList.add('selected');
+        localStorage.setItem('selectedSize', this.innerText);
+      });
+    });
+
+    const selectedSize = localStorage.getItem('selectedSize');
+    if (selectedSize) {
+      sizeButtons.forEach(button => {
+        if (button.innerText === selectedSize) {
+          button.classList.add('selected');
+        }
+      });
+    }
+  });
+</script>
+ <div class="bg-[#fceae4]">
+  <div class="max-w-4xl mx-auto p-4">
+   <div class="flex border-b-2 border-gray-200 mb-4">
+    <div class="text-xl font-bold text-[#ff6f3d] px-4 py-2 border-b-4 border-[#ff6f3d]">
+     Mô tả sản phẩm
+    </div>
+    <div class="text-xl font-bold text-[#1a2e6c] px-4 py-2">
+     Thông số kỹ thuật
+    </div>
+    <div class="text-xl font-bold text-[#1a2e6c] px-4 py-2">
+     Đánh giá 0
+     <i class="fas fa-star text-[#ffb400]">
+     </i>
+    </div>
+   </div>
+   <div>
+    <h1 class="text-2xl font-bold mb-4">
+     1. Giới thiệu Vợt cầu lông Lining Axforce Cannon Pro
+    </h1>
+    <p class="text-lg mb-4">
+     <span class="text-[#ff6f3d]">
+      Vợt Lining Axforce Cannon Pro
+     </span>
+     là phiên bản nâng cấp của siêu phẩm đỉnh đám được ra mắt vào năm 2023. Mặc dù cây vợt vừa mới được ra mắt nhưng nó đã gây sốt không chỉ trên
+     <span class="text-[#ff6f3d]">
+      thị trường cầu lông
+     </span>
+     Việt Nam mà còn trên toàn thế giới. Với phiên bản nâng cấp này có thiết kế hoàn toàn mới hiện đại hơn, cuốn hút hơn. Các họa tiết xanh dương bóng bẩy kết hợp cùng trắng và xanh lá, cái tên Axforce – Pro hiện lên vô cùng ấn tượng, đem lại vẻ đẹp khỏe khoắn, uy quyền, thu hút mọi ánh nhìn khi ra sân. Trở lại với phiên bản tiên tiến lần này hứa hẹn sẽ đem lại cho người chơi cầu lông những trải nghiệm mới đầy thú vị.
+    </p>
+    <img alt="Two badminton rackets, one with red accents and the other with blue accents, standing upright against a plain background." class="w-full" height="400" src="https://storage.googleapis.com/a1aa/image/jveUK7kn13TbIKCeXG2e9LODrz1ebOuQb3BzMdM2hTyevXhdC.jpg" width="600"/>
+   </div>
+  </div>
+ </div>
+ <div class="bg-[#fceae4]">
+ <div class="max-w-4xl mx-auto p-8">
+  <h2 class="text-2xl font-bold mb-4">2. Thông số kỹ thuật Vợt cầu lông Lining Axforce Cannon Pro</h2>
+  <ul class="list-none space-y-2">
+      <li>– Thương hiệu: Lining</li>
+      <li>– Chất liệu: High Carbon</li>
+      <li>– Độ cứng: Trung bình</li>
+      <li>– Điểm cân bằng: Xanh: 296mm</li>
+      <li>Đỏ: 295mm</li>
+      <li>– Điểm Swing: Xanh: 85 kg/cm2</li>
+      <li>Đỏ: 96kg/cm2</li>
+      <li>– Trọng lượng: Xanh: 82.5g (4U)</li>
+      <li>Đỏ: 85g (4U)</li>
+      <li>– Chu vi cán vợt: G5</li>
+      <li>– Sức căng tối đa: 28 lbs</li>
+  </ul>
+</div>
+ </div>
+ <div class="bg-[#fceae4]">
+  <div class="max-w-4xl mx-auto p-8">
+   <h2 class="text-2xl font-bold mb-4">3. Mô tả chi tiết Vợt cầu lông Lining Axforce Cannon Pro
+  </h2>
+  <p>– Lining Axforce Cannon Pro khoác lên mình lớp sơn bóng bẩy, hiện đại cuốn hút. Với trọng lượng 4U, khả năng chịu lực căng tối đa lên tới 28 lbs tương đương 12.7 kg với mức căng cao giúp tăng khả năng kiểm soát cầu và tốc độ.</p>
+  <p>– Độ cứng thân vợt ở mức trung bình phù hợp với nhiều đối tượng kể cả người mới chơi, học sinh sinh viên với lực cổ tay không quá tốt đều có thể thuần cây vợt này. Với thiết kế nặng đầu cây vợt Lining Axforce Cannon Đen phù hợp với lối chơi tấn công, cho những pha đập cầu cắm sâu đầy uy lực</p>
+  <p>– Không chỉ thay đổi về thiết kế, thông số kỹ thuật của vợt cũng được điều chỉnh đáng kể với điểm cân bằng nặng đầu 300mm, trở thành một cây vợt thiên về lối chơi tấn công mạnh mẽ cùng với trọng lượng 4U, thân dẻo trợ lực cho người chơi những cú đập tốc độ và uy lực, áp đảo đối phương.</p>
+  <p>– Đũa vợt được làm mỏng hơn 02mm là 6.8mm giúp người chơi có tốc độ ra vợt nhanh hơn, được trang bị thêm công nghệ cao cấp HDF Shock Absorption System trên khung vợt giúp hấp thụ chấn động tạo ra khi đập, nhằm tăng độ chính xác, giảm hao tổn năng lượng, đem lại các chuyển động mượt mà và linh hoạt.</p>
+  <div class="max-w-4xl mx-auto p-8">
+<h2 class="text-2xl font-bold mb-4">4. Công nghệ Vợt cầu lông Lining Axforce Cannon Pro</h2>
+  <p>– <span class="font-bold">HDF SHOCK ABSORPTION SYSTEM:</span> Công nghệ được tích hợp lên khung vợt cầu lông Lining bằng việc trang bị một vật liệu hấp thụ ánh sáng công nghệ cao để giảm sốc. Sức mạnh tấn công sẽ được truyền đi mượt mà hơn và được giải phóng triệt để, giúp giảm chấn thương khi chơi thể thao một cách hiệu quả.</p>
+</div>
+  </div>
+  </div>
+ </body>
+</html>

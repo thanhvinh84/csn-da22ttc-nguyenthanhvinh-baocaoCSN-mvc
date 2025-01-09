@@ -1,0 +1,410 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+    body {
+             font-family: 'Roboto', sans-serif;
+         }
+         .hover-orange:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7f00;
+      color: white;
+      border-color: #ff7f00;
+    }
+    /* Add smooth transition for all interactive elements */
+    button, input[type="text"] {
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    /* Hover and active feedback for add to cart and buy now buttons */
+    .btn-action:hover {
+      background-color: #e06800;
+      transform: scale(1.05);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+    /* Focus and hover effects for quantity buttons */
+    .quantity-btn:focus, .quantity-btn:hover {
+      background-color: #f3f3f3;
+    }
+   </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="container mx-auto py-4">
+    <div class="text-sm text-gray-600">
+        <span>Trang chủ</span>
+        <span class="mx-2">/</span>
+        <span>Dụng cụ cầu lông chính hãng, đa dạng giá tốt tại Fbshop</span>
+        <span class="mx-2">/</span>
+        <span>Giày cầu lông</span>
+        <span class="mx-2">/</span>
+        <span class="text-orange-500">Giày Yonex Eclipsion Z3 Men 2024 | Linh hoạt bền bỉ</span>
+    </div>
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+<div class="container mx-auto p-4">
+    <div class="flex flex-col md:flex-row">
+      <!-- Left Section: Image Gallery -->
+      <div class="w-full md:w-1/2">
+        <div class="relative">
+          <img alt="A pair of white Yonex Eclipsion Z3 Men 2024 shoes" class="w-full" height="400" src="https://static.fbshop.vn/wp-content/uploads/2024/10/90fd0b17332d8a73d33c.jpg" width="600"/>
+          <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-200">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-200">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="flex mt-4 space-x-2">
+          <img alt="Thumbnail of Yonex Eclipsion Z3 Men 2024 shoes" class="w-1/4 border-2 border-orange-500" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/10/90fd0b17332d8a73d33c.jpg" width="100"/>
+          <img alt="Thumbnail of Yonex Eclipsion Z3 Men 2024 shoes" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/10/9e3ecc2bf4114d4f1400.jpg" width="100"/>
+          <img alt="Thumbnail of Yonex Eclipsion Z3 Men 2024 shoes" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/10/be63dd89e5b35ced05a2.jpg" width="100"/>
+          <img alt="Thumbnail of Yonex Eclipsion Z3 Men 2024 shoes" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/10/8cbb6caf5495edcbb484.jpg" width="100"/>
+        </div>
+      </div>
+
+      <!-- Right Section: Product Details -->
+      <div class="w-full md:w-1/2 md:pl-8">
+        <h1 class="text-2xl font-bold">Giày Yonex Eclipsion Z3 Men 2024</h1>
+        <h1 class="text-2xl font-bold">| Linh hoạt bền bỉ</h1>
+        <div class="flex items-center mt-2">
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="ml-2 text-gray-600">1 đánh giá</span>
+          <span class="ml-2 text-gray-600">lượt mua</span>
+        </div>
+        <div class="text-3xl text-orange-500 font-bold mt-4">2.650.000đ</div>
+        <div class="mt-4">
+          <span class="text-gray-600">Chọn Size:</span>
+          <div class="flex space-x-2 mt-2" id="size-options">
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">37</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">38</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">39</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">40</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">41</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">42</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">43</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">44</button>
+          </div>
+        </div>
+        <div class="max-w-4xl mx-auto p-4">
+        <div class="text-lg mb-4">
+        <div class="flex items-center ml-4">
+            <span class="text-gray-700">
+                Số lượng:
+               </span>
+            <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="decreaseQuantity()">
+             -
+            </button>
+            <input class="w-12 text-center border border-gray-300 mx-2" id="quantity" type="text" value="01"/>
+            <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="increaseQuantity()">
+             +
+            </button>
+           </div>
+           </div>
+           
+           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <button class="btn-action bg-orange-500 text-white px-6 py-3 rounded"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('Giày Yonex Eclipsion Z3 Men 2024 | Linh hoạt bền bỉ',' 2.500.000đ')">Thêm vào giỏ</a></button>
+          </div>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+       <script src="js/scripts.js"></script>
+        </div>
+        <div class="bg-white border border-orange-300 rounded-lg p-6 shadow-md max-w-lg">
+            <h2 class="text-orange-500 font-bold text-lg mb-4">
+             Ưu đãi
+            </h2>
+            <ul class="space-y-3">
+             <li class="flex items-center">
+              <i class="fas fa-fire text-orange-500 mr-2">
+              </i>
+              <span>
+               Tặng tất cầu lông (tất dài hoặc ngắn)
+              </span>
+             </li>
+             <li class="flex items-center">
+              <i class="fas fa-gift text-orange-500 mr-2">
+              </i>
+              <span>
+               Bảo hành 1 tháng lỗi từ nhà sản xuất
+              </span>
+             </li>
+             <li class="flex items-center">
+              <i class="fas fa-shipping-fast text-orange-500 mr-2">
+              </i>
+              <span>
+               Ship toàn quốc, nhận hàng kiểm tra thanh toán
+              </span>
+             </li>
+             <li class="flex items-center">
+              <i class="fas fa-truck text-orange-500 mr-2">
+              </i>
+              <span>
+               Freeship khi chuyển khoản trước với đơn hàng trên 1 triệu
+              </span>
+             </li>
+             <li class="flex items-center">
+              <i class="fas fa-certificate text-orange-500 mr-2">
+              </i>
+              <span>
+               Cam kết sản phẩm chính hãng chất lượng
+              </span>
+             </li>
+             <li class="flex items-center">
+              <i class="fas fa-tags text-orange-500 mr-2">
+              </i>
+              <span>
+               Cơ hội nhận voucher cho những đơn hàng tiếp theo
+              </span>
+             </li>
+             <li class="flex items-center">
+              <i class="fas fa-phone-alt text-orange-500 mr-2">
+              </i>
+              <span>
+               Vô vàn các dịch vụ hỗ trợ miễn phí khác
+              </span>
+             </li>
+            </ul>
+            <div class="flex justify-end mt-6">
+             <img alt="Two badminton rackets" class="w-16 h-16" height="100" src="https://storage.googleapis.com/a1aa/image/MwwPXrMYmYaBFFJQN7KrrxZ7WBRC1o1xLNjmPq9SgKEJex2JA.jpg" width="100"/>
+            </div>
+           </div>
+      </div>
+    </div>
+  </div>
+  <script>
+       document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+    function increaseQuantity() {
+    var quantityInput = document.getElementById('quantity');
+    var currentValue = parseInt(quantityInput.value);
+    if (!isNaN(currentValue)) {
+      quantityInput.value = (currentValue + 1).toString().padStart(2, '0');
+    }
+  }
+
+  function decreaseQuantity() {
+    var quantityInput = document.getElementById('quantity');
+    var currentValue = parseInt(quantityInput.value);
+    if (!isNaN(currentValue) && currentValue > 1) {
+      quantityInput.value = (currentValue - 1).toString().padStart(2, '0');
+    }
+  }
+    document.addEventListener('DOMContentLoaded', function() {
+      const sizeButtons = document.querySelectorAll('#size-options button');
+      sizeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          sizeButtons.forEach(btn => btn.classList.remove('selected'));
+          this.classList.add('selected');
+          localStorage.setItem('selectedSize', this.innerText);
+        });
+      });
+
+      const selectedSize = localStorage.getItem('selectedSize');
+      if (selectedSize) {
+        sizeButtons.forEach(button => {
+          if (button.innerText === selectedSize) {
+            button.classList.add('selected');
+          }
+        });
+      }
+    });
+</script>
+<div class="bg-[#fceae8]">
+    <div class="max-w-4xl mx-auto p-4">
+     <div class="flex space-x-4 border-b-2 border-gray-200 pb-2">
+      <div class="text-xl font-bold text-[#f97316]">
+       Mô tả sản phẩm
+      </div>
+      <div class="text-xl font-bold text-[#1f2937]">
+       Đánh giá 5
+       <i class="fas fa-star text-[#f97316]">
+       </i>
+      </div>
+     </div>
+     <div class="mt-4">
+      <h1 class="text-2xl font-bold text-[#1f2937]">
+       1. Giới thiệu Giày Yonex Eclipsion Z3 Men 2024
+      </h1>
+      <p class="mt-2 text-[#1f2937]">
+       <span class="font-bold">
+        Giày Yonex Eclipsion Z3 Men 2024
+       </span>
+       là lựa chọn lý tưởng cho những tay vợt đam mê
+       <span class="text-[#f97316]">
+        cầu lông
+       </span>
+       , muốn nâng cao hiệu suất thi đấu. Với thiết kế hiện đại, tối ưu hóa sự linh hoạt và hỗ trợ cho từng bước di chuyển,
+       <span class="font-bold">
+        Eclipsion Z3 Men 2024
+       </span>
+       không chỉ mang lại sự thoải mái mà còn giúp bạn tự tin thể hiện kỹ năng trên sân. Chất liệu cao cấp cùng công nghệ tiên tiến giúp giày bền bỉ và chắc chắn, phù hợp với mọi trận đấu. Với sự kết hợp hoàn hảo giữa công nghệ tiên tiến và tính năng thoải mái, mẫu giày này hứa hẹn mang đến hiệu suất tối ưu trên sân đấu.
+      </p>
+      <div class="mt-6 flex justify-center">
+      <div class="mt-4">
+       <img alt="A pair of Yonex Eclipsion Z3 Men 2024 shoes" class="rounded-lg" height="400" src="https://static.fbshop.vn/wp-content/uploads/2024/10/be63dd89e5b35ced05a2.jpg" width="600"/>
+      </div>
+      </div>
+     </div>
+     <div class="p-8">
+        <h2 class="text-xl font-bold mb-4">2. Thông số kĩ thuật Giày Yonex Eclipsion Z3 Men 2024</h2>
+        <ul class="list-none space-y-2">
+            <li>– Phía trên: Sợi tổng hợp</li>
+            <li>– Đế giữa: Nhựa tổng hợp</li>
+            <li>– Đế ngoài: Cao su</li>
+            <li>– Chất liệu: da PU</li>
+            <li>– Đối tượng: Nam</li>
+            <li>– Thương hiệu: Yonex</li>
+            <li>– Màu sắc: Xanh navy, White/gold</li>
+            <li>– Size: 37-45</li>
+        </ul>
+        <h2 class="text-xl font-bold mb-4">3. Mô tả chi tiết Giày Yonex Eclipsion Z3 Men 2024</h2>
+        <p class="text-lg">
+            – Thiết kế năng động với nhiều màu sắc bắt mắt, phù hợp với phong cách của các vận động viên trẻ trung và hiện đại. Hệ thống đệm <span class="text-red-500 font-bold">Power Cushion</span> hấp thụ lực tác động, giúp giảm chấn thương và mang lại cảm giác êm ái. Thiết kế hỗ trợ đàn hồi giúp tăng cường khả năng phản hồi trong từng bước di chuyển.
+        </p>
+        <p class="text-lg">
+            – Yonex Eclipsion Z3 Men 2024 mang lại tính ổn định và vừa vặn là cốt lõi của dòng sản phẩm ECLIPSION. Dòng sản phẩm này được thiết kế để xử lý ngay cả những động tác chân tiên tiến hoặc phức tạp nhất, giúp người dùng tự tin trong từng bước và từng bước nhảy. POWER CUSHION ECLIPSION được thiết kế lại sẽ có mặt trên thị trường vào tháng 3 năm 2023.
+        </p>
+        <p class="text-lg">
+            – Hơn bao giờ hết, khi trận đấu tăng tốc độ, độ ổn định và độ vừa vặn của giày là những yêu cầu chính đối với các bước chân nhanh nhẹn, nhịp độ nhanh. ECLIPSION mới mang lại sự tự tin về thời gian phản ứng tức thì và lực đẩy với độ ổn định được nâng cấp và vừa vặn thoải mái để trận cầu trở nên sôi động.
+        </p>
+        <p class="text-lg">
+            – Yonex Eclipsion Z3 Men 2024 phù hợp với cả người chơi chuyên nghiệp và nghiệp dư, đặc biệt là những ai thường xuyên tham gia các giải đấu hoặc luyện tập cường độ cao. Với những tính năng vượt trội và thiết kế tinh tế, <span class="text-red-500 font-bold">giày cầu lông Yonex Eclipsion Z3 Men 2024</span> xứng đáng là sự lựa chọn hàng đầu cho những ai yêu thích môn <span class="text-red-500 font-bold">thể thao cầu lông</span>
+        </p>
+        <h2 class="text-xl font-bold mb-4">4. Công nghệ Giày Yonex Eclipsion Z3 Men 2024</h2>
+        <p class="text-lg">
+            – <span class="font-bold">Lateral Shell + Stability Reinforcement:</span> Giúp giảm trượt ở cạnh bên, cải thiện sự ổn định, phần vỏ chống trượt, LATERAL SHELL được tích hợp để nâng đỡ phần chịu tác động lực nhiều nhất và trợ lực cho bàn chân từ mặt bên đến gót.
+        </p>
+        <p class="text-lg">
+            – <span class="font-bold">POWER CUSHION +:</span> Bằng cách thêm một lớp đàn hồi đặc biệt vào POWER CUSHION, trong khi vẫn duy trì các đặc tính như thông thường, khả năng hấp thụ sốc cao được thực hiện. Các rãnh được thiết kế nhỏ hơn mang tính thể, với khoảng cách và độ sâu tối ưu, lực đẩy và khả năng phục hồi hơn. So với vật liệu đệm thông thường, POWER CUSHION + tạo ra sự hấp thụ sốc hơn 28% và lực đẩy mạnh hơn 62%.
+        </p>
+        <p class="text-lg">
+            – <span class="font-bold">Durable Skin Light:</span> Kết hợp tính linh hoạt giống như cao su với độ cứng của nhựa cứng. Giày Cầu Lông Yonex Eclipsion Z3 Men dựa trên polyurethane tạo cho bạn cảm giác cực kì nhẹ nhàng ở phần bề mặt áp súc lên trên đôi chân của mình trong khi vẫn giữ được cảm giác ôm chân và chắc chắn tự tin trong các bước di chuyển.</span>
+        </p>
+        <p class="text-lg">
+            – <span class="font-bold">3D Power Graphite:</span> Tấm 3D Power Carbon được đưa vào đế giữa. Giảm trọng lượng và cùng cố sự ổn định trên đôi Giày Cầu Lông Yonex Eclipsion Z3 Men trong từng bước nhảy</span>
+        </p>
+        <p class="text-lg">
+            – <span class="font-bold">Synchro-Fit Insole: </span>Kết cấu để đồng bộ mới của YONEX cho phép tạo sự vừa vặn hơn giữa giày và chân. Giúp giảm thiểu tổn thất điện năng ở mức tối thiểu để đạt được chuyển động mượt mà hơn và thao tác chân nhanh hơn. So với giày dép thông thường. Khu vực giữa đến gót chân trên đế được nâng lên để tạo sự vừa vặn giữa giày và chân. Bằng cách giữ gót chân chắc chắn hơn so với đế. Khoảng cách giữa giày và chân được giảm bớt. Cải thiện sự thoải mái và đảm bảo bàn chân không bị trượt về phía trong giày.</span>
+        </p>
+    </div>
+    </div>
+    </div>
+
+ </body>
+</html>

@@ -1,0 +1,646 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+  </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <script>
+       document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+   </script>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="max-w-4xl mx-auto p-4"></div>
+  <div class="max-w-4xl mx-auto p-4"></div>
+  <div class="max-w-4xl mx-auto p-4"></div>
+  <main class="mt-4">
+   <div class="relative">
+    <div class="flex overflow-x-auto space-x-4">
+     <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-orange-500 text-white p-2 rounded-full z-10">
+      <i class="fas fa-chevron-left">
+      </i>
+     </button>
+     <img alt="Yonex bag" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/ofGIDCdnyaQqMiHuKj80KhCzXDRGTURVaotuvKrAiaAYC90JA.jpg" width="300"/>
+     <img alt="Yonex shoes and racket" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/CtMY66x5LJZxJVockfG5y8xeqizIyemc88ePsjxOW3EETonOB.jpg" width="300"/>
+     <img alt="Yonex bag" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/ofGIDCdnyaQqMiHuKj80KhCzXDRGTURVaotuvKrAiaAYC90JA.jpg" width="300"/>
+     <img alt="Yonex shuttlecock tube" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/QRUSms3UopYENBgVoIb8eeDew2JFuzYKu78MitLewQ9VTonOB.jpg" width="300"/>
+     <img alt="Yonex clothing" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/edfH6GpF24nARk3iXSnekZf4xfNj47pngSPdej98zBnpOhe0JA.jpg" width="300"/>
+     <img alt="Yonex racket" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/OAzgvTwe9U1OBafPUIRzanuBuCboXoBKeNFI2uFkhTgmJ0TnA.jpg" width="300"/>
+     <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-orange-500 text-white p-2 rounded-full z-10">
+      <i class="fas fa-chevron-right">
+      </i>
+     </button>
+    </div>
+   </div>
+  </main>
+  <div class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4">
+         Tất cả sản phẩm
+        </h1>
+    </div>
+  </div>
+  <div class="container mx-auto p-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+     <!-- Card 1 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <a href="G25.html"><img alt="Black and white sports shoes with red sole" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/06/Vot-cau-long-15-400x400.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center justify-between mb-2">
+        <span class="text-green-600 font-semibold">
+         <i class="fas fa-check-circle">
+         </i>
+         Còn hàng
+        </span>
+        <span class="bg-orange-500 text-white text-xs px-2 py-1 rounded">
+         FBSHOP
+        </span>
+       </div>
+       <div class="flex items-center mb-2">
+        <div class="flex text-yellow-400">
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+        </div>
+        <span class="text-gray-500 text-sm ml-2">
+         (0)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+       <a href="G25.html"> Giày Cầu Lông Lefus L018 | Nâng tầm bước chân</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        570.000đ
+       </p>
+      </div>
+     </div>
+     <!-- Second Product -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <a href="G26.html"><img alt="Light purple sports shoes" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/05/Vot-cau-long-1-2-400x400.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center justify-between mb-2">
+        <span class="text-green-600 font-semibold">
+         <i class="fas fa-check-circle">
+         </i>
+         Còn hàng
+        </span>
+        <span class="bg-orange-500 text-white text-xs px-2 py-1 rounded">
+         FBSHOP
+        </span>
+       </div>
+       <div class="flex items-center mb-2">
+        <div class="flex text-yellow-400">
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+        </div>
+        <span class="text-gray-500 text-sm ml-2">
+         (0)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+       <a href="G26.html"> Giày Cầu Lông Lining Feiying nữ AYTU001-3 | Mang lại sự tự tin</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        1.080.000đ
+       </p>
+      </div>
+     </div>
+     <!-- Third Product -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <a href="G27.html"><img alt="Blue sports shoes" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/05/Vot-cau-long-5-2-400x400.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center justify-between mb-2">
+        <span class="text-red-600 font-semibold">
+         <i class="fas fa-times-circle">
+         </i>
+         Hết hàng
+        </span>
+        <span class="bg-orange-500 text-white text-xs px-2 py-1 rounded">
+         FBSHOP
+        </span>
+       </div>
+       <div class="flex items-center mb-2">
+        <div class="flex text-yellow-400">
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+        </div>
+        <span class="text-gray-500 text-sm ml-2">
+         (0)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+        <a href="G27.html">Giày cầu lông Lining Feiying nam AYTU001-4 | Tăng cường độ bền bỉ</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        1.080.000đ
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container mx-auto p-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+     <!-- Card 1 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <a href="G28.html"><img alt="Giày cầu lông Kawasaki B3333" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/04/vn-11134207-7r98o-ltx8skzu222y9d-400x400.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center mb-2">
+        <span class="text-green-600">
+         <i class="fas fa-check-circle">
+         </i>
+         Còn hàng
+        </span>
+       </div>
+       <div class="flex items-center mb-2">
+        <div class="flex text-yellow-400">
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+        </div>
+        <span class="ml-2 text-gray-500">
+         (0)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+       <a href="G28.html"> Giày cầu lông Kawasaki B3333 | Phong cách năng động</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        850.000đ
+       </p>
+      </div>
+     </div>
+     <!-- Product 2 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <a href="G29.html"><img alt="Giày Yonex 88 Dial Wide NEW 2024" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/04/Vot-cau-long-17-400x400.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center mb-2">
+        <span class="text-red-600">
+         <i class="fas fa-times-circle">
+         </i>
+         Hết hàng
+        </span>
+       </div>
+       <div class="flex items-center mb-2">
+        <div class="flex text-yellow-400">
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+        </div>
+        <span class="ml-2 text-gray-500">
+         (0)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+       <a href="G29.html"> Giày Yonex 88 Dial Wide NEW 2024 | Mang lại sự tự tin</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        2.750.000đ
+        <span class="line-through text-gray-500">
+         2.850.000đ
+        </span>
+       </p>
+      </div>
+     </div>
+     <!-- Product 3 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+     <a href="G30.html"> <img alt="Giày cầu lông Yonex 88 Dial 2024 New" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/04/Vot-cau-long-13-400x400.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center mb-2">
+        <span class="text-green-600">
+         <i class="fas fa-check-circle">
+         </i>
+         Còn hàng
+        </span>
+       </div>
+       <div class="flex items-center mb-2">
+        <div class="flex text-yellow-400">
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+        </div>
+        <span class="ml-2 text-gray-500">
+         (0)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+       <a href="G30.html"> Giày cầu lông Yonex 88 Dial 2024 New | Tính bền bỉ cao</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        2.750.000đ
+        <span class="line-through text-gray-500">
+         2.900.000đ
+        </span>
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container mx-auto p-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+     <!-- Card 1 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+     <a href="G31.html"> <img alt="White and blue Mizuno Wave Claw EL 2 shoes" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/03/Screenshot-2024-03-07-141638-400x399.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center">
+         <i class="fas fa-star text-yellow-500">
+         </i>
+         <i class="fas fa-star text-yellow-500">
+         </i>
+         <i class="fas fa-star text-yellow-500">
+         </i>
+         <i class="fas fa-star text-yellow-500">
+         </i>
+         <i class="fas fa-star text-yellow-500">
+         </i>
+         <span class="ml-2 text-gray-500">
+          (0)
+         </span>
+        </div>
+        <span class="bg-red-100 text-red-500 text-xs font-semibold px-2 py-1 rounded">
+         ✕ Hết hàng
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+       <a href="G31.html"> Giày Mizuno Wave Claw EL 2 Trắng Xanh Biển</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        2.300.000đ
+       </p>
+      </div>
+      <div class="flex justify-end">
+       <img alt="FBShop logo" class="w-10 h-10" height="50" src="https://storage.googleapis.com/a1aa/image/eMC0X9A1D0whDKHqByj2lJX92mxQUfAv8lqxfAfnbPUFlStOB.jpg" width="50"/>
+      </div>
+     </div>
+     <!-- Card 2 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <a href="G32.html"><img alt="White and green Kumpoo KH-E301 shoes" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/03/f6da3fda4fa04fbeb0b292dfb99640d4-400x300.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center">
+         <i class="fas fa-star text-yellow-500">
+         </i>
+         <i class="fas fa-star text-yellow-500">
+         </i>
+         <i class="fas fa-star text-yellow-500">
+         </i>
+         <i class="fas fa-star text-yellow-500">
+         </i>
+         <i class="fas fa-star text-yellow-500">
+         </i>
+         <span class="ml-2 text-gray-500">
+          (0)
+         </span>
+        </div>
+        <span class="bg-red-100 text-red-500 text-xs font-semibold px-2 py-1 rounded">
+         ✕ Hết hàng
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+        <a href="G32.html">Giày cầu Lông Kumpoo KH-E301 Xanh | Thoải mái khi di chuyển</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        750.000đ
+       </p>
+      </div>
+     </div>
+     <!-- Card 3 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+     <a href="G33.html"> <img alt="Blue Mizuno Wave Claw 3 shoes" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/03/z5237646549104_44000269c8199c28f3a09568dc141d97-400x300.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center">
+         <i class="fas fa-star text-yellow-500">
+         </i>
+         <i class="fas fa-star text-yellow-500">
+         </i>
+         <i class="fas fa-star text-yellow-500">
+         </i>
+         <i class="fas fa-star text-yellow-500">
+         </i>
+         <i class="fas fa-star text-yellow-500">
+         </i>
+         <span class="ml-2 text-gray-500">
+          (0)
+         </span>
+        </div>
+        <span class="bg-green-100 text-green-500 text-xs font-semibold px-2 py-1 rounded">
+         ✔ Còn hàng
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+       <a href="G33.html"> Giày cầu lông Mizuno Wave Claw 3 | Bền bỉ trên sân</a>
+
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        2.850.000đ
+       </p>
+      </div>
+      <div class="flex justify-end">
+       <img alt="FBShop logo" class="w-10 h-10" height="50" src="https://storage.googleapis.com/a1aa/image/eMC0X9A1D0whDKHqByj2lJX92mxQUfAv8lqxfAfnbPUFlStOB.jpg" width="50"/>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container mx-auto p-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+     <!-- Card 1 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <a href="G34.html"><img alt="Black Mizuno Wave Fang 2 shoes" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/03/Vot-cau-long-17-1-400x400.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center mb-2">
+        <span class="text-green-600">
+         <i class="fas fa-check-circle">
+         </i>
+         Còn hàng
+        </span>
+       </div>
+       <div class="flex items-center mb-2">
+        <div class="flex text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+        </div>
+        <span class="ml-2 text-gray-500">
+         (0)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+       <a href="G34.html"> Giày Cầu Lông Mizuno Wave Fang 2 | Sức mạnh vượt trội</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        3.050.000đ
+       </p>
+      </div>
+     </div>
+     <!-- Product 2 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <a href="G35.html"><img alt="Yellow Mizuno Wave Claw 2 shoes" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/03/vang-chanh-hong-400x394.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center mb-2">
+        <span class="text-green-600">
+         <i class="fas fa-check-circle">
+         </i>
+         Còn hàng
+        </span>
+       </div>
+       <div class="flex items-center mb-2">
+        <div class="flex text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+        </div>
+        <span class="ml-2 text-gray-500">
+         (0)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+       <a href="G35.html"> Giày Cầu Lông Mizuno Wave Claw 2 | Phiên bản nâng cấp</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        2.850.000đ
+       </p>
+      </div>
+     </div>
+     <!-- Product 3 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+     <a href="G36.html"> <img alt="White Kawasaki 3308 shoes" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2024/03/dscf0226_1688732090-400x300.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center mb-2">
+        <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+         -10%
+        </span>
+       </div>
+       <div class="flex items-center mb-2">
+        <span class="text-green-600">
+         <i class="fas fa-check-circle">
+         </i>
+         Còn hàng
+        </span>
+       </div>
+       <div class="flex items-center mb-2">
+        <div class="flex text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+        </div>
+        <span class="ml-2 text-gray-500">
+         (2)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+       <a href="G36.html"> Giày cầu lông Kawasaki 3308 | Mang đến trải nghiệm mới</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        1.000.000đ
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="flex justify-center mt-4">
+    <nav aria-label="Page navigation">
+     <ul class="inline-flex items-center -space-x-px">
+      <li>
+       <a class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700" href="#">
+        &lt;
+       </a>
+      </li>
+      <li>
+        <a class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700" href="Giaycaulong.html">
+           1
+       </a>
+      </li>
+      <li>
+        <a class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700" href="Giaycaulong2.html">
+           2
+       </a>
+      </li>
+      <li>
+        <a class="px-3 py-2 leading-tight text-white bg-orange-500 border border-gray-300 hover:bg-orange-600 hover:text-white" href="Giaycaulong3.html">
+           3
+       </a>
+      </li>
+      <li>
+       <a class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700" href="#">
+        &gt;
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+ </body>
+</html>

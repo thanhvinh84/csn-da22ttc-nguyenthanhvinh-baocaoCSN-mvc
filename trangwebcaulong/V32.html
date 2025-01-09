@@ -1,0 +1,413 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+    body {
+             font-family: 'Roboto', sans-serif;
+         }
+         .hover-orange:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7f00;
+      color: white;
+      border-color: #ff7f00;
+    }
+    /* Add smooth transition for all interactive elements */
+    button, input[type="text"] {
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    /* Hover and active feedback for add to cart and buy now buttons */
+    .btn-action:hover {
+      background-color: #e06800;
+      transform: scale(1.05);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+    /* Focus and hover effects for quantity buttons */
+    .quantity-btn:focus, .quantity-btn:hover {
+      background-color: #f3f3f3;
+    }
+   </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="container mx-auto py-4">
+    <div class="text-sm text-gray-600">
+        <span>Trang chủ</span>
+        <span class="mx-2">/</span>
+        <span>Dụng cụ cầu lông chính hãng, đa dạng giá tốt tại Fbshop</span>
+        <span class="mx-2">/</span>
+        <span>Vợt cầu lông</span>
+        <span class="mx-2">/</span>
+        <span class="text-orange-500 font-semibold">Vợt cầu lông Victor Auraspeed 100X TUC | Phiên bản đặc biệt</span>
+    </div>
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+<div class="container mx-auto p-4">
+  <div class="flex">
+   <!-- Left Section: Product Image and Thumbnails -->
+   <div class="w-1/2">
+    <div class="mb-4">
+     <img alt="Victor Auraspeed 100X Badminton Racket" class="w-full" height="600" src="https://static.fbshop.vn/wp-content/uploads/2024/05/z5440027449250_7b2437aa22742a10e0f2cf4b277fe7d8-1.jpg" width="600"/>
+    </div>
+    <div class="flex mt-4 space-x-2">
+      <img alt="Thumbnail 1" class="w-1/4 border-2 border-orange-500" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/05/z5440027449250_7b2437aa22742a10e0f2cf4b277fe7d8-1.jpg" width="100"/>
+      <img alt="Thumbnail 2" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/05/z5440027449250_7b2437aa22742a10e0f2cf4b277fe7d8.jpg" width="100"/>
+      <img alt="Thumbnail 3" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/05/z5440027448097_91a8e2817fa70bbea482000c699beb36.jpg" width="100"/>
+      <img alt="Thumbnail 4" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/05/z5440027452678_a47c58dd0f9d9ff4fe2644dfed43e4a5.jpg" width="100"/>
+     </div>
+   </div>
+   <!-- Right Section: Product Details -->
+   <div class="w-1/2 pl-8">
+    <h1 class="text-3xl font-bold text-gray-800">
+     Vợt cầu lông Victor Auraspeed 100X TUC | Phiên bản đặc biệt
+    </h1>
+    <div class="flex items-center mt-2">
+     <div class="flex text-yellow-500">
+      <i class="far fa-star">
+      </i>
+      <i class="far fa-star">
+      </i>
+      <i class="far fa-star">
+      </i>
+      <i class="far fa-star">
+      </i>
+      <i class="far fa-star">
+      </i>
+     </div>
+     <span class="ml-2 text-gray-600">
+      0 đánh giá
+     </span>
+     <span class="ml-2 text-gray-600">
+      lượt mua
+     </span>
+    </div>
+    <div class="text-3xl text-orange-600 font-bold mt-4">
+     3.350.000đ
+    </div>
+    <div class="max-w-4xl mx-auto p-4">
+      <div class="text-lg mb-4">
+      <div class="flex items-center ml-4">
+          <span class="text-gray-700">
+              Số lượng:
+             </span>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="decreaseQuantity()">
+           -
+          </button>
+          <input class="w-12 text-center border border-gray-300 mx-2" id="quantity" type="text" value="01"/>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="increaseQuantity()">
+           +
+          </button>
+         </div>
+         </div>
+         
+         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <button class="btn-action bg-orange-500 text-white px-6 py-3 rounded"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('   Vợt cầu lông Victor Auraspeed 100X TUC | Phiên bản đặc biệt','   3.350.000đ')">Thêm vào giỏ</a></button>
+        </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="js/scripts.js"></script>
+      </div>
+    <div class="mt-8 border border-orange-500 p-4 rounded-lg">
+     <h2 class="text-xl font-bold text-gray-800 mb-4">
+      Ưu đãi
+     </h2>
+     <ul class="space-y-2 text-gray-700">
+      <li>
+       <i class="fas fa-fire text-orange-500">
+       </i>
+       Tặng cước và căng cước vợt cầu lông miễn phí
+      </li>
+      <li>
+       <i class="fas fa-fire text-orange-500">
+       </i>
+       Tặng bao nhung/bao đơn bảo vệ vợt cầu lông
+      </li>
+      <li>
+       <i class="fas fa-fire text-orange-500">
+       </i>
+       Tặng quấn cán vợt cầu lông
+      </li>
+      <li>
+       <i class="fas fa-fire text-orange-500">
+       </i>
+       Freeship khi chuyển khoản trước với đơn hàng trên 1 triệu
+      </li>
+      <li>
+       <i class="fas fa-fire text-orange-500">
+       </i>
+       Yên tâm với quy trình nhận hàng kiểm tra trước thanh toán sau
+      </li>
+      <li>
+       <i class="fas fa-fire text-orange-500">
+       </i>
+       Bảo hành vợt 90 ngày lỗi 1 đổi 1 lỗi nhà sản xuất
+      </li>
+      <li>
+       <i class="fas fa-fire text-orange-500">
+       </i>
+       Cơ hội nhận voucher cho các đơn hàng tiếp theo
+      </li>
+      <li>
+       <i class="fas fa-fire text-orange-500">
+       </i>
+       Vô vàn dịch vụ hỗ trợ miễn phí khác
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </div>
+ <script>
+     document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+  function increaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue)) {
+    quantityInput.value = (currentValue + 1).toString().padStart(2, '0');
+  }
+}
+
+function decreaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue) && currentValue > 1) {
+    quantityInput.value = (currentValue - 1).toString().padStart(2, '0');
+  }
+}
+  document.addEventListener('DOMContentLoaded', function() {
+    const sizeButtons = document.querySelectorAll('#size-options button');
+    sizeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        sizeButtons.forEach(btn => btn.classList.remove('selected'));
+        this.classList.add('selected');
+        localStorage.setItem('selectedSize', this.innerText);
+      });
+    });
+
+    const selectedSize = localStorage.getItem('selectedSize');
+    if (selectedSize) {
+      sizeButtons.forEach(button => {
+        if (button.innerText === selectedSize) {
+          button.classList.add('selected');
+        }
+      });
+    }
+  });
+</script>
+ <div  class="bg-[#FFEFE6]">
+  <div class="max-w-5xl mx-auto">
+   <div class="flex border-b-2 border-gray-200">
+    <div class="px-6 py-4 text-[#FF6F00] font-bold text-xl border-b-4 border-[#FF6F00]">
+     Mô tả sản phẩm
+    </div>
+    <div class="px-6 py-4 text-[#1A202C] font-bold text-xl">
+     Đánh giá 0
+     <i class="fas fa-star text-[#FF6F00]">
+     </i>
+    </div>
+   </div>
+   <div class="p-6">
+    <p class="text-[#1A202C] text-lg">
+     <span class="font-bold">
+      Vợt cầu lông Victor Auraspeed 100X Limited
+     </span>
+     thuộc dòng cao cấp của
+     <span class="text-[#FF6F00]">
+      thương hiệu Victor
+     </span>
+     . Cây vợt là phiên bản đặc biệt được Victor cho ra mắt nhân dịp sự kiện khởi tranh BWF Thomas &amp; Uber Cup Finals 2024 diễn ra 2 năm 1 lần.
+     <span class="font-bold">
+      Victor Auraspeed 100X TUC
+     </span>
+     có sự đặc trưng của dòng vợt Auraspeed này là sự nhanh nhẹn, tốc độ kết hợp với sức mạnh từ những cú đập cầu, những cú gập cổ tay nhanh vào lực vô cùng mạnh mẽ.
+    </p>
+    <div class="mt-6">
+     <img alt="A badminton racket with a white and black frame" class="w-full rounded-lg" height="600" src="https://static.fbshop.vn/wp-content/uploads/2024/05/z5440027449250_7b2437aa22742a10e0f2cf4b277fe7d8.jpg" width="800"/>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div  class="bg-[#FFEFE6]">
+ <div class="max-w-4xl mx-auto">
+  <h2 class="text-2xl font-bold mb-4">1. Giới thiệu Vợt cầu lông Victor Auraspeed 100X TUC</h2>
+  <p class="text-base text-gray-800">
+      Vợt Victor Auraspeed 100X TUC thuộc dòng Auraspeed – <span class="text-red-600 font-bold">dòng vợt cao cấp</span> cùng với đó là sự nhanh nhẹn kết hợp tốc độ lẫn sức mạnh cực nổi trội, đặc biệt là với những pha cầu phản tạt và đập gõ rất hiểm hóc. Bên cạnh đó, cây vợt được áp dụng những công nghệ có khả năng chịu lực tốt và độ bền bỉ, giúp cho khung vợt cứng cáp, chịu được sức căng lớn. Ngoài ra, còn có khả năng hồi phục rất nhanh, giúp vợt nhanh chóng trở lại trạng thái cân bằng sẵn sàng cho những cú đánh tiếp sau.
+  </p>
+</div>
+ </div>
+ <div  class="bg-[#FFEFE6]">
+    <div class="max-w-4xl mx-auto">
+  <h2 class="text-2xl font-bold mb-4">2. Thông số kỹ thuật Vợt cầu lông Victor Auraspeed 100X Limited</h2>
+  <ul class="list-disc pl-5 space-y-2">
+      <li>Thương hiệu: Victor</li>
+      <li>Độ cứng: Trung bình</li>
+      <li>Khung vợt: High Resilience Modulus Graphite + Nano Fortify TR +</li>
+      <li>Thân vợt: High Resilience Modulus Graphite + PYROFIL + 6.8 SHAFT</li>
+      <li>Trọng lượng: 84.5g</li>
+      <li>Chu vi cán vợt: G5</li>
+      <li>Sức căng tối đa: 4U ≤28 lbs (12.5 Kg)</li>
+      <li>Điểm cân bằng: 298mm</li>
+      <li>Swing: 83.5 kg/cm2</li>
+      <li>Chiều dài tổng thể: 675mm</li>
+      <li>Màu sắc: Nhám phối Đen Trắng</li>
+  </ul>
+  <p class="mt-4"><span class="font-bold">Kết luận:</span> Nhìn chung cây vợt <span class="font-bold">Victor Auraspeed 100X TUC</span> có lối chơi công thủ toàn diện hơi thiên công một chút. Thân vợt cứng vừa phải, khối lượng không quá nặng giúp cho những tình huống cầu nhanh. Phù hợp với người chơi có lực cổ tay trung bình trở lên sẽ phát huy tối đa sức mạnh.</p>
+ </div>
+ </div>
+ <div  class="bg-[#FFEFE6]">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold mb-4">
+     3. Mô tả chi tiết Vợt cầu lông Victor Auraspeed 100X Limited
+    </h2>
+    <ul class="list-disc pl-5 mb-4">
+     <li class="mb-2">
+      <strong>
+       Vợt cầu lông Victor Auraspeed 100X
+      </strong>
+      thiết kế phối các chi tiết trắng, đen cực hiện đại và nổi bật trên nền màu nhám tạo nên một tổng thể bắt mắt trên vợt Victor ARS 100X TUC, đem lại sự mạnh mẽ cho người chơi trên sân cầu.
+     </li>
+     <li>
+      Về thông số với trọng lượng 4U trung bình, điểm cân bằng 298mm (hơi nặng đầu) và thân vợt trung bình, có thể thấy Victor Auraspeed 100X là cây vợt thiên về lối chơi cầu
+      <strong>
+       tấn công
+      </strong>
+      , phát huy tốt nhất sức mạnh trong những pha smash cầu cắm và sâu, đập cầu đầy uy lực găm thẳng vào sân đối phương. Ngoài ra, mức chịu lực căng dây của cây vợt tối đa lên tới 28LBS, người chơi có thể thoải mái lựa chọn mức căng thích hợp với trình độ chơi và lực cổ tay của mình.
+     </li>
+    </ul>
+    <div class="flex justify-center">
+     <img alt="Vợt cầu lông Victor Auraspeed 100X TUC" class="rounded-lg" height="400" src="https://static.fbshop.vn/wp-content/uploads/2024/05/z5440027448097_91a8e2817fa70bbea482000c699beb36.jpg" width="600"/>
+    </div>
+    <p class="text-center mt-2">
+     Vợt Cầu Lông Victor Auraspeed 100X TUC
+    </p>
+    <ul class="list-disc pl-6 mb-4">
+    <li class="mb-2">Thông số vừa phải, dễ điều khiển và kiểm soát trong thời gian ngắn dành cho người chơi hơi thiên công do đầu vợt hơi nặng nhưng vẫn đảm bảo sự chắc chắn trong những pha phòng thủ.</li>
+    <li>Với thân vợt cứng vừa phải, khối lượng không quá nặng giúp cho những tình huống cầu nhanh, cầu trên lưới, chụp cầu cây vợt xử lí rất linh hoạt. Cùng với đầu vợt hơi nặng nên Victor ARS 100X TUC giúp người chơi có được những cú vung vợt nhanh với độ chính xác cực kì cao.</li>
+    </ul>
+    <h2 class="text-2xl font-bold mb-4">4. Công nghệ nổi bật trên Vợt cầu lông Victor Auraspeed 100X TUC</h2>
+    <p class="text-[#333333]"><span class="font-bold">SEVEN SIX -76</span> là công nghệ hệ thống 76 lỗ đan được áp dụng rộng rãi trong hầu hết các cây vợt cầu lông Victor hiện nay. Với cấu trúc grommet một lỗ tạo ra ít ma sát hơn giữa các dây, điều này giúp giảm hao tổn lực căng một cách hiệu quả, đồng thời kéo dài tuổi thọ của dây.</p>
+    <p class="text-lg font-bold text-gray-800">PYROFIL</p>
+    <p class="text-base text-gray-800">là công nghệ của hãng Victor sử dụng sợi carbon và vật liệu tổng hợp. Đây là vật liệu tiên tiến siêu nhẹ của Nhật Bản giúp vợt có khả năng hấp thụ sốc tuyệt vời và tăng cường khả năng kiểm soát.</p>
+    
+    <p class="text-lg font-bold text-gray-800">NANO FORTIFY TR+</p>
+    <p class="text-base text-gray-800">của vợt cầu lông Victor được nâng cấp và xây dựng dựa trên những điểm mạnh của công nghệ NANO FORTIFY TR trước đó. Công nghệ này mang lại thiết kế bằng sợi carbon tiên tiến, bền, chắc chắn nhưng vẫn mang lại khả năng đàn hồi và cảm giác vừa tay cho người chơi.</p>
+    
+    <p class="text-lg font-bold text-gray-800">REBOUND TRANSITION CONSTRUCTION (R.T.C)</p>
+    <p class="text-base text-gray-800">là công nghệ khung vợt của VICTOR mang đến cấu trúc bật lại. Với “điểm bật lại” đã được các nhà nghiên cứu kiểm nghiệm trên các phần cụ thể của khung vợt, làm tăng độ phản lực của mặt vợt vào quả cầu để tạo ra sức mạnh và vận tốc lớn hơn trong các cú đánh của bạn.</p>
+   </div>
+ </div>
+ </body>
+</html>

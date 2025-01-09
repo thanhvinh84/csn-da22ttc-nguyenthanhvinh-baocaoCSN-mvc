@@ -1,0 +1,653 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+  </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="max-w-4xl mx-auto p-4"></div>
+  <div class="max-w-4xl mx-auto p-4"></div>
+  <div class="max-w-4xl mx-auto p-4"></div>
+  <main class="mt-4">
+   <div class="relative">
+    <div class="flex overflow-x-auto space-x-4">
+     <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-orange-500 text-white p-2 rounded-full z-10">
+      <i class="fas fa-chevron-left">
+      </i>
+     </button>
+     <img alt="Yonex bag" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/ofGIDCdnyaQqMiHuKj80KhCzXDRGTURVaotuvKrAiaAYC90JA.jpg" width="300"/>
+     <img alt="Yonex shoes and racket" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/CtMY66x5LJZxJVockfG5y8xeqizIyemc88ePsjxOW3EETonOB.jpg" width="300"/>
+     <img alt="Yonex bag" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/ofGIDCdnyaQqMiHuKj80KhCzXDRGTURVaotuvKrAiaAYC90JA.jpg" width="300"/>
+     <img alt="Yonex shuttlecock tube" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/QRUSms3UopYENBgVoIb8eeDew2JFuzYKu78MitLewQ9VTonOB.jpg" width="300"/>
+     <img alt="Yonex clothing" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/edfH6GpF24nARk3iXSnekZf4xfNj47pngSPdej98zBnpOhe0JA.jpg" width="300"/>
+     <img alt="Yonex racket" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/OAzgvTwe9U1OBafPUIRzanuBuCboXoBKeNFI2uFkhTgmJ0TnA.jpg" width="300"/>
+     <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-orange-500 text-white p-2 rounded-full z-10">
+      <i class="fas fa-chevron-right">
+      </i>
+     </button>
+    </div>
+   </div>
+  </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+          const productLink = document.getElementById('product-link');
+          const dropdownMenu = document.getElementById('dropdown-menu');
+
+          productLink.addEventListener('click', function (event) {
+              event.preventDefault();
+              dropdownMenu.classList.toggle('hidden');
+          });
+      });
+</script>
+  <div class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4">
+         Tất cả sản phẩm
+        </h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+         <!-- Product 1 -->
+         <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+         <a href="V1.html"> <img  alt="Red badminton racket" class="w-full h-48 object-cover rounded" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/10/DSC6062-1-400x600.jpg" width="300"/></a>
+          <div class="flex items-center mt-2">
+           <span class="bg-green-100 text-green-700 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">
+            Còn hàng
+           </span>
+          </div>
+          <div class="flex items-center mt-2">
+           <div class="flex items-center">
+            <i class="fas fa-star text-yellow-500">
+            </i>
+            <i class="fas fa-star text-yellow-500">
+            </i>
+            <i class="fas fa-star text-yellow-500">
+            </i>
+            <i class="fas fa-star text-yellow-500">
+            </i>
+            <i class="fas fa-star text-yellow-500">
+            </i>
+           </div>
+           <span class="ml-2">
+            (0)
+           </span>
+          </div>
+          <h2 class="text-lg font-bold mb-2">
+          <a href="V1.html"> Vợt Yonex Nanoflare 1000Z Red Limited 2024 | Phiên bản đặc biệt</a>
+          </h2>
+          <p class="text-orange-600 font-bold mt-2">
+           Liên hệ
+          </p>
+         </div>
+         <!-- Product 2 -->
+         <div class="bg-white rounded-lg shadow p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+          <a href="V2.html"><img alt="Blue badminton shoes" class="w-full h-48 object-cover rounded" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/10/ca348721bf1b06455f0a-400x300.jpg" width="300"/></a>
+          <div class="flex items-center mt-2">
+           <span class="bg-green-100 text-green-700 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">
+            Còn hàng
+           </span>
+          </div>
+          <div class="flex items-center mt-2">
+           <div class="flex items-center">
+            <i class="fas fa-star text-yellow-500">
+            </i>
+            <i class="fas fa-star text-yellow-500">
+            </i>
+            <i class="fas fa-star text-yellow-500">
+            </i>
+            <i class="fas fa-star text-gray-300">
+            </i>
+            <i class="fas fa-star text-gray-300">
+            </i>
+           </div>
+           <span class="ml-2">
+            (3)
+           </span>
+          </div>
+          <h2 class="text-lg font-bold mb-2">
+           <a href="V2.html"> Giày Cầu Lông Yonex Eclipsion Z3 Wide | Bền bỉ trên sân</a>
+          </h2>
+          <p class="mt-2 text-orange-500 text-xl font-bold">
+           2.500.000đ
+           <span class="line-through text-gray-500">
+            2.850.000đ
+           </span>
+          </p>
+         </div>
+         <!-- Product 3 -->
+         <div class="bg-white rounded-lg shadow p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+         <a href="V3.html"> <img alt="Black badminton racket" class="w-full h-48 object-cover rounded" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/10/Vot-cau-long-5-400x400.jpg" width="300"/></a>
+          <div class="flex items-center mt-2">
+           <span class="bg-green-100 text-green-700 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">
+            Còn hàng
+           </span>
+          </div>
+          <div class="flex items-center mt-2">
+           <div class="flex items-center">
+            <i class="fas fa-star text-yellow-500">
+            </i>
+            <i class="fas fa-star text-yellow-500">
+            </i>
+            <i class="fas fa-star text-yellow-500">
+            </i>
+            <i class="fas fa-star text-yellow-500">
+            </i>
+            <i class="fas fa-star text-yellow-500">
+            </i>
+           </div>
+           <span class="ml-2">
+            (0)
+           </span>
+          </div>
+          <h2 class="text-lg font-bold mb-2">
+           <a href="V3.html">Vợt Victor Thruster Ryuga Metallic CO24 Limited | Phiên Bản Dành Cho...</a>
+          </h2>
+          <p class="mt-2 text-orange-500 text-xl font-bold">
+           Liên hệ
+          </p>
+         </div>
+        </div>
+       </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+         <!-- Product 1 -->
+         <div class="bg-white rounded-lg shadow p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <a href="V4.html"><img alt="Badminton racket Lining Turbo Charging Marshal" class="w-full h-48 object-contain mb-4" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/09/Vot-cau-long-1-400x400.jpg" width="200"/></a>
+      <div class="flex items-center mb-2">
+       <span class="text-green-600 text-sm font-semibold mr-2">
+        <i class="fas fa-check-circle">
+        </i>
+        Còn hàng
+       </span>
+       <span class="bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded">
+        FBSHOP
+       </span>
+      </div>
+      <div class="flex items-center mb-2">
+       <div class="flex text-yellow-400">
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+       </div>
+       <span class="text-gray-500 text-sm ml-2">
+        (0)
+       </span>
+      </div>
+      <h2 class="text-lg font-bold mb-2">
+      <a href="V4.html"> Vợt cầu lông Lining Turbo Charging Marshal | Trợ Thủ Đắc Lực</a>
+      </h2>
+      <p class="mt-2 text-orange-500 text-xl font-bold">
+       1.950.000đ
+      </p>
+     </div>
+     <!-- Product 2 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <a href="V5.html"><img alt="Badminton racket Victor Artery Tec Ti 99" class="w-full h-48 object-contain mb-4" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/09/Vot-cau-long-15-1-400x400.jpg" width="200"/></a>
+      <div class="flex items-center mb-2">
+       <span class="text-green-600 text-sm font-semibold mr-2">
+        <i class="fas fa-check-circle">
+        </i>
+        Còn hàng
+       </span>
+       <span class="bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded">
+        FBSHOP
+       </span>
+      </div>
+      <div class="flex items-center mb-2">
+       <div class="flex text-yellow-400">
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+       </div>
+       <span class="text-gray-500 text-sm ml-2">
+        (0)
+       </span>
+      </div>
+      <h2 class="text-lg font-bold mb-2">
+       <a href="V5.html">Vợt cầu lông Victor Artery Tec Ti 99 | Sức mạnh vượt trội</a>
+      </h2>
+      <p class="mt-2 text-orange-500 text-xl font-bold">
+       2.940.000đ
+      </p>
+     </div>
+     <!-- Product 3 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <a href="V6.html"><img alt="Badminton racket Victor Artery Tec Ti98" class="w-full h-48 object-contain mb-4" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/09/Vot-cau-long-11-400x400.jpg" width="200"/></a>
+      <div class="flex items-center mb-2">
+       <span class="text-green-600 text-sm font-semibold mr-2">
+        <i class="fas fa-check-circle">
+        </i>
+        Còn hàng
+       </span>
+       <span class="bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded">
+        FBSHOP
+       </span>
+      </div>
+      <div class="flex items-center mb-2">
+       <div class="flex text-yellow-400">
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+       </div>
+       <span class="text-gray-500 text-sm ml-2">
+        (0)
+       </span>
+      </div>
+      <h2 class="text-lg font-bold mb-2">
+       <a href="V6.html">Vợt cầu lông Victor Artery Tec Ti98 | Nâu sáng ánh kim nổi bật</a>
+      </h2>
+      <p class="mt-2 text-orange-500 text-xl font-bold">
+       1.850.000đ
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="container mx-auto p-4">
+    <div class="grid grid-cols-3 gap-4">
+     <!-- Product 1 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <div class="relative">
+       <a href="V7.html"><img alt="Pink Yonex Aerus Z2 Women 2024 Badminton Shoes" class="w-full h-auto rounded-lg" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/09/Vot-cau-long-2024-09-06T135142.094-400x400.jpg" width="300"/></a>
+       <div class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+        -8%
+       </div>
+      </div>
+      <div class="mt-4">
+       <div class="flex items-center mb-2">
+        <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full flex items-center">
+         <i class="fas fa-check-circle mr-1">
+         </i>
+         Còn hàng
+        </span>
+       </div>
+       <div class="flex items-center mb-2">
+        <div class="flex text-yellow-400">
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+        </div>
+        <span class="text-gray-500 text-sm ml-2">
+         (0)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+        <a href="V7.html">Giày cầu Lông Yonex Aerus Z2 Women 2024 | Phiên bản nâng cấp</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        2.600.000đ
+        <span class="text-gray-500 line-through text-base">
+         2.800.000đ
+        </span>
+      </p>
+      </div>
+     </div>
+     <!-- Product 2 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <div class="relative">
+       <a href="V8.html"><img alt="Yonex Nanoflare 700 Game Badminton Racket" class="w-full h-auto rounded-lg" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/08/1cb0b6488e1729497006.jpg" width="300"/></a>
+      </div>
+      <div class="mt-4">
+       <div class="flex items-center mb-2">
+        <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full flex items-center">
+         <i class="fas fa-check-circle mr-1">
+         </i>
+         Còn hàng
+        </span>
+       </div>
+       <div class="flex items-center mb-2">
+        <div class="flex text-yellow-400">
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+        </div>
+        <span class="text-gray-500 text-sm ml-2">
+         (0)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+       <a href="V8.html"> Vợt Yonex Nanoflare 700 Game | Chinh phục mọi thử thách</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        1.919.000đ
+       </p>
+      </div>
+     </div>
+     <!-- Product 3 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <div class="relative">
+       <a href="V9.html"><img alt="Yonex Nanoflare 700 Play Badminton Racket" class="w-full h-auto rounded-lg" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/10/464377691_3424112824563772_3025051366567140978_n-400x533.jpg" width="300"/></a>
+      </div>
+      <div class="mt-4">
+       <div class="flex items-center mb-2">
+        <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full flex items-center">
+         <i class="fas fa-check-circle mr-1">
+         </i>
+         Còn hàng
+        </span>
+       </div>
+       <div class="flex items-center mb-2">
+        <div class="flex text-yellow-400">
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+        </div>
+        <span class="text-gray-500 text-sm ml-2">
+         (0)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+        <a href="V9.html">Vợt Yonex Nanoflare 700 Play | Linh hoạt trên sân cầu</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        1.339.000đ
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container mx-auto p-4">
+    <div class="grid grid-cols-3 gap-4">
+     <!-- Product 1 -->
+     <div class="bg-white rounded-lg shadow-md p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <a href="V10.html"><img alt="Yonex Nanoflare 700 Tour badminton racket" class="w-full h-64 object-cover rounded-t-lg" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/08/66d74535-9dce-4f90-8f39-f8420c1f51d5-366x400.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center mb-2">
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-gray-500 ml-2">
+         (0)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+        <a href="V10.html">Vợt cầu lông Yonex Nanoflare 700 Tour | Điều cầu chính xác</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        2.669.000đ
+       </p>
+       <button class="bg-green-100 text-green-700 px-4 py-2 rounded-full flex items-center">
+        <i class="fas fa-check-circle mr-2">
+        </i>
+        Còn hàng
+       </button>
+      </div>
+     </div>
+     <!-- Product 2 -->
+     <div class="bg-white rounded-lg shadow-md p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <a href="V11.html"><img alt="Yonex Nanoflare 700 Pro badminton racket" class="w-full h-64 object-cover rounded-t-lg" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/08/50545c096378c5269c69-400x533.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center mb-2">
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-gray-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-gray-500 ml-2">
+         (3)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+       <a href="V11.html"> Vợt cầu lông Yonex Nanoflare 700 Pro | Điều cầu nhẹ nhàng thanh thoát</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        3.729.000đ
+       </p>
+       <button class="bg-green-100 text-green-700 px-4 py-2 rounded-full flex items-center">
+        <i class="fas fa-check-circle mr-2">
+        </i>
+        Còn hàng
+       </button>
+      </div>
+     </div>
+     <!-- Product 3 -->
+     <div class="bg-white rounded-lg shadow-md p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <a href="V12.html"><img alt="Lining Halbertec 9000 Limited badminton set" class="w-full h-64 object-cover rounded-t-lg" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/08/8aabf9990a15ae4bf704-400x400.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center mb-2">
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-gray-500 ml-2">
+         (0)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+        <a href="V12.html">Vợt cầu lông Lining Halbertec 9000 Limited - Thể vận hội Olympic...</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        12.450.000đ
+       </p>
+       <button class="bg-green-100 text-green-700 px-4 py-2 rounded-full flex items-center">
+        <i class="fas fa-check-circle mr-2">
+        </i>
+        Còn hàng
+       </button>
+      </div>
+     </div>
+    </div>
+    <!-- Pagination -->
+    <div class="flex justify-center mt-4">
+        <nav aria-label="Page navigation">
+         <ul class="inline-flex items-center -space-x-px">
+          <li>
+           <a class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700" href="#">
+            &lt;
+           </a>
+          </li>
+          <li>
+            <a class="px-3 py-2 leading-tight text-white bg-orange-500 border border-gray-300 hover:bg-orange-600 hover:text-white" href="Votcaulong.html">
+               1
+           </a>
+          </li>
+          <li>
+            <a class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700" href="Votcaulong2.html">
+             2
+           </a>
+          </li>
+          <li>
+           <a class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700" href="Votcaulong3.html">
+            3
+           </a>
+          </li>
+          <li>
+           <a class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700" href="#">
+            &gt;
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+   </div>
+ </body>
+</html>

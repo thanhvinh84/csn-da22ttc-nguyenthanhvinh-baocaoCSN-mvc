@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đơn hàng</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Đơn hàng của bạn</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Stt</th>
+                    <th scope="col">Tên sản phẩm</th>
+                    <th scope="col">Giá</th>
+                </tr>
+            </thead>
+            <tbody id="order-items">
+                <!-- Nơi để hiển thị các sản phẩm trong đơn hàng -->
+            </tbody>
+        </table>
+        <a id="viewDetailsBtn" class="btn btn-primary"><i class="fas fa-eye"></i> Xem chi tiết</a>
+        <a href="trangwebcaulong.html" class="btn btn-dark"><i class="fas fa-arrow-left"></i> Quay lại cửa hàng</a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Lấy thông tin giỏ hàng từ URL
+        let urlParams = new URLSearchParams(window.location.search);
+        let cartItems = JSON.parse(urlParams.get('cart'));
+
+        // Hiển thị thông tin đơn hàng
+        let orderTable = document.getElementById('order-items');
+        cartItems.forEach((item, index) => {
+            let row = `
+                <tr>
+                    <th scope="row">${index + 1}</th>
+                    <td>${item.name}</td>
+                    <td>${item.price}</td>
+                </tr>
+            `;
+            orderTable.innerHTML += row;
+        });
+
+         // Xử lý sự kiện khi người dùng click vào nút Xem chi tiết
+         document.getElementById('viewDetailsBtn').addEventListener('click', function() {
+            // Chuyển hướng sang trang đơn hàng chi tiết và truyền dữ liệu đơn hàng
+            window.location.href = 'order_chitiet.html?cart=' + JSON.stringify(cartItems);
+        });
+
+       // Kiểm tra xem người dùng đã nhấn nút "Buy Now" từ trang giỏ hàng chưa
+       if (sessionStorage.getItem('orderPlaced')) {
+            // Hiển thị thông báo cảm ơn
+            let thankYouMessage = document.createElement('div');
+            thankYouMessage.classList.add('alert', 'alert-success', 'mt-3');
+            thankYouMessage.innerHTML = `<strong>Cảm ơn bạn đã ủng hộ!</strong> Chúng tôi sẽ xử lý đơn hàng của bạn ngay lập tức.`;
+            document.body.appendChild(thankYouMessage);
+            // Xóa trạng thái từ sessionStorage
+            sessionStorage.removeItem('orderPlaced');
+        }
+    </script>
+</body>
+</html>

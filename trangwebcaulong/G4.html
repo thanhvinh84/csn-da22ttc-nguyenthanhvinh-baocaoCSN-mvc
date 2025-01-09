@@ -1,0 +1,398 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+    body {
+             font-family: 'Roboto', sans-serif;
+         }
+         .hover-orange:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7f00;
+      color: white;
+      border-color: #ff7f00;
+    }
+    /* Add smooth transition for all interactive elements */
+    button, input[type="text"] {
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    /* Hover and active feedback for add to cart and buy now buttons */
+    .btn-action:hover {
+      background-color: #e06800;
+      transform: scale(1.05);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+    /* Focus and hover effects for quantity buttons */
+    .quantity-btn:focus, .quantity-btn:hover {
+      background-color: #f3f3f3;
+    }
+   </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="container mx-auto py-4">
+    <div class="text-sm text-gray-600">
+        <span>Trang chủ</span>
+        <span class="mx-2">/</span>
+        <span>Dụng cụ cầu lông chính hãng, đa dạng giá tốt tại Fbshop</span>
+        <span class="mx-2">/</span>
+        <span>Giày cầu lông</span>
+        <span class="mx-2">/</span>
+        <span class="text-orange-500"> Giày Yonex Aerus Z2 Wide Xám 2024 | Di chuyển nhanh nhẹn</span>
+    </div>
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+<div class="container mx-auto p-4">
+    <div class="flex flex-col md:flex-row">
+      <!-- Left Section: Image Gallery -->
+      <div class="w-full md:w-1/2">
+        <div class="relative">
+          <img alt="A pair of white Yonex Eclipsion Z3 Men 2024 shoes" class="w-full" height="400" src="https://static.fbshop.vn/wp-content/uploads/2024/09/Vot-cau-long-97.jpg" width="600"/>
+          <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-200">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-200">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="flex mt-4 space-x-2">
+          <img alt="Thumbnail of Yonex Eclipsion Z3 Men 2024 shoes" class="w-1/4 border-2 border-orange-500" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/09/Vot-cau-long-97.jpg" width="100"/>
+          <img alt="Thumbnail of Yonex Eclipsion Z3 Men 2024 shoes" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/09/Vot-cau-long-98.jpg" width="100"/>
+        </div>
+      </div>
+
+      <!-- Right Section: Product Details -->
+      <div class="w-full md:w-1/2 md:pl-8">
+        <h1 class="text-2xl font-bold">Giày Yonex Aerus Z2 Wide Xám 2024</h1>
+        <h1 class="text-2xl font-bold">| Di chuyển nhanh nhẹn</h1>
+        <div class="flex items-center mt-2">
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="ml-2 text-gray-600">0 đánh giá</span>
+          <span class="ml-2 text-gray-600">lượt mua</span>
+        </div>
+        <div class="mt-4">
+          <span class="text-3xl font-bold text-orange-500">2.600.000đ</span>
+          <span class="text-gray-500 line-through ml-2">2.800.000đ</span>
+      </div>
+        <div class="mt-4">
+          <span class="text-gray-600">Chọn Size:</span>
+          <div class="flex space-x-2 mt-2" id="size-options">
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">37</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">38</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">39</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">40</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">41</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">42</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">43</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">44</button>
+          </div>
+        </div>
+        <div class="max-w-4xl mx-auto p-4">
+        <div class="text-lg mb-4">
+        <div class="flex items-center ml-4">
+            <span class="text-gray-700">
+                Số lượng:
+               </span>
+            <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="decreaseQuantity()">
+             -
+            </button>
+            <input class="w-12 text-center border border-gray-300 mx-2" id="quantity" type="text" value="01"/>
+            <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="increaseQuantity()">
+             +
+            </button>
+           </div>
+           </div>
+           
+           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <button class="btn-action bg-orange-500 text-white px-6 py-3 rounded"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart(' Giày Yonex Aerus Z2 Wide Xám 2024 | Di chuyển nhanh nhẹn','2.600.000đ')">Thêm vào giỏ</a></button>
+          </div>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+       <script src="js/scripts.js"></script>
+        </div>
+        <div class="bg-white border border-orange-300 rounded-lg p-6 shadow-md max-w-lg">
+          <h2 class="text-orange-500 font-bold text-lg mb-4">
+           Ưu đãi
+          </h2>
+          <ul class="space-y-3">
+           <li class="flex items-center">
+            <i class="fas fa-fire text-orange-500 mr-2">
+            </i>
+            <span>
+             Tặng tất cầu lông (tất dài hoặc ngắn)
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-gift text-orange-500 mr-2">
+            </i>
+            <span>
+             Bảo hành 1 tháng lỗi từ nhà sản xuất
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-shipping-fast text-orange-500 mr-2">
+            </i>
+            <span>
+             Ship toàn quốc, nhận hàng kiểm tra thanh toán
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-truck text-orange-500 mr-2">
+            </i>
+            <span>
+             Freeship khi chuyển khoản trước với đơn hàng trên 1 triệu
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-certificate text-orange-500 mr-2">
+            </i>
+            <span>
+             Cam kết sản phẩm chính hãng chất lượng
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-tags text-orange-500 mr-2">
+            </i>
+            <span>
+             Cơ hội nhận voucher cho những đơn hàng tiếp theo
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-phone-alt text-orange-500 mr-2">
+            </i>
+            <span>
+             Vô vàn các dịch vụ hỗ trợ miễn phí khác
+            </span>
+           </li>
+          </ul>
+          <div class="flex justify-end mt-6">
+           <img alt="Two badminton rackets" class="w-16 h-16" height="100" src="https://storage.googleapis.com/a1aa/image/MwwPXrMYmYaBFFJQN7KrrxZ7WBRC1o1xLNjmPq9SgKEJex2JA.jpg" width="100"/>
+          </div>
+         </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+       document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+    function increaseQuantity() {
+    var quantityInput = document.getElementById('quantity');
+    var currentValue = parseInt(quantityInput.value);
+    if (!isNaN(currentValue)) {
+      quantityInput.value = (currentValue + 1).toString().padStart(2, '0');
+    }
+  }
+
+  function decreaseQuantity() {
+    var quantityInput = document.getElementById('quantity');
+    var currentValue = parseInt(quantityInput.value);
+    if (!isNaN(currentValue) && currentValue > 1) {
+      quantityInput.value = (currentValue - 1).toString().padStart(2, '0');
+    }
+  }
+    document.addEventListener('DOMContentLoaded', function() {
+      const sizeButtons = document.querySelectorAll('#size-options button');
+      sizeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          sizeButtons.forEach(btn => btn.classList.remove('selected'));
+          this.classList.add('selected');
+          localStorage.setItem('selectedSize', this.innerText);
+        });
+      });
+
+      const selectedSize = localStorage.getItem('selectedSize');
+      if (selectedSize) {
+        sizeButtons.forEach(button => {
+          if (button.innerText === selectedSize) {
+            button.classList.add('selected');
+          }
+        });
+      }
+    });
+</script>
+<div class="bg-[#fceae8]">
+    <div class="max-w-4xl mx-auto p-4">
+        <div class="flex space-x-4 border-b-2 border-gray-200 pb-2">
+            <div class="text-xl font-bold text-[#f97316]">
+             Mô tả sản phẩm
+            </div>
+            <div class="text-xl font-bold text-[#1f2937]">
+             Đánh giá 5
+             <i class="fas fa-star text-[#f97316]">
+             </i>
+            </div>
+           </div>
+           <div class="max-w-4xl mx-auto">
+            <h1 class="text-2xl font-bold mb-4">
+             1. Giới thiệu Giày Yonex Aerus Z2 Wide Xám 2024
+            </h1>
+            <p class="mb-4">
+             Nếu bạn đang tìm kiếm một đôi giày cầu lông mang đến sự kết hợp hoàn hảo giữa hiệu suất và thoải mái, thì
+             <span class="text-red-500">
+              Giày cầu lông
+             </span>
+             Giày Yonex Aerus Z2 Wide Xám 2024 chính là lựa chọn lý tưởng. Được thiết kế đặc biệt cho những vận động viên có đôi chân rộng hơn, Aerus Z2 Wide không chỉ nổi bật với công nghệ tiên tiến của
+             <span class="text-red-500">
+              Yonex
+             </span>
+             mà còn đem lại sự hỗ trợ vượt trội và sự vừa vặn hoàn hảo. Với cấu trúc Power Cushion và các tính năng độc quyền, giày mang đến trải nghiệm chơi thể thao tối ưu, giúp bạn di chuyển linh hoạt, nhanh nhẹn và tự tin trên sân đấu. Khám phá giày Yonex Power Cushion Aerus Z2 Wide để cảm nhận sự khác biệt trong từng bước di chuyển của bạn.
+            </p>
+            <div class="flex justify-center">
+             <img alt="Giày Yonex Aerus Z2 Wide Xám 2024" class="rounded-lg" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/09/Vot-cau-long-98.jpg" width="400"/>
+            </div>
+            <div class="max-w-4xl mx-auto p-4"></div>
+            <h2 class="text-2xl font-bold mb-4">2. Thông số kỹ thuật Giày Yonex Aerus Z2 Wide Xám 2024</h2>
+            <p class="mb-2"><span class="font-bold">Màu sắc:</span> Xám Đậm</p>
+            <p class="mb-2"><span class="font-bold">Phần trên:</span> Sợi tổng hợp</p>
+            <p class="mb-2"><span class="font-bold">Đế giữa:</span> Nhựa tổng hợp</p>
+            <p class="mb-2"><span class="font-bold">Đế ngoài:</span> Đế cao su</p>
+            <p class="mb-2"><span class="font-bold">Size:</span> 36-42</p>
+            <p class="mb-2"><span class="font-bold">Vật liệu:</span> POWER CUSHION+, POWER CUSHION, Lưới Raschel đôi, Nhẹ bền cho da, Tấm Power Graphite, msLITE X</p>
+            <div class="max-w-4xl mx-auto p-4"></div>
+            <h2 class="text-2xl font-bold mb-4">3. Mô tả chi tiết Giày Yonex Aerus Z2 Wide Xám 2024</h2>
+            <ul class="list-disc pl-6">
+              <li class="mb-2">Giày cầu lông Giày Yonex Aerus Z2 Wide Xám 2024 thiết kế đặc biệt cho những người có đôi chân rộng, mẫu giày này không chỉ cung cấp sự vừa vặn hoàn hảo mà còn hỗ trợ tối đa trong các trận đấu căng thẳng.</li>
+              <li class="mb-2">Công nghệ Power Cushion: Hệ thống đệm Power Cushion độc quyền của Yonex giúp hấp thụ sốc và giảm chấn thương, đồng thời cung cấp cảm giác mềm mại và thoải mái khi di chuyển trên sân. Công nghệ này giúp người chơi nhanh chóng phục hồi sức mạnh và duy trì hiệu suất cao trong suốt trận đấu.</li>
+              <li class="mb-2">Thiết kế Wide Fit: Phiên bản Wide Fit của Aerus Z2 mang đến không gian thoải mái cho đôi chân rộng hơn mà không làm giảm tính chính xác và hỗ trợ. Điều này giúp giảm áp lực và cọ xát, mang lại sự dễ chịu tối ưu ngay cả trong những trận đấu dài.</li>
+              <li>Trọng lượng siêu nhẹ: Với thiết kế tối ưu về trọng lượng, giày Aerus Z2 Wide giúp bạn di chuyển nhanh nhẹn và linh hoạt hơn trên sân. Trọng lượng nhẹ giúp bạn dễ dàng thực hiện các động tác chuyển hướng và nhảy cao mà không gặp trở ngại.</li>
+              <li>Chất liệu cao cấp: Được làm từ các vật liệu chất lượng cao, giày không chỉ bền bỉ mà còn mang lại sự thoáng khí và khô ráo trong suốt trận đấu.</li>
+              <li>Đế ngoài chống trượt: Đế ngoài của giày được thiết kế đặc biệt với độ bám tốt, giúp bạn giữ vững và kiểm soát tốt các chuyển động trên mặt sân cầu lông. Điều này đảm bảo rằng bạn có thể di chuyển một cách an toàn và chính xác.</li>
+              <li>Giày cầu lông Yonex Power Cushion Aerus Z2 Wide là sự lựa chọn lý tưởng cho những tay vợt có chân rộng, tìm kiếm sự kết hợp hoàn hảo giữa hỗ trợ, thoải mái và hiệu suất. Với các công nghệ tiên tiến và thiết kế thông minh, giày này giúp bạn nâng cao khả năng thi đấu và tận hưởng sự tự tin và sự thoải mái tối đa trên sân.</li>
+          </ul>
+          <div class="max-w-4xl mx-auto p-4"></div>
+          <h2 class="text-2xl font-bold mb-4">4. Công nghệ nổi bật trên Giày Yonex Aerus Z2 Wide Xám 2024</h2>
+          <p><strong>– POWER CUSHION :</strong> Đôi giày được tích hợp công nghệ Power Cushion+ bằng cách thêm một loại nhựa đàn hồi đặc biệt vào POWER CUSHION, trong khi vẫn duy trì các đặc tính như thông thường, khả năng hấp thụ sốc cao được thực hiện. Các rãnh được thiết kế theo mô hình mạng tinh thể, với khoảng cách và độ sâu tối ưu, đạt được khả năng phục hồi hơn. So với vật liệu đệm thông thường, POWER CUSHION + tự hào về khả năng hấp thụ sốc hơn 28% và lực đẩy mạnh hơn 62%.</p>
+          <p class="mb-4">
+            <span class="font-bold">– DURABLE SKIN LIGHT:</span> Kết hợp tính linh hoạt giống như cao su với độ cứng của nhựa cứng, với công nghệ <span class="font-bold">DURABLE SKIN LIGHT</span> dựa trên polyurethane cho phép bạn chơi một cách nhẹ nhàng trên đôi chân của bạn trong khi vẫn giữ được sự chắc chắn.
+        </p>
+        <p class="mb-4">
+            <span class="font-bold">– DOUBLE RASCHEL MESH:</span> Double Raschel Mesh là một lưới siêu mịn cực kỳ nhẹ và bền được trang bị trên đôi giày cầu lông xịn Yonex Power Cushion Aerus Z Women. Cho khả năng thoáng khí nhiều hơn tám lần để giải phóng độ ẩm so với vải lưới thông thường.
+        </p>
+        <p>
+            <span class="font-bold">– SYN CRO FIT INSOLE:</span> Cấu trúc đế YONEX Synchro-Fit Insole tạo ra sự tiếp xúc an toàn giữa chân và giày, giảm lãng phí năng lượng thông qua sự phù hợp được cải thiện.
+        </p>
+        <p>– <strong>POWER GRAPHITE DRIVE:</strong> Một tấm than chì được chèn dưới phần giữa của bàn chân để tăng sự ổn định và giảm trọng lượng trong giày và để đẩy bạn về phía trước cho pha cầu tiếp theo.</p>
+        <p>– <strong>3D Power Graphite:</strong> Tấm 3D Power Carbon được đưa vào để giữa trên đôi giày cầu lông Yonex chính hãng Power Cushion Aerus Z2 Xám, giảm trọng lượng và cùng cố sự ổn định của bạn sau mỗi cú bật nhảy.</p>
+        <p>– <strong>TOE ASSIST SHAFE:</strong> Thiết kế tập trung vào ngón chân giúp giảm áp lực ở ngón chân cái, cũng như cung cấp sự hỗ trợ được cải thiện ở giữa bàn chân và gót chân cho phù hợp, ổn định.</p>
+        <p>– <strong>ROUND SOLE:</strong> YONEX Round Sole được thiết kế để cung cấp hỗ trợ toàn diện cho các bước chân nhanh chóng và trơn tru. Round Sole đảm bảo chuyển động trơn tru và truyền năng lượng tối đa.</p>
+           </div>
+  
+ </body>
+</html>

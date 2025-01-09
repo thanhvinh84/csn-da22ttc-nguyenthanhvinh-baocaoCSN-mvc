@@ -1,0 +1,374 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+    body {
+             font-family: 'Roboto', sans-serif;
+         }
+         .hover-orange:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7f00;
+      color: white;
+      border-color: #ff7f00;
+    }
+    /* Add smooth transition for all interactive elements */
+    button, input[type="text"] {
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    /* Hover and active feedback for add to cart and buy now buttons */
+    .btn-action:hover {
+      background-color: #e06800;
+      transform: scale(1.05);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+    /* Focus and hover effects for quantity buttons */
+    .quantity-btn:focus, .quantity-btn:hover {
+      background-color: #f3f3f3;
+    }
+   </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="container mx-auto py-4">
+    <nav class="text-sm text-gray-600">
+        <span>Trang chủ</span>
+        <span class="mx-2">/</span>
+        <span>Dụng cụ cầu lông chính hãng, đa dạng giá tốt tại Fbshop</span>
+        <span class="mx-2">/</span>
+        <span>Balo cầu lông</span>
+        <span class="mx-2">/</span>
+        <span class="text-orange-500 font-semibold"> 
+          Balo cầu lông Kawasaki 8233 cam | Gam màu nổi bật
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+<div class="container mx-auto p-4">
+    <div class="flex">
+     <!-- Left Section -->
+     <div class="w-1/2">
+      <div class="relative">
+       <img alt="White and purple backpack with 'TAI TZU YING' text and 'VICTOR' logo" class="w-full" height="800" src="https://static.fbshop.vn/wp-content/uploads/2023/12/balo-cau-long-Kawasaki-8233-cam-4.jpg" width="600"/>
+       <button class="absolute left-0 top-1/2 transform -translate-y-1/2 text-orange-500 text-2xl">
+        <i class="fas fa-chevron-left">
+        </i>
+       </button>
+       <button class="absolute right-0 top-1/2 transform -translate-y-1/2 text-orange-500 text-2xl">
+        <i class="fas fa-chevron-right">
+        </i>
+       </button>
+      </div>
+      <div class="flex mt-4 space-x-2">
+        <img alt="Thumbnail of Yonex Eclipsion Z3 Men 2024 shoes" class="w-1/4 border-2 border-orange-500" height="100" src="https://static.fbshop.vn/wp-content/uploads/2023/12/balo-cau-long-Kawasaki-8233-cam-4.jpg" width="100"/>
+        <img alt="Thumbnail of Yonex Eclipsion Z3 Men 2024 shoes" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2023/12/balo-cau-long-Kawasaki-8233-cam-5.jpg" width="100"/>
+      </div>
+     </div>
+     <!-- Right Section -->
+     <div class="w-1/2 pl-8">
+      <h1 class="text-3xl font-bold text-gray-800">
+        Balo cầu lông Kawasaki 8233 cam |
+      </h1>
+      <h1 class="text-3xl font-bold text-gray-800">
+        Gam màu nổi bật
+      </h1>
+      <div class="flex items-center mt-2">
+       <div class="flex items-center">
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+       </div>
+       <span class="ml-2 text-gray-500">
+        0 đánh giá
+       </span>
+       <span class="ml-2 text-gray-500">
+        lượt mua
+       </span>
+      </div>
+      <div class="mt-4">
+        <span class="text-3xl font-bold text-orange-600">
+         650.000đ
+        </span>
+        <span class="text-gray-500 line-through ml-2">
+         800.000đ
+        </span>
+       </div>
+      <div class="max-w-4xl mx-auto p-4">
+        <div class="text-lg mb-4">
+        <div class="flex items-center ml-4">
+            <span class="text-gray-700">
+                Số lượng:
+               </span>
+            <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="decreaseQuantity()">
+             -
+            </button>
+            <input class="w-12 text-center border border-gray-300 mx-2" id="quantity" type="text" value="01"/>
+            <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="increaseQuantity()">
+             +
+            </button>
+           </div>
+           </div>
+           
+           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <button class="btn-action bg-orange-500 text-white px-6 py-3 rounded"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('  Balo cầu lông Kawasaki 8233 cam | Gam màu nổi bật','  650.000đ')">Thêm vào giỏ</a></button>
+          </div>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+       <script src="js/scripts.js"></script>
+        </div>
+      <div class="border border-orange-500 rounded-lg p-4 mt-4">
+       <h3 class="text-lg font-bold text-orange-500">
+        Ưu đãi
+       </h3>
+       <ul class="mt-2 space-y-2">
+        <li class="flex items-center">
+         <i class="fas fa-shopping-cart text-orange-500 mr-2">
+         </i>
+         Freeship khi chuyển khoản trước
+        </li>
+        <li class="flex items-center">
+         <i class="fas fa-truck text-green-500 mr-2">
+         </i>
+         Ship COD toàn quốc
+        </li>
+        <li class="flex items-center">
+         <i class="fas fa-check-circle text-blue-500 mr-2">
+         </i>
+         Cam kết chất lượng sản phẩm
+        </li>
+        <li class="flex items-center">
+         <i class="fas fa-exchange-alt text-gray-500 mr-2">
+         </i>
+         Hỗ trợ đổi trả sản phẩm lỗi
+        </li>
+       </ul>
+       <div class="flex justify-end mt-4">
+        <img alt="Two badminton rackets with 'VICTOR' logo" height="100" src="https://storage.googleapis.com/a1aa/image/SWgL0FvMiwaaI5q1LelJ4VJ8zJQHpWcxgkKLfBZAao0cI5vTA.jpg" width="100"/>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <script>
+       document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+    function increaseQuantity() {
+    var quantityInput = document.getElementById('quantity');
+    var currentValue = parseInt(quantityInput.value);
+    if (!isNaN(currentValue)) {
+      quantityInput.value = (currentValue + 1).toString().padStart(2, '0');
+    }
+  }
+
+  function decreaseQuantity() {
+    var quantityInput = document.getElementById('quantity');
+    var currentValue = parseInt(quantityInput.value);
+    if (!isNaN(currentValue) && currentValue > 1) {
+      quantityInput.value = (currentValue - 1).toString().padStart(2, '0');
+    }
+  }
+    document.addEventListener('DOMContentLoaded', function() {
+      const sizeButtons = document.querySelectorAll('#size-options button');
+      sizeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          sizeButtons.forEach(btn => btn.classList.remove('selected'));
+          this.classList.add('selected');
+          localStorage.setItem('selectedSize', this.innerText);
+        });
+      });
+
+      const selectedSize = localStorage.getItem('selectedSize');
+      if (selectedSize) {
+        sizeButtons.forEach(button => {
+          if (button.innerText === selectedSize) {
+            button.classList.add('selected');
+          }
+        });
+      }
+    });
+</script>
+<div class="bg-[#fceae8]">
+    <div class="max-w-4xl mx-auto p-4">
+     <div class="flex space-x-4 border-b-2 border-gray-200 pb-2">
+      <div class="text-xl font-bold text-[#f97316]">
+       Mô tả sản phẩm
+      </div>
+      <div class="text-xl font-bold text-[#1f2937]">
+       Đánh giá 5
+       <i class="fas fa-star text-[#f97316]">
+       </i>
+      </div>
+     </div>
+     <div class="max-w-4xl mx-auto p-4"></div>
+     <h1 class="text-3xl font-bold mb-4">
+      Balo cầu lông Kawasaki 8233 cam | Gam màu nổi bật
+     </h1>
+     <p class="text-lg mb-6">
+      <span class="font-bold">
+       Balo cầu lông Kawasaki 8233 cam
+      </span>
+      được thiết kế khỏe khoắn với tông màu đen viền cam nên không bị lộ vết bẩn khi sử dụng. Sử dụng chất liệu Polyester và được tráng lớp PU bên ngoài giúp nâng cao khả năng chống nước và giữ cho không gian bên trong balo luôn khô thoáng.
+     </p>
+     <div class="flex justify-center">
+      <img alt="A black and orange Kawasaki backpack with the text 'Kawasaki' on it." height="400" src="https://static.fbshop.vn/wp-content/uploads/2023/12/balo-cau-long-Kawasaki-8233-cam-340x400.jpg" width="400"/>
+     </div>
+     <div class="max-w-4xl mx-auto p-4"></div>
+     <h1 class="text-3xl font-bold mb-4">
+      Thông số kĩ thuật:
+     </h1>
+     <ul class="list-disc pl-5 space-y-2">
+      <li>
+       Màu sắc : đen cam
+      </li>
+      <li>
+       Chất liệu : Polyester
+      </li>
+      <li>
+       Size: 32x22x50 cm
+      </li>
+      <li>
+       Mã sp: 8233
+      </li>
+      <li>
+       Thương hiệu: Kawasoki
+      </li>
+     </ul>
+     <div class="mt-6 flex justify-center">
+      <img alt="A black backpack with orange accents" class="rounded-lg" height="400" src="https://static.fbshop.vn/wp-content/uploads/2023/12/balo-cau-long-Kawasaki-8233-cam-1-340x400.jpg" width="300"/>
+     </div>
+     <div class="max-w-4xl mx-auto p-4"></div>
+     <h1 class="text-3xl font-bold mb-4">Đánh giá sản phẩm:</h1>
+     <ul class="list-disc pl-6 space-y-2">
+         <li>Một mẫu balo chất lượng đạt chuẩn theo tiêu chuẩn của Nhật được nhiều người săn lùng. Phần lưng của balo được thiết kế đặc biệt ôm sát cơ thể và được phân bổ trọng lực đều tránh được tình trạng đau mỏi vai khi đeo nặng.</li>
+         <li>Kích thước balo 32x 22 x 50 cm rộng rãi và bố trí nhiều ngăn tiện lợi để bạn có thể dễ dàng sắp xếp đồ một cách thông minh nhất. Chất liệu vải dày dặn, chắc chắn, chống rách tốt.</li>
+         <li>Dây đeo có lót đệm nên khi đeo không bị đau vai, ngoài ra còn có thể điều chỉnh được độ dài dây cho phù hợp với khuôn người.</li>
+     </ul>
+    </div>
+</div>
+ </body></html>

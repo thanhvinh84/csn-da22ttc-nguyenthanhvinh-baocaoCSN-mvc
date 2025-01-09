@@ -1,0 +1,403 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+    body {
+             font-family: 'Roboto', sans-serif;
+         }
+         .hover-orange:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7f00;
+      color: white;
+      border-color: #ff7f00;
+    }
+    /* Add smooth transition for all interactive elements */
+    button, input[type="text"] {
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    /* Hover and active feedback for add to cart and buy now buttons */
+    .btn-action:hover {
+      background-color: #e06800;
+      transform: scale(1.05);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+    /* Focus and hover effects for quantity buttons */
+    .quantity-btn:focus, .quantity-btn:hover {
+      background-color: #f3f3f3;
+    }
+   </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="bg-white py-2">
+    <div class="container mx-auto px-4">
+        <p class="text-gray-600 text-sm">
+            Trang chủ / Dụng cụ cầu lông chính hãng, đa dạng giá tốt tại Fbshop / Vợt cầu lông / 
+            <span class="text-orange-500 font-semibold">Set Vợt Yonex NanoFlare FL 2024 | Phong cách năng động</span>
+        </p>
+    </div>
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+<div class="container mx-auto p-4">
+    <div class="flex flex-col md:flex-row">
+     <!-- Image Section -->
+     <div class="w-full md:w-1/2">
+      <div class="relative">
+       <img alt="Yonex NanoFlare FL 2024 Set" class="w-full" height="800" src="https://static.fbshop.vn/wp-content/uploads/2024/07/453086864_346077831876903_4136345877637503897_n.jpg" width="600"/>
+       <button class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md">
+        <i class="fas fa-chevron-left">
+        </i>
+       </button>
+       <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md">
+        <i class="fas fa-chevron-right">
+        </i>
+       </button>
+      </div>
+      <div class="flex mt-4 space-x-2">
+        <img alt="Thumbnail 1" class="w-1/4 border-2 border-orange-500" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/07/453086864_346077831876903_4136345877637503897_n.jpg" width="100"/>
+        <img alt="Thumbnail 2" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/07/453097631_346078185210201_2500937467773923072_n.jpg" width="100"/>
+        <img alt="Thumbnail 3" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/07/453094074_346077948543558_3533182842533250854_n.jpg" width="100"/>
+        <img alt="Thumbnail 4" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/07/453093052_346078161876870_8817725687383981044_n.jpg" width="100"/>
+       </div>
+     </div>
+     <!-- Product Details Section -->
+     <div class="w-full md:w-1/2 md:pl-8">
+      <h1 class="text-3xl font-bold">
+       Set Vợt Yonex NanoFlare FL 2024 |
+      </h1>
+      <h1 class="text-3xl font-bold">
+       Phong cách năng động
+      </h1>
+      <div class="flex items-center mt-2">
+       <div class="flex items-center">
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+        <span class="text-yellow-500">
+         <i class="fas fa-star">
+         </i>
+        </span>
+       </div>
+       <span class="ml-2 text-gray-500">
+        0 đánh giá
+       </span>
+       <span class="ml-2 text-gray-500">
+        lượt mua
+       </span>
+      </div>
+      <div class="text-3xl text-orange-500 mt-4">
+       3.550.000đ
+      </div>
+      <div class="max-w-4xl mx-auto p-4">
+        <div class="text-lg mb-4">
+        <div class="flex items-center ml-4">
+            <span class="text-gray-700">
+                Số lượng:
+               </span>
+            <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="decreaseQuantity()">
+             -
+            </button>
+            <input class="w-12 text-center border border-gray-300 mx-2" id="quantity" type="text" value="01"/>
+            <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="increaseQuantity()">
+             +
+            </button>
+           </div>
+           </div>
+           
+           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <button class="btn-action bg-orange-500 text-white px-6 py-3 rounded"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('Set Vợt Yonex NanoFlare FL 2024 | Phong cách năng động','3.550.000đ')">Thêm vào giỏ</a></button>
+          </div>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+       <script src="js/scripts.js"></script>
+        </div>
+      <div class="mt-8">
+       <h3 class="text-xl font-bold">
+        Ưu đãi
+       </h3>
+       <ul class="list-disc list-inside mt-2 text-gray-700">
+        <li>
+         <i class="fas fa-fire text-orange-500">
+         </i>
+         Tặng cước và căng cước vợt cầu lông miễn phí
+        </li>
+        <li>
+         <i class="fas fa-fire text-orange-500">
+         </i>
+         Tặng bao nhung/bao đơn bảo vệ vợt cầu lông
+        </li>
+        <li>
+         <i class="fas fa-fire text-orange-500">
+         </i>
+         Tặng quấn cán vợt cầu lông
+        </li>
+        <li>
+         <i class="fas fa-fire text-orange-500">
+         </i>
+         Freeship khi chuyển khoản trước với đơn hàng trên 1 triệu
+        </li>
+        <li>
+         <i class="fas fa-fire text-orange-500">
+         </i>
+         Yên tâm với quy trình nhận hàng kiểm tra trước thanh toán sau
+        </li>
+        <li>
+         <i class="fas fa-fire text-orange-500">
+         </i>
+         Bảo hành vợt 90 ngày lỗi 1 đổi 1 nhà sản xuất
+        </li>
+        <li>
+         <i class="fas fa-fire text-orange-500">
+         </i>
+         Cơ hội nhận voucher cho các đơn hàng tiếp theo
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+   <script>
+       document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+    function increaseQuantity() {
+    var quantityInput = document.getElementById('quantity');
+    var currentValue = parseInt(quantityInput.value);
+    if (!isNaN(currentValue)) {
+      quantityInput.value = (currentValue + 1).toString().padStart(2, '0');
+    }
+  }
+
+  function decreaseQuantity() {
+    var quantityInput = document.getElementById('quantity');
+    var currentValue = parseInt(quantityInput.value);
+    if (!isNaN(currentValue) && currentValue > 1) {
+      quantityInput.value = (currentValue - 1).toString().padStart(2, '0');
+    }
+  }
+    document.addEventListener('DOMContentLoaded', function() {
+      const sizeButtons = document.querySelectorAll('#size-options button');
+      sizeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          sizeButtons.forEach(btn => btn.classList.remove('selected'));
+          this.classList.add('selected');
+          localStorage.setItem('selectedSize', this.innerText);
+        });
+      });
+
+      const selectedSize = localStorage.getItem('selectedSize');
+      if (selectedSize) {
+        sizeButtons.forEach(button => {
+          if (button.innerText === selectedSize) {
+            button.classList.add('selected');
+          }
+        });
+      }
+    });
+</script>
+   <div class="bg-[#FCEAE6]">
+    <div class="container mx-auto p-4">
+     <div class="flex space-x-4 border-b-2 border-gray-200">
+      <a class="text-[#FF6F3D] font-bold text-lg pb-2 border-b-4 border-[#FF6F3D]" href="#">
+       Mô tả sản phẩm
+      </a>
+      <a class="text-[#1A202C] font-bold text-lg pb-2" href="#">
+       Video review
+      </a>
+     </div>
+     <div class="bg-[#FCEAE6]">
+        <div class="p-8">
+         <h2 class="text-2xl font-bold mb-4">1. Giới thiệu Set Vợt Yonex NanoFlare FL 2024</h2>
+      <p class="mt-2 text-lg">
+       Set vợt Yonex NanoFlare FL 2024 thuộc phân khúc cao cấp đến từ
+       <span class="text-red-500">
+        thương hiệu Yonex
+       </span>
+       , cây vợt được thiết kế nổi bật với màu Trắng Xanh. trang trí quanh khung và thân vợt với các chi tiết màu sắc vô cùng tinh tế và bắt mắt. Chắc chắn rất thích hợp với các lông thủ yêu thích phong cách năng động, yêu thích sự độc đáo mới lạ, khỏe khoắn. Đặc biệt ở set vợt này là mang lại những pha nhồi cầu, bắt cầu, đập gõ nhanh như chớp.
+      </p>
+     </div>
+    </div>
+    <div class="bg-[#FCEAE6]">
+    <div class="p-8">
+        <h2 class="text-2xl font-bold mb-4">2. Thông số kỹ thuật Set Vợt Yonex NanoFlare FL 2024</h2>
+        <ul class="list-disc pl-5 space-y-2">
+            <li>Thương hiệu: Yonex</li>
+            <li>Điểm cân bằng: Cân bằng</li>
+            <li>Độ cứng đũa: Cứng</li>
+            <li>Trọng lượng: 4U (85g)</li>
+            <li>Swing 84.5 kg/cm2</li>
+            <li>Điểm cân bằng 295 mm</li>
+            <li>Chu vi cán vợt: G5</li>
+            <li>Chiều dài tổng thể: 675mm</li>
+            <li>Sức căng tối đa: 28lbs (12,5kg).</li>
+            <li>Cấu tạo đũa: HM Graphite / Namd</li>
+        </ul>
+        <div class="container mx-auto p-4"></div>
+        <h2 class="text-2xl font-bold mb-4">3. Mô tả chi tiết Vợt Yonex NanoFlare FL 2024</h2>
+        <div class="space-y-4">
+            <ul class="list-disc pl-5 space-y-2">
+                <li><span class="text-red-600 font-bold">Vợt cầu lông</span> Yonex NanoFlare FL 2024 được thiết kế dành cho những người chơi yêu thích lối đánh công thủ toàn diện hơi thiên về phản tạt, điều cầu, đẩy vợt ở mức cứng hướng tới người chơi có cổ tay khỏe, trình độ trung bình trở lên</li>
+                <li>Thiết kế bên ngoài được phủ lớp sơn nhám màu Trắng phối Xanh mang đến sự nhẹ nhàng trong phong cách phối đồ trên sân. Cả trên thân và khung vợt Yonex NanoFlare FL 2024 sử dụng vật liệu bền bỉ và chịu lực tốt, đem lại sự ổn định, khả năng kiểm soát tối đa trong từng pha cầu.</li>
+                <li>Sở hữu thông số dễ chơi với trọng lượng trung bình 4U, thân vợt linh hoạt trợ lực, ngoài ra mức căng dây tối đa lên tới 12,5kg, các bạn chơi cầu phong trào, mới chơi có thể thoải mái lựa chọn mức căng phù hợp với trình độ và lực cổ tay của mình. Yonex NanoFlare FL 2024 là cây vợt công thủ toàn diện trên sân cầu, vừa có khả năng điều cầu, phòng thủ thoát tay, chuẩn xác bên cạnh các pha cầu tấn công, smash cầu uy lực.</li>
+                <li>Sức bền của vợt Yonex NanoFlare FL cũng được cải tiến tối đa với công nghệ chế tạo sợi carbon thế hệ mới tích hợp trên vợt Yonex, sợi cacbon vừa giữ được sự chắc chắn vốn có nhưng vẫn đảm bảo về tính đàn hồi, được phát triển bởi Toray Industries.</li>
+            </ul>
+            <h2 class="text-2xl font-bold mb-4">4. Công nghệ nổi bật Vợt Yonex NanoFlare FL 2024</h2>
+            <ul class="list-none pl-0 space-y-2">
+                <li><span class="font-bold">– SONIC FLARE SYSTEM:</span> Với vật liệu than chì mang tính cách mạng mới của TORAYCA(r) M40X và SUPER HMG được tích hợp giúp cung cấp sức mạnh và sự ổn định tối đa cho mỗi cú đánh của người chơi.</li>
+                <li><span class="font-bold">– TORAYCA(r) M40X:</span> Một loại carbon thế hệ mới tích hợp trên vợt của Yonex, sợi carbon vừa giữ được sự chắc chắn vốn có nhưng vẫn đảm bảo về tính đàn hồi, được phát triển bởi Toray Industries.</li>
+            </ul>
+        </div>
+
+        <p class="mb-4">
+            <span class="font-bold">– NANOMETRIC:</span> Cải thiện độ bền liên kết giữ các sợi carbon cho phép đưa cấu trúc vợt lên một đẳng cấp khác. Bằng cách giảm lượng carbon trong trục hơn 60% so với một cây vợt thông thường trong khi vẫn giữ được độ cứng giúp vung vợt nhanh hơn thêm 30km/h.
+        </p>
+        <p>
+            <span class="font-bold">– ISOMETRIC:</span> Công nghệ được phát minh bởi Yonex để tối đa hoá vùng đánh cầu hiệu quả và giờ nó trở thành tính năng hàng đầu thế giới đối với vợt cầu lông của Yonex. Đầu vợt có hình dạng vuông có nghĩa là có nhiều dây hơn cắt nhau ở các góc vợt, làm cho khu vực đánh cầu hiệu quả lớn hơn. Yonex tiếp tục phát triển và nâng cao sức mạnh của ISOMETRIC giảm bớt khu vực “chết” xung quanh mép ở các cây vợt thông thường. Tạo ra vùng chạm cầu hiệu quả lớn hơn nhiều so với các loại vợt khác.
+        </p>
+        <p class="font-bold">
+            – E.B CAP PLUS: <span class="font-normal">Chụp mũ vợt trên Yonex Astrox SV có hình dạng độc đáo giúp tối đa hóa hiệu suất của trục. Mặt trước cho phép trục uốn cong, trong khi đường cong hình vòm hai bên giúp ổn định mặt vợt bằng cách ngăn trục xoắn. Ngoài ra, với thiết kế này cũng sẽ giúp cây vợt có điểm tựa lớn hơn trong các pha cầu ti đè, bắt lưới cần cảm cao cán vợt.</span>
+        </p>
+        <p class="font-bold">
+            – RAZOR FRAME: <span class="font-normal">Bằng cách giảm 13% phần trên của khung và phần dưới 15,1%, khi so sánh với các loại vợt có khung mỏng thông thường, sức cản không khí giảm 9,3% ở phần trên của khung và 11,5% ở phần dưới. Trục siêu mỏng bổ sung thêm các đặc tính khí động học của vợt giúp vung vợt nhanh hơn khi ít cản gió hơn. Hỗ trợ tốt hơn cho cú đánh của người chơi.</span>
+        </p>
+        <p class="font-bold">
+            – AERO-BOX FRAME: <span class="font-normal">Công nghệ kết hợp giữa kiểu khung hàng không Aero Frame và khung BOX Frame để tạo nên một cấu trúc độc đáo để giảm lực cản của gió nhưng vẫn giữ được độ bền cao của khung vợt. Khung AeroBox đảm bảo đem lại độ xoáy nhanh hơn và cảm giác chắc chắn trong từng cú đánh khi tiếp mặt tiếp xúc với cầu.</span>
+        </p>   
+        <p class="font-bold">
+            – NEW GROMMET PATTERN:<span class="font-normal">Là công nghệ đan dây kiểu mới của nhà Yonex. Cấu trúc lỗ grommet được thiết kế lớn hơn giúp dây di chuyển nhiều hơn để tăng thời gian kiểm soát cầu.
+        </p>
+        <p class="font-bold">
+            – ROTATIONAL GENARATOR SYSTEM: <span class="font-normal">Là công nghệ được Yonex áp dụng để trọng lượng được phân bố đều ở đỉnh vợt, khớp nối và điểm cuối của cán vợt. Điều này giúp tăng cường sự uyển chuyển trong các pha vung vợt và giúp cho những cú đập cầu trở nên chuẩn xác, uy lực hơn.</span>
+        </p>
+        <p class="font-bold">
+            – NEW BUILT-IN T-JOINT: <span class="font-normal">Là công nghệ tiên tiến của Yonex được áp dụng nhiều lên các dòng vợt cầu lông Yonex. Công nghệ sử dụng chất liệu nhựa nhẹ áp dụng lên phần chữ T của khung vợt giúp tăng khả năng ổn định của quả cầu trên lưới, tối đa hóa sức mạnh và khả năng kiểm soát cầu.</span>
+            </p>
+    </div>
+</div>
+ </body>
+</html>

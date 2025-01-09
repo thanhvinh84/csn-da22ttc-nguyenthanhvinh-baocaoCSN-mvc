@@ -1,0 +1,393 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+    body {
+             font-family: 'Roboto', sans-serif;
+         }
+         .hover-orange:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7f00;
+      color: white;
+      border-color: #ff7f00;
+    }
+    /* Add smooth transition for all interactive elements */
+    button, input[type="text"] {
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    /* Hover and active feedback for add to cart and buy now buttons */
+    .btn-action:hover {
+      background-color: #e06800;
+      transform: scale(1.05);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+    /* Focus and hover effects for quantity buttons */
+    .quantity-btn:focus, .quantity-btn:hover {
+      background-color: #f3f3f3;
+    }
+   </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="bg-gradient-to-b from-white to-gray-100 py-2">
+    <div class="container mx-auto px-4">
+        <nav class="text-sm text-gray-600">
+            <span>Trang chủ</span>
+            <span class="mx-2">/</span>
+            <span>Dụng cụ cầu lông chính hãng, đa dạng giá tốt tại Fbshop</span>
+            <span class="mx-2">/</span>
+            <span>Vợt cầu lông</span>
+            <span class="mx-2">/</span>
+            <span class="text-orange-500">Vợt Cầu Lông Lining Bladex 73 Light | Đánh bại đối thủ</span>
+        </nav>
+    </div>
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+<div class="container mx-auto p-4">
+  <div class="flex flex-col md:flex-row">
+   <div class="flex-1">
+    <img alt="Badminton racket" class="w-full h-auto" height="600" src="https://static.fbshop.vn/wp-content/uploads/2024/06/Vot-cau-long-18.jpg" width="400"/>
+    <div class="flex mt-4 space-x-2">
+      <img alt="Thumbnail 1" class="w-1/4 border-2 border-orange-500" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/06/Vot-cau-long-18.jpg" width="100"/>
+      <img alt="Thumbnail 2" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/06/vot-cau-long-lining-bladex-73-light-hong-khung-vot-2.jpg" width="100"/>
+      <img alt="Thumbnail 3" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/06/vot-cau-long-lining-bladex-73-light-hong-khop-chu-t.jpg" width="100"/>
+      <img alt="Thumbnail 4" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/06/vot-cau-long-lining-bladex-73-light-hong-truc-vot.jpg" width="100"/>
+     </div>
+   </div>
+   <div class="flex-1 md:ml-8 mt-8 md:mt-0">
+    <h1 class="text-3xl font-bold text-gray-900">
+     Vợt Cầu Lông Lining Bladex 73 Light | Đánh bại đối thủ
+    </h1>
+    <div class="flex items-center mt-2">
+     <div class="flex items-center">
+      <i class="fas fa-star text-gray-400">
+      </i>
+      <i class="fas fa-star text-gray-400">
+      </i>
+      <i class="fas fa-star text-gray-400">
+      </i>
+      <i class="fas fa-star text-gray-400">
+      </i>
+      <i class="fas fa-star text-gray-400">
+      </i>
+     </div>
+     <span class="ml-2 text-gray-500">
+      0 đánh giá
+     </span>
+     <span class="ml-2 text-gray-500">
+      |
+     </span>
+     <span class="ml-2 text-gray-500">
+      lượt mua
+     </span>
+    </div>
+    <div class="text-3xl font-bold text-orange-500 mt-4">
+     2.150.000đ
+    </div>
+    <div class="text-red-500 mt-2">
+     Chương trình giảm giá mừng sinh nhật FBShop
+    </div>
+    <div class="max-w-4xl mx-auto p-4">
+      <div class="text-lg mb-4">
+      <div class="flex items-center ml-4">
+          <span class="text-gray-700">
+              Số lượng:
+             </span>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="decreaseQuantity()">
+           -
+          </button>
+          <input class="w-12 text-center border border-gray-300 mx-2" id="quantity" type="text" value="01"/>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="increaseQuantity()">
+           +
+          </button>
+         </div>
+         </div>
+         
+         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <button class="btn-action bg-orange-500 text-white px-6 py-3 rounded"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('  Vợt Cầu Lông Lining Bladex 73 Light | Đánh bại đối thủ',' 2.150.000đ')">Thêm vào giỏ</a></button>
+        </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="js/scripts.js"></script>
+      </div>
+    <div class="mt-8">
+     <h2 class="text-xl font-bold text-gray-900">
+      Ưu đãi
+     </h2>
+     <ul class="mt-2 space-y-2">
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng cước và căng cước vợt cầu lông miễn phí
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng bao nhung/bao đơn bảo vệ vợt cầu lông
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng quấn cán vợt cầu lông
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Freeship khi chuyển khoản trước với đơn hàng trên 1 triệu
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Yên tâm với quy trình nhận hàng kiểm tra trước thanh toán sau
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Bảo hành vợt 90 ngày lỗi 1 đổi 1 lỗi nhà sản xuất
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Cơ hội nhận voucher cho các đơn hàng tiếp theo
+      </li>
+      <li class="flex items-center text-gray-700">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Vô vàn dịch vụ hỗ trợ miễn phí khác
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </div>
+ <script>
+     document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+  function increaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue)) {
+    quantityInput.value = (currentValue + 1).toString().padStart(2, '0');
+  }
+}
+
+function decreaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue) && currentValue > 1) {
+    quantityInput.value = (currentValue - 1).toString().padStart(2, '0');
+  }
+}
+  document.addEventListener('DOMContentLoaded', function() {
+    const sizeButtons = document.querySelectorAll('#size-options button');
+    sizeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        sizeButtons.forEach(btn => btn.classList.remove('selected'));
+        this.classList.add('selected');
+        localStorage.setItem('selectedSize', this.innerText);
+      });
+    });
+
+    const selectedSize = localStorage.getItem('selectedSize');
+    if (selectedSize) {
+      sizeButtons.forEach(button => {
+        if (button.innerText === selectedSize) {
+          button.classList.add('selected');
+        }
+      });
+    }
+  });
+</script>
+  <div  class="bg-[#FFEFE8]">
+ <div class="max-w-4xl mx-auto p-4">
+    <div class="flex border-b-2 border-orange-500">
+     <div class="px-4 py-2 bg-orange-200 text-orange-600 font-bold text-lg">
+      Mô tả sản phẩm
+     </div>
+     <div class="px-4 py-2 text-blue-900 font-bold text-lg">
+      Đánh giá 0
+      <i class="fas fa-star text-yellow-500">
+      </i>
+     </div>
+    </div>
+    <div class="mt-4">
+     <h1 class="text-3xl font-bold text-black">
+      Vợt Cầu Lông Lining Bladex 73 Light
+     </h1>
+     <p class="mt-2 text-gray-700">
+      Vợt Lining BladeX 73 Light được thiết kế tỉ mỉ, với hai phiên bản màu Hồng và Xanh, kì công trang bị trên mình những công nghệ hiện đại hỗ trợ đem đến những trải nghiệm chơi cầu trọn vẹn nhất cho người chơi vừa đã tay vừa đã tai chắc chắn là cây vợt đáng để trải nghiệm, hứa hẹn đem đến cho bạn những trải nghiệm chơi đầy mới mẻ và thú vị.
+     </p>
+    </div>
+    <div class="mt-6 flex justify-center">
+     <img alt="A badminton racket with a pink and white color scheme" class="w-1/2" height="600" src="https://static.fbshop.vn/wp-content/uploads/2024/06/Vot-cau-long-18.jpg" width="400"/>
+    </div>
+   </div>
+   </div>
+   <div  class="bg-[#FFEFE8]">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-2xl font-bold mb-4">
+         1. Giới thiệu Vợt cầu lông Lining Bladex 73 Light
+        </h1>
+        <p class="text-lg mb-4">
+         Vợt cầu lông Lining Bladex 73 Light là một sản phẩm dành cho người chơi
+         <span class="text-red-500">
+          cầu lông
+         </span>
+         trung cấp. Vợt này có trọng lượng nhẹ giúp người dùng dễ dàng điều khiển và di chuyển trên sân. Bladex 73 Light được thiết kế để cung cấp sức mạnh và kiểm soát tốt trong khi chơi cầu lông. Đây là một lựa chọn phù hợp cho những người chơi muốn cải thiện kỹ năng của mình trên sân cầu lông. Hãy sở hữu ngay cho mình một cây
+         <span class="text-red-500">
+          vợt cầu lông Lining
+         </span>
+         để trở nên chuyên nghiệp và phát huy hết kĩ năng của mình nhé!
+        </p>
+        <div class="flex justify-center">
+         <img alt="A badminton racket with a white and pink frame" class="rounded-lg" height="400" src="https://static.fbshop.vn/wp-content/uploads/2024/06/vot-cau-long-lining-bladex-73-light-hong-khung-vot-2.jpg" width="400"/>
+        </div>
+       </div>
+    </div>
+    <div  class="bg-[#FFEFE8]">
+        <div class="max-w-4xl mx-auto p-6">
+            <h2 class="text-2xl font-bold mb-4">2. Thông số kỹ thuật Vợt cầu lông Lining Bladex 73 Light</h2>
+            <ul class="list-disc pl-5 space-y-1">
+                <li>Thương hiệu: Lining</li>
+                <li>Khung vợt: Cacbon Fibre</li>
+                <li>Màu sắc: Trắng Hồng và Xanh</li>
+                <li>Trọng lượng: 6U, 74g – 79,9g</li>
+                <li>Chiều dài vợt: 675mm</li>
+                <li>Điểm swing weight: 78,5 kg/cm2</li>
+                <li>Độ cứng đũa: Dẻo (Flexible)</li>
+                <li>Điểm cân bằng: 302 +-3 mm</li>
+                <li>Sức căng tối đa: 26 LBS (12kg)</li>
+                <li>Đường kính đũa vợt: 7mm</li>
+                <li>Chu vi cán cầm: G6</li>
+                <li>Sản xuất: Trung Quốc</li>
+            </ul>
+            <h2 class="text-2xl font-bold mt-8 mb-4">3. Mô tả chi tiết Vợt cầu lông Lining Bladex 73 Light</h2>
+            <p class="mb-4">
+                – Với màu sắc chủ đạo là màu hồng tươi tắn, có phần nữ tính và mềm mại hơn phiên bản vợt Lining BladeX 73 Light Xanh, cây vợt này mang trên mình nước sơn trắng chủ đạo phối cùng các chi tiết ôm quanh khung và thân vợt màu tím, hồng như những gợn sóng vô cùng đẹp mắt chắc chắn khiến các lông thủ yêu thích phong cách nhẹ nhàng, thanh thoát đặc biệt là các bạn nữ “đổ” ngay từ cái nhìn đầu tiên.
+            </p>
+            <p>
+                – Với trọng lượng nhẹ như, chiếc vợt này cung cấp khả năng phòng thủ linh hoạt, giúp người chơi dễ dàng điều chỉnh góc đánh và phản công nhanh chóng khi cần thiết.
+            </p>
+            <p>– Vợt được làm từ sợi carbon chất lượng cao, giúp tăng độ bền và độ cứng của khung, đồng thời cũng giúp tăng khả năng kiểm soát và tăng sức mạnh khi sử dụng. Với trọng lượng 6U G6, sản phẩm này rất nhẹ, giúp người chơi dễ dàng di chuyển và tăng sự nhanh nhẹn trên sân.</p>
+            <p>– Chất liệu Cabcon Fiber mang đến một bộ khung chắc chắn với khả năng chịu được mức căng lên đến 12kg, một điều rất ít thấy trên những dòng vợt nhẹ.</p>
+            <p>– Lining BladeX 73 Light thiết kế hướng tới đối tượng người chơi là những lông thủ ưa thích lối đánh tốc độ, thiên hướng phòng thủ, đặc biệt với công nghệ Sonic Boom System sẽ cho những đường cầu sắc bén, chính xác để hiệu ứng âm thanh đánh và vang cực kỳ đã tai.</p>
+            <h2 class="text-2xl font-bold mt-8 mb-4">4. Công nghệ nổi bật trên Vợt cầu lông Lining Bladex 73 Light</h2>
+            <p>– <span class="font-bold">DYNAMIC OPTIMUM FRAME:</span> Khung được tối ưu hóa độ linh hoạt của vợt giúp Lining Bladex 73 Light mở rộng điểm ngọt lên trên và di chuyển điểm đánh cao hơn. Tốc độ đánh được cải thiện đáng kể với diện tích dây được mở rộng và độ này tăng lên, giúp mở rộng khu vực phòng thủ hiệu quả cho những cú đập mạnh.</p>
+            <p>– <span class="font-bold">SONIC BOOM SYSTEM:</span> Tối ưu hoá quá trình hình thành áp suất không khí để cải thiện âm thanh khi mặt vợt chạm cầu. Điều này mang lại cảm giác đánh tốt hơn, cầu đi với lực nhanh hơn, âm thanh giòn và mạnh mẽ hơn, thích cảm giác đập cầu tấn công cho người chơi.</p>
+        </div>
+        </div>
+ </body>
+</html>

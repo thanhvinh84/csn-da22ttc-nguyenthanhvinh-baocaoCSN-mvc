@@ -1,0 +1,380 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+    body {
+             font-family: 'Roboto', sans-serif;
+         }
+         .hover-orange:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7f00;
+      color: white;
+      border-color: #ff7f00;
+    }
+    /* Add smooth transition for all interactive elements */
+    button, input[type="text"] {
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    /* Hover and active feedback for add to cart and buy now buttons */
+    .btn-action:hover {
+      background-color: #e06800;
+      transform: scale(1.05);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+    /* Focus and hover effects for quantity buttons */
+    .quantity-btn:focus, .quantity-btn:hover {
+      background-color: #f3f3f3;
+    }
+   </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="container mx-auto py-4">
+    <div class="text-sm text-gray-600">
+        <span>Trang chủ</span>
+        <span class="mx-2">/</span>
+        <span>Dụng cụ cầu lông chính hãng, đa dạng giá tốt tại Fbshop</span>
+        <span class="mx-2">/</span>
+        <span>Vợt cầu lông</span>
+        <span class="mx-2">/</span>
+        <span class="text-orange-500 font-semibold">Vợt Cầu Lông VS Cupid | Linh hoạt trong tấn công</span>
+    </div>
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+<div class="container mx-auto p-4">
+  <div class="flex">
+   <!-- Left Section: Product Image -->
+   <div class="w-1/2 flex flex-col items-center">
+    <img alt="Badminton racket image" class="w-1/2 mb-4" height="600" src="https://static.fbshop.vn/wp-content/uploads/2024/06/Vot-cau-long-32.jpg" width="300"/>
+    <div class="flex mt-4 space-x-2">
+      <img alt="Thumbnail 1" class="w-1/4 border-2 border-orange-500" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/06/Vot-cau-long-32.jpg" width="100"/>
+      <img alt="Thumbnail 2" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/06/Vot-cau-long-31.jpg" width="100"/>
+     </div>
+   </div>
+   <!-- Right Section: Product Details -->
+   <div class="w-1/2 pl-8">
+    <h1 class="text-3xl font-bold text-gray-800">
+     Vợt Cầu Lông VS Cupid | Linh hoạt trong tấn công
+    </h1>
+    <div class="flex items-center mt-2">
+     <span class="text-yellow-500 text-xl">
+      <i class="fas fa-star">
+      </i>
+      <i class="fas fa-star">
+      </i>
+      <i class="fas fa-star">
+      </i>
+      <i class="fas fa-star">
+      </i>
+      <i class="fas fa-star">
+      </i>
+     </span>
+     <span class="ml-2 text-gray-600">
+      3 đánh giá
+     </span>
+     <span class="ml-2 text-gray-600">
+      lượt mua
+     </span>
+    </div>
+    <div class="text-3xl text-orange-500 font-bold mt-4">
+     560.000đ
+    </div>
+    <div class="max-w-4xl mx-auto p-4">
+      <div class="text-lg mb-4">
+      <div class="flex items-center ml-4">
+          <span class="text-gray-700">
+              Số lượng:
+             </span>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="decreaseQuantity()">
+           -
+          </button>
+          <input class="w-12 text-center border border-gray-300 mx-2" id="quantity" type="text" value="01"/>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="increaseQuantity()">
+           +
+          </button>
+         </div>
+         </div>
+         
+         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <button class="btn-action bg-orange-500 text-white px-6 py-3 rounded"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('  Vợt Cầu Lông VS Cupid | Linh hoạt trong tấn công','  560.000đ')">Thêm vào giỏ</a></button>
+        </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="js/scripts.js"></script>
+      </div>
+    <div class="mt-8 border border-orange-500 rounded-lg p-4">
+     <h2 class="text-xl font-bold text-orange-500 mb-4">
+      Ưu đãi
+     </h2>
+     <ul class="space-y-2">
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng cước và căng cước vợt cầu lông miễn phí
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng bao nhung/bao đơn bảo vệ vợt cầu lông
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng quấn cán vợt cầu lông
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Freeship khi chuyển khoản trước với đơn hàng trên 1 triệu
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-gift text-orange-500 mr-2">
+       </i>
+       Yên tâm với quy trình nhận hàng kiểm tra trước thanh toán sau
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-shield-alt text-orange-500 mr-2">
+       </i>
+       Bảo hành vợt 90 ngày lỗi 1 đổi 1 lỗi nhà sản xuất
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-tags text-orange-500 mr-2">
+       </i>
+       Cơ hội nhận voucher cho các đơn hàng tiếp theo
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-hand-holding-heart text-orange-500 mr-2">
+       </i>
+       Vô vàn dịch vụ hỗ trợ miễn phí khác
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </div>
+ <script>
+     document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+  function increaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue)) {
+    quantityInput.value = (currentValue + 1).toString().padStart(2, '0');
+  }
+}
+
+function decreaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue) && currentValue > 1) {
+    quantityInput.value = (currentValue - 1).toString().padStart(2, '0');
+  }
+}
+  document.addEventListener('DOMContentLoaded', function() {
+    const sizeButtons = document.querySelectorAll('#size-options button');
+    sizeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        sizeButtons.forEach(btn => btn.classList.remove('selected'));
+        this.classList.add('selected');
+        localStorage.setItem('selectedSize', this.innerText);
+      });
+    });
+
+    const selectedSize = localStorage.getItem('selectedSize');
+    if (selectedSize) {
+      sizeButtons.forEach(button => {
+        if (button.innerText === selectedSize) {
+          button.classList.add('selected');
+        }
+      });
+    }
+  });
+</script>
+    <div class="bg-[#fceae6]">
+ <div class="max-w-4xl mx-auto p-4">
+  <div class="flex border-b border-gray-200">
+   <div class="px-4 py-2 text-orange-600 font-bold border-b-4 border-orange-600">
+    Mô tả sản phẩm
+   </div>
+   <div class="px-4 py-2 text-gray-800 font-bold">
+    Video review
+   </div>
+   <div class="px-4 py-2 text-gray-800 font-bold">
+    Thông số kỹ thuật
+   </div>
+   <div class="px-4 py-2 text-gray-800 font-bold">
+    Đánh giá 5
+    <i class="fas fa-star text-yellow-500">
+    </i>
+   </div>
+  </div>
+  </div>
+  <div class="bg-[#fceae6]">
+    <div class="max-w-4xl mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4">
+    1. Giới thiệu Vợt Cầu Lông VS Cupid
+   </h1>
+   <p class="text-gray-800 mb-4">
+    <span class="font-bold">
+     Vợt cầu lông VS Cupid
+    </span>
+    vừa mới được
+    <span class="text-orange-600">
+     thương hiệu VS
+    </span>
+    cho ra mắt, với thiết kế trắng kết hợp với xanh tạo ra một cây vợt trẻ trung, thanh lịch và không kém phần hiện đại phù hợp với những lông thủ muốn chọn cho mình một cây vợt mang màu sắc tươi sáng. VS Cupid được làm bằng công nghệ vật liệu High Modulus Carbon Fiber giúp tăng độ bền và hỗ trợ hấp thụ độ rung khi vợt tiếp xúc với cầu. Được sử dụng thêm công nghệ Aero Frame với thiết kế khung vợt khí động học hỗ trợ giảm lực cản không khí khi vung vợt, giúp tăng tốc độ vung vợt, giúp người chơi có thể thực hiện các pha đánh nhanh hơn.
+   </p>
+   <img alt="Hình ảnh vợt cầu lông VS Cupid" class="mx-auto" height="400" src="https://static.fbshop.vn/wp-content/uploads/2024/06/Vot-cau-long-31.jpg" width="400"/>
+  </div>
+  </div>
+ <div class="bg-[#fceae6]">
+ <div class="max-w-4xl mx-auto p-6">
+  <h2 class="text-2xl font-bold mb-4">2. Thông số Vợt Cầu Lông VS Cupid</h2>
+  <ul class="list-disc pl-6 mb-8">
+      <li>Thương hiệu: VS</li>
+      <li>Màu sắc: Trắng Hồng</li>
+      <li>Chất liệu: High Modulus Carbon Fiber</li>
+      <li>Độ cân bằng: 295 +- 3mm</li>
+      <li>Độ cứng: Trung Bình</li>
+      <li>Chiều dài vợt: 675 mm</li>
+      <li>Trọng lượng: 4U (82 ± 2g)</li>
+      <li>Chu vi cán vợt: G5</li>
+      <li>Mức căng lưới tối đa: 28LBS ~ 12.5kg</li>
+  </ul>
+  <h2 class="text-2xl font-bold mb-4">3. Mô tả chi tiết Vợt VS Cupid</h2>
+  <p class="mb-4"> – Về ngoài hình cây VS Cupid khoác lên mình lớp sơn nhám với những chi tiết hiện đại, màu sắc vừa bắt mắt ấn tượng lại hài hòa tạo cảm giác sang trọng và đẳng cấp, cùng với khả năng chơi cầu linh hoạt. Với thông số cùng đặc điểm nổi bật trên, VS Cupid phù hợp với người chơi yêu thích lối đánh toàn diện hơi thiên công và linh hoạt trong các pha cầu.</p>
+  <p> – Với thông số 295 +- 3mm cùng với đũa vợt có độ cứng trung bình hướng tới lối chơi công thủ toàn diện hơi thiên công dành cho những người chơi yêu thích sự linh hoạt trong tấn công và phòng thủ.</p>
+  <p class="text-[#e74c3c] font-bold">
+    – Vợt cầu lông VS Cupid với thiết kế vẻ ngoài độc đáo, thời thượng cùng khả năng chơi cầu linh hoạt, công thủ toàn diện linh hoạt trong các pha cầu sẽ là lựa chọn vợt hoàn hảo dành cho những bạn đang muốn tìm kiếm một cây vợt bền bỉ, tăng cường sức mạnh trong lối chơi cầu.
+</p>
+<p class="mt-2">
+    – Trọng lượng nhẹ, khung mỏng nhưng có độ bền và sức chịu lực cao, cung cấp mức căng dây tối đa lên tới 28 LBS, phù hợp với lực cổ tay và trình độ của mình, yên tâm bung hết sức mạnh trong từng cú vung vợt mà không lo sập, gãy khung.
+</p>
+<h2 class="text-2xl font-bold mb-4">  4. Công nghệ nổi bật trên Vợt VS Cupid</h2>
+<p class="mt-2">
+  – <span class="font-bold">CARBON NANO:</span> Các sợi carbon có kích thước nanomet được làm mỏng để tạo thành các cấu trúc carbon hình trụ nhỏ tạo nên sự bền bỉ chắc chắn cho khung vợt, bên cạnh đó cải thiện đáng kể hiệu suất xoắn, đồng thời cải thiện độ đàn hồi và trả lực lại nhanh sau mỗi cú đánh.
+</p>
+<p class="mt-2">
+  – <span class="font-bold">Aero Frame:</span> Với thiết kế khung vợt khí động học hỗ trợ giảm lực cản không khí khi vung vợt, giúp tăng tốc độ vung vợt, giúp người chơi có thể thực hiện các pha đánh nhanh hơn.
+</p>
+<p class="mt-2">
+  – <span class="font-bold">Power Frame:</span> Công nghệ sử dụng thiết kế khung vợt hỗ trợ tăng cường sức mạnh giúp người chơi có thể thực hiện các pha đập cầu có lực hơn. Ngoài ra còn mang đến khả năng kiểm soát và tốc độ vung vợt nhanh hơn.
+</p>
+
+</div>
+</div>
+ </body>
+</html>

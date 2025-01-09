@@ -1,0 +1,403 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+    body {
+             font-family: 'Roboto', sans-serif;
+         }
+         .hover-orange:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7f00;
+      color: white;
+      border-color: #ff7f00;
+    }
+    /* Add smooth transition for all interactive elements */
+    button, input[type="text"] {
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    /* Hover and active feedback for add to cart and buy now buttons */
+    .btn-action:hover {
+      background-color: #e06800;
+      transform: scale(1.05);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+    /* Focus and hover effects for quantity buttons */
+    .quantity-btn:focus, .quantity-btn:hover {
+      background-color: #f3f3f3;
+    }
+   </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="container mx-auto py-4">
+    <div class="text-sm text-gray-600">
+        <span>Trang chủ</span>
+        <span class="mx-2">/</span>
+        <span>Dụng cụ cầu lông chính hãng, đa dạng giá tốt tại Fbshop</span>
+        <span class="mx-2">/</span>
+        <span>Vợt cầu lông</span>
+        <span class="mx-2">/</span>
+        <span class="text-orange-500 font-semibold">Vợt cầu lông Yonex Arcsaber 1 Ability | Linh hoạt – Cuốn hút</span>
+    </div>
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+<div class="container mx-auto p-4">
+  <div class="flex">
+   <!-- Left Section -->
+   <div class="w-1/2">
+    <div class="relative">
+     <img alt="Yonex Arcsaber 1 Ability Badminton Racket" class="w-full" height="600" src="https://static.fbshop.vn/wp-content/uploads/2024/05/Vot-cau-long.jpg" width="400"/>
+     <div class="absolute top-1/2 left-0 transform -translate-y-1/2 text-orange-500 text-2xl cursor-pointer">
+      <i class="fas fa-chevron-left">
+      </i>
+     </div>
+     <div class="absolute top-1/2 right-0 transform -translate-y-1/2 text-orange-500 text-2xl cursor-pointer">
+      <i class="fas fa-chevron-right">
+      </i>
+     </div>
+    </div>
+    <div class="flex mt-4 space-x-2">
+      <img alt="Thumbnail 1" class="w-1/4 border-2 border-orange-500" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/05/Vot-cau-long.jpg" width="100"/>
+      <img alt="Thumbnail 2" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/05/Vot-cau-long-1.jpg" width="100"/>
+      <img alt="Thumbnail 3" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/05/440876291_1220051136082886_276144175872688219_n.jpg" width="100"/>
+      <img alt="Thumbnail 4" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/05/438304017_1220050279416305_4783783927958236044_n.jpg" width="100"/>
+     </div>
+   </div>
+   <!-- Right Section -->
+   <div class="w-1/2 pl-8">
+    <h1 class="text-3xl font-bold">
+     Vợt cầu lông Yonex Arcsaber 1 Ability | Linh hoạt - Cuốn hút
+    </h1>
+    <div class="flex items-center mt-2">
+     <div class="flex text-yellow-500">
+      <i class="fas fa-star">
+      </i>
+      <i class="fas fa-star">
+      </i>
+      <i class="fas fa-star">
+      </i>
+      <i class="fas fa-star">
+      </i>
+      <i class="fas fa-star">
+      </i>
+     </div>
+     <span class="ml-2 text-gray-500">
+      2 đánh giá
+     </span>
+     <span class="ml-2 text-gray-500">
+      lượt mua
+     </span>
+    </div>
+    <div class="text-3xl text-orange-500 font-bold mt-4">
+     550.000đ
+    </div>
+    <div class="text-red-500 mt-2">
+     Chương trình giảm giá mừng sinh nhật Fbshop
+    </div>
+    <div class="max-w-4xl mx-auto p-4">
+      <div class="text-lg mb-4">
+      <div class="flex items-center ml-4">
+          <span class="text-gray-700">
+              Số lượng:
+             </span>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="decreaseQuantity()">
+           -
+          </button>
+          <input class="w-12 text-center border border-gray-300 mx-2" id="quantity" type="text" value="01"/>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="increaseQuantity()">
+           +
+          </button>
+         </div>
+         </div>
+         
+         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <button class="btn-action bg-orange-500 text-white px-6 py-3 rounded"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('  Vợt cầu lông Yonex Arcsaber 1 Ability | Linh hoạt - Cuốn hút','  550.000đ')">Thêm vào giỏ</a></button>
+        </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="js/scripts.js"></script>
+      </div>
+    <div class="mt-6 p-4 border border-orange-500 rounded-md">
+     <h2 class="font-bold text-orange-500">
+      Ưu đãi
+     </h2>
+     <ul class="mt-2 space-y-2">
+      <li>
+       <i class="fas fa-fire text-orange-500">
+       </i>
+       Tặng cước và căng cước vợt cầu lông miễn phí
+      </li>
+      <li>
+       <i class="fas fa-fire text-orange-500">
+       </i>
+       Tặng bao nhung/bao đơn bảo vệ vợt cầu lông
+      </li>
+      <li>
+       <i class="fas fa-fire text-orange-500">
+       </i>
+       Tặng quấn cán vợt cầu lông
+      </li>
+      <li>
+       <i class="fas fa-fire text-orange-500">
+       </i>
+       Freeship khi chuyển khoản trước với đơn hàng trên 1 triệu
+      </li>
+      <li>
+       <i class="fas fa-fire text-orange-500">
+       </i>
+       Yên tâm với quy trình nhận hàng kiểm tra trước thanh toán sau
+      </li>
+      <li>
+       <i class="fas fa-fire text-orange-500">
+       </i>
+       Bảo hành vợt 90 ngày lỗi 1 đổi 1 lỗi nhà sản xuất
+      </li>
+      <li>
+       <i class="fas fa-fire text-orange-500">
+       </i>
+       Cơ hội nhận voucher cho các đơn hàng tiếp theo
+      </li>
+      <li>
+       <i class="fas fa-fire text-orange-500">
+       </i>
+       Vô vàn dịch vụ hỗ trợ miễn phí khác
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </div>
+ <script>
+     document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+  function increaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue)) {
+    quantityInput.value = (currentValue + 1).toString().padStart(2, '0');
+  }
+}
+
+function decreaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue) && currentValue > 1) {
+    quantityInput.value = (currentValue - 1).toString().padStart(2, '0');
+  }
+}
+  document.addEventListener('DOMContentLoaded', function() {
+    const sizeButtons = document.querySelectorAll('#size-options button');
+    sizeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        sizeButtons.forEach(btn => btn.classList.remove('selected'));
+        this.classList.add('selected');
+        localStorage.setItem('selectedSize', this.innerText);
+      });
+    });
+
+    const selectedSize = localStorage.getItem('selectedSize');
+    if (selectedSize) {
+      sizeButtons.forEach(button => {
+        if (button.innerText === selectedSize) {
+          button.classList.add('selected');
+        }
+      });
+    }
+  });
+</script>
+ <div class="bg-[#fceae4]">
+  <div class="max-w-4xl mx-auto">
+    <div class="flex border-b-2 border-gray-200">
+     <div class="px-6 py-4 bg-orange-100 border-b-4 border-orange-500">
+      <a class="text-orange-600 font-bold text-lg" href="#">
+       Mô tả sản phẩm
+      </a>
+     </div>
+     <div class="px-6 py-4">
+      <a class="text-gray-800 font-bold text-lg" href="#">
+       Đánh giá 5
+       <i class="fas fa-star text-yellow-500">
+       </i>
+      </a>
+     </div>
+    </div>
+    <div class="bg-[#fceae4]">
+      <div class="max-w-4xl mx-auto p-4"></div>
+     <h1 class="text-2xl font-bold text-gray-900">
+      Vợt cầu lông Yonex Arcsaber 1 Ability | Linh hoạt – Cuốn hút
+     </h1>
+     <p class="mt-4 text-gray-700">
+      <span class="font-bold">
+       Vợt Yonex Arcsaber 1 Ability
+      </span>
+      là thành viên mới thuộc dòng Arcsaber của thương hiệu
+      <span class="text-red-500">
+       vợt cầu lông Yonex
+      </span>
+      thiên về lối đánh
+      <span class="font-bold">
+       công thủ toàn diện
+      </span>
+      . Thuộc phân khúc giá rẻ được thiết kế hướng tới người mới bắt đầu chơi chơi bộ môn thể thao này, người có lực cổ tay yếu. Đặc biệt nếu bạn đang tìm kiếm cây vợt có tính ổn định cao, linh hoạt trong từng động tác thì đây là cây vợt hoàn hảo dành cho bạn.
+     </p>
+     <div class="mt-6 flex justify-center">
+      <img alt="Yonex Arcsaber 1 Ability badminton racket" class="w-1/2" height="600" src="https://static.fbshop.vn/wp-content/uploads/2024/05/440876291_1220051136082886_276144175872688219_n-1152x1536.jpg" width="400"/>
+     </div>
+     <div class="max-w-4xl mx-auto p-4"></div>
+     <div class="max-w-4xl mx-auto">
+      <h1 class="text-xl font-bold mb-4">1. Giới thiệu Vợt cầu lông Yonex Arcsaber 1 Ability</h1>
+      <p class="text-base">
+          <span class="font-bold">Yonex Arcsaver 1 Ability</span> là một trong 3 cây vợt thuộc dòng vợt Arcsaber 
+          <span class="text-red-500 font-bold">Clear, Ability, Feel</span>. Vợt phù hợp cho người chơi mới tiếp cận với cầu lông, giúp dễ dàng làm quen và lựa chọn lối đánh riêng của mình. Vừa đảm bảo chất lượng, ngoại hình ấn tượng, giá cả cực kì phải chăng của nhà Yonex đã đáp ứng gần như đầy đủ nhu cầu của người chơi cầu lông. Cây vợt mang tới sự lựa chọn hoàn hảo cho người chơi mới, hoặc các bạn học sinh, sinh viên.
+      </p>
+  </div>
+  <div>
+    <div class="max-w-4xl mx-auto p-4"></div>
+    <h1 class="text-xl font-bold mb-4">2. Thông số kỹ thuật Vợt cầu lông Yonex Arcsaber 1 Ability</h1>
+    <ul class="list-disc pl-5 mb-4">
+        <li>Thương hiệu: Yonex</li>
+        <li>Độ cứng: Siêu dẻo</li>
+        <li>Chất liệu: HM Graphite</li>
+        <li>Trọng lượng: 5U</li>
+        <li>Chu vi cán vợt: G5</li>
+        <li>Mức căng dây tối đa: 13.5kg</li>
+    </ul>
+    <p class="conclusion">
+        Kết luận: Nhìn chung cây <strong>Yonex Arcsaber 1 Ability</strong> là một lựa chọn tuyệt vời cho những người chơi cầu lông đang tìm kiếm một cây vợt nhẹ, tốc độ nhanh <strong>công thủ toàn diện</strong>, giá rẻ. Vợt có thể đáp ứng tốt nhu cầu chơi của người mới chơi, người chơi phòng trào, học sinh, sinh viên.
+    </p>
+</div>
+<div class="mt-8">
+  <h1 class="text-xl font-bold mb-4">3. Mô tả chi tiết Vợt cầu lông Yonex Arcsaber 1 Ability</h1>
+    <ul class="list-disc pl-5">
+        <li>Cây vợt được thiết kế vô cùng ấn tượng, màu đen phối cùng màu xám ghi giúp vợt khoác lên một vẻ ngoài hiện đại, cuốn hút làm hài lòng các lông thủ ngay từ cái nhìn đầu tiên.</li>
+        <li>Ngoài ra, Yonex Arcsaber 1 Ability có độ vợt dẻo, giúp vợt linh hoạt, xử lí những pha cầu vô cùng thanh thoát. Với chất liệu Graphite giúp vợt có độ căng tối đa là 13.5 kg đảm bảo độ bền cao.</li>
+        <li>Yonex Arcsaber 1 Ability là cây vợt cầu lông rất đáng trải nghiệm và đáng tiền với mức giá phải chăng, thiết kế đẹp mắt cùng khả năng công thủ toàn diện, linh hoạt và dễ chơi, sẽ là lựa chọn tốt cho các bạn mới chơi để luyện tập những lối chơi linh hoạt ứng biến trên sân cầu.</li>
+        <li class="mb-2">Với các thông số cơ bản như trọng lượng 5u với sức căng tối đa lên đến 13.5kg được nhận xét là có thông số khá mềm, là cây vợt dễ chơi, linh hoạt phù hợp cho cả những người mới.</li>
+        <li>Ngoài ra nếu các bạn muốn tìm những dòng vợt cao cấp hơn đa dạng về lối chơi tấn công, phòng thủ cùng các công nghệ tiên tiến thì có thể tham khảo qua những cây <span class="text-red-500">vợt cầu lông Yonex</span> đang được bán tại <span class="text-red-500">FBShop</span> để có thêm nhiều sự lựa chọn nhé.</li>
+    </ul>
+    <div class="max-w-4xl mx-auto p-4"></div>
+    <h1 class="text-xl font-bold mb-4">4. Công nghệ nổi bật Vợt cầu lông Yonex Arcsaber 1 Ability</h1>
+    <p class="mt-2 text-lg text-gray-800"><span class="font-bold">Isometric:</span> Công nghệ thiết kế hình vuông giúp đảm bảo tính tương đồng về độ dài và góc của các dây dọc cũng như dây ngang, tăng tối đa điểm ngọt theo mọi hướng, thiết kế khung lớn hơn nên khi cầu chạm mặt vợt ở những điểm khác nhau trên mặt vợt vẫn mang lại cảm giác đánh tốt nhất.</p>
+    <p class="text-[#4A4A4A] font-bold inline">AERO-BOX FRAME:</p>
+    <span class="text-[#4A4A4A]"> kết hợp giữa kiểu khung hàng không Aero Frame và khung BOX Frame để tạo nên một cấu trúc độc đáo để giảm lực cản của gió nhưng vẫn giữ được độ bền cao của khung vợt. Khung AeroBox đảm bảo đem lại độ xoáy nhanh hơn và cảm giác chắc chắn trong từng cú đánh khi tiếp mặt tiếp xúc với cầu.</span>
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+    </div>
+   </div>
+   </div>
+
+ </body>
+</html>

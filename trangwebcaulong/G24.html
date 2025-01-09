@@ -1,0 +1,406 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+    body {
+             font-family: 'Roboto', sans-serif;
+         }
+         .hover-orange:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7f00;
+      color: white;
+      border-color: #ff7f00;
+    }
+    /* Add smooth transition for all interactive elements */
+    button, input[type="text"] {
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    /* Hover and active feedback for add to cart and buy now buttons */
+    .btn-action:hover {
+      background-color: #e06800;
+      transform: scale(1.05);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+    /* Focus and hover effects for quantity buttons */
+    .quantity-btn:focus, .quantity-btn:hover {
+      background-color: #f3f3f3;
+    }
+   </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="container mx-auto py-4">
+    <div class="text-sm text-gray-600">
+        <span>Trang chủ</span>
+        <span class="mx-2">/</span>
+        <span>Dụng cụ cầu lông chính hãng, đa dạng giá tốt tại Fbshop</span>
+        <span class="mx-2">/</span>
+        <span>Giày cầu lông</span>
+        <span class="mx-2">/</span>
+        <span class="text-orange-500">
+    Giày cầu lông Lefus L020 | Ấn tượng với vẻ ngoài độc đáo</span>
+    </div>
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+<div class="container mx-auto p-4">
+    <div class="flex flex-col md:flex-row">
+      <!-- Left Section: Image Gallery -->
+      <div class="w-full md:w-1/2">
+        <div class="relative">
+          <img alt="A pair of white Yonex Eclipsion Z3 Men 2024 shoes" class="w-full" height="400" src="https://static.fbshop.vn/wp-content/uploads/2024/06/vn-11134207-7r98o-lq7ki3kv8g1j8a.jpg" width="600"/>
+          <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-200">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-200">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="flex mt-4 space-x-2">
+          <img alt="Thumbnail of Yonex Eclipsion Z3 Men 2024 shoes" class="w-1/4 border-2 border-orange-500" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/06/vn-11134207-7r98o-lq7ki3kv8g1j8a.jpg" width="100"/>
+          <img alt="Thumbnail of Yonex Eclipsion Z3 Men 2024 shoes" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/06/vn-11134207-7r98o-lq7ki3kv9ulzfb.jpg" width="100"/>
+          <img alt="Thumbnail of Yonex Eclipsion Z3 Men 2024 shoes" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/06/vn-11134207-7r98o-lq7ki3kv71h307.jpg" width="100"/>
+        </div>
+      </div>
+
+      <!-- Right Section: Product Details -->
+      <div class="w-full md:w-1/2 md:pl-8">
+        <h1 class="text-2xl font-bold"> Giày cầu lông Lefus L020 </h1>
+        <h1 class="text-2xl font-bold">| Ấn tượng với vẻ ngoài độc đáo</h1>
+        <div class="flex items-center mt-2">
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="ml-2 text-gray-600">0 đánh giá</span>
+          <span class="ml-2 text-gray-600">lượt mua</span>
+        </div>
+        <div class="mt-4">
+          <span class="text-3xl font-bold text-orange-500">640.000đ</span>
+      </div>
+        <div class="mt-4">
+          <span class="text-gray-600">Chọn Size:</span>
+          <div class="flex space-x-2 mt-2" id="size-options">
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">37</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">38</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">39</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">40</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">41</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">42</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">43</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">44</button>
+          </div>
+        </div>
+        <div class="max-w-4xl mx-auto p-4">
+        <div class="text-lg mb-4">
+        <div class="flex items-center ml-4">
+            <span class="text-gray-700">
+                Số lượng:
+               </span>
+            <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="decreaseQuantity()">
+             -
+            </button>
+            <input class="w-12 text-center border border-gray-300 mx-2" id="quantity" type="text" value="01"/>
+            <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="increaseQuantity()">
+             +
+            </button>
+           </div>
+           </div>
+           
+           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <button class="btn-action bg-orange-500 text-white px-6 py-3 rounded"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('  Giày cầu lông Lefus L020 | Ấn tượng với vẻ ngoài độc đáo','640.000đ')">Thêm vào giỏ</a></button>
+          </div>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+       <script src="js/scripts.js"></script>
+        </div>
+        <div class="bg-white border border-orange-300 rounded-lg p-6 shadow-md max-w-lg">
+          <h2 class="text-orange-500 font-bold text-lg mb-4">
+           Ưu đãi
+          </h2>
+          <ul class="space-y-3">
+           <li class="flex items-center">
+            <i class="fas fa-fire text-orange-500 mr-2">
+            </i>
+            <span>
+             Tặng tất cầu lông (tất dài hoặc ngắn)
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-gift text-orange-500 mr-2">
+            </i>
+            <span>
+             Bảo hành 1 tháng lỗi từ nhà sản xuất
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-shipping-fast text-orange-500 mr-2">
+            </i>
+            <span>
+             Ship toàn quốc, nhận hàng kiểm tra thanh toán
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-truck text-orange-500 mr-2">
+            </i>
+            <span>
+             Freeship khi chuyển khoản trước với đơn hàng trên 1 triệu
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-certificate text-orange-500 mr-2">
+            </i>
+            <span>
+             Cam kết sản phẩm chính hãng chất lượng
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-tags text-orange-500 mr-2">
+            </i>
+            <span>
+             Cơ hội nhận voucher cho những đơn hàng tiếp theo
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-phone-alt text-orange-500 mr-2">
+            </i>
+            <span>
+             Vô vàn các dịch vụ hỗ trợ miễn phí khác
+            </span>
+           </li>
+          </ul>
+          <div class="flex justify-end mt-6">
+           <img alt="Two badminton rackets" class="w-16 h-16" height="100" src="https://storage.googleapis.com/a1aa/image/MwwPXrMYmYaBFFJQN7KrrxZ7WBRC1o1xLNjmPq9SgKEJex2JA.jpg" width="100"/>
+          </div>
+         </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+       document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+    function increaseQuantity() {
+    var quantityInput = document.getElementById('quantity');
+    var currentValue = parseInt(quantityInput.value);
+    if (!isNaN(currentValue)) {
+      quantityInput.value = (currentValue + 1).toString().padStart(2, '0');
+    }
+  }
+
+  function decreaseQuantity() {
+    var quantityInput = document.getElementById('quantity');
+    var currentValue = parseInt(quantityInput.value);
+    if (!isNaN(currentValue) && currentValue > 1) {
+      quantityInput.value = (currentValue - 1).toString().padStart(2, '0');
+    }
+  }
+    document.addEventListener('DOMContentLoaded', function() {
+      const sizeButtons = document.querySelectorAll('#size-options button');
+      sizeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          sizeButtons.forEach(btn => btn.classList.remove('selected'));
+          this.classList.add('selected');
+          localStorage.setItem('selectedSize', this.innerText);
+        });
+      });
+
+      const selectedSize = localStorage.getItem('selectedSize');
+      if (selectedSize) {
+        sizeButtons.forEach(button => {
+          if (button.innerText === selectedSize) {
+            button.classList.add('selected');
+          }
+        });
+      }
+    });
+</script>
+<div class="bg-[#fceae8]">
+    <div class="max-w-4xl mx-auto p-4">
+        <div class="flex space-x-4 border-b-2 border-gray-200 pb-2">
+            <div class="text-xl font-bold text-[#f97316]">
+             Mô tả sản phẩm
+            </div>
+            <div class="text-xl font-bold text-[#1f2937]">
+             Đánh giá 5
+             <i class="fas fa-star text-[#f97316]">
+             </i>
+            </div>
+           </div>
+           <h1 class="text-3xl font-bold mb-4">
+            1. Giới thiệu Giày cầu lông Lefus L020
+           </h1>
+           <p class="text-lg font-semibold italic mb-4">
+            Giày cầu lông
+            <span class="font-bold">
+             Lefus L020
+            </span>
+            đang làm mưa làm gió trên thị trường cầu lông giá rẻ cùng với thiết kế độc đáo, hiện đại, trẻ trung.
+            <span class="font-bold text-red-500">
+             Lefus L020
+            </span>
+            chắc hẳn có thể khiến bạn ngay lập tức ấn tượng với đặc điểm chung là thiết kế với sự phối màu theo phong cách gradient fill, hay nói cách khác là thiết kế tạo ra được cảm giác về sự chuyển mình từ trắng sang những màu sắc khác.
+           </p>
+           <p class="text-lg mb-4">
+            Mẫu giày Lefus bao gồm 4 màu chính: Xanh, đen, chuối, trắng đỏ đem đến cảm giác vô cùng mới lạ nhưng đồng thời vẫn giữ được sự năng động và mạnh mẽ nhất định. Nếu bạn đang tìm kiếm những đôi giày cầu lông giá rẻ với độ bền và độ thoải mái tốt, thì giày cầu lông
+            <span class="font-bold text-red-500">
+             Lefus 020
+            </span>
+            rất có thể sẽ là một lựa chọn lý tưởng dành cho bạn.
+           </p>
+           <div class="flex justify-center">
+            <img alt="A pair of Lefus L020 badminton shoes with a gradient color design from white to red." class="rounded-lg shadow-lg" height="300" src="https://static.fbshop.vn/wp-content/uploads/2024/06/vn-11134207-7r98o-lq7ki3kv71h307.jpg" width="400"/>
+           </div>
+           <div class="max-w-4xl mx-auto p-4"></div>
+           <h1 class="text-3xl font-bold mb-4">2. Thông số sản phẩm</h1>
+           <ul class="list-none space-y-2">
+               <li>– Tên sản phẩm: LEFUS L020</li>
+               <li>– Màu sắc: Xanh Dương/ Xanh chuối/ Đen/ Đỏ</li>
+               <li>– Thân giày/ Upper: Da PU, lưới.</li>
+               <li>– Đế giữa/ Midsole: EVA đàn hồi cao, TPU chống xoắn phẳng.</li>
+               <li>– Đế ngoài/ Outsole: Cao su mặc kháng, 3D Carbon.</li>
+               <li>– Bên trong/ Inner materials: Lưới thoáng khí nhiều lớp.</li>
+               <li>– Tính năng: Thoát khí, mát xa, nhanh khô, nhẹ, chống trơn trượt</li>
+               <li>– Size: 36 – 45.</li>
+               <li>– Sản xuất: Việt Nam</li>
+           </ul>
+           <div class="max-w-4xl mx-auto p-4"></div>
+           <h1 class="text-3xl font-bold mb-4">3. Mô tả sản phẩm Giày cầu lông Lefus L020</h1>
+           <ul class="list-disc pl-6 space-y-2">
+            <li>
+                <span class="font-bold">Giày cầu lông Lefus LFS-020</span> là đôi giày cầu lông ở phân khúc giá rẻ đang gây sốt thị trường dạo gần đây. Nếu lông thủ còn đang thắc mắc, chưa biết nhiều về dòng Lefus, thì đây là một thương hiệu đến từ Malaysia. Hiện là một trong những hãng chuyên về dòng giày cầu lông giá rẻ. Đôi giày mang một thiết kế độc đáo, với vẻ ngoài bắt mắt, đem đến sự mới lạ cho những người đam mê bộ môn cầu lông.
+            </li>
+            <li>
+                Sở hữu thiết kế nổi bật trong cách phối màu loang cá tính, giày bóng chuyền Lefus L020 là tâm điểm của thời trang thể thao năm nay. Bộ sưu tập mới của Lefus sở hữu tới 4 màu sắc tươi trẻ và cá tính.
+            </li>
+            <li>
+                Không chỉ gây ấn tượng với vẻ ngoài độc đáo, giày cầu lông Lefus 020 còn tạo được cảm giác vô cùng thoải mái cho người dùng trong quá trình di chuyển hay tập luyện dựa trên những chất liệu có độ đàn hồi tốt. Không những vậy, nhằm đảm bảo sự an toàn cho những người thường xuyên chơi các môn thể thao đòi hỏi sự di chuyển một cách nhanh chóng, phần đế giày của mẫu giày được hoàn thiện với công nghệ có sức hấp thụ sốc cao. Đây cũng chính là một trong những điểm được yêu thích nhất tại mẫu giày cầu lông giá rẻ này.
+            </li>
+            <li>Thân giày đặc biệt kết hợp giữa vải sợi nhân tạo mềm mại, được phủ một lớp TPU mỏng, trong suốt vừa thẩm mỹ, lạ mắt lại vừa cho giày cầu lông Lefus L020 có độ bền tốt hơn, tạo hệ thống thoáng khí trên giày cho người chơi luôn có cảm giác khô thoáng, dễ chịu kể cả mang trong thời gian dài.</li>
+        <li>Mũi giày trang bị một lớp nhựa dẻo giúp bảo vệ mũi chân người chơi tốt, chống mài mòn giúp tăng cường tuổi thọ đáng kể. Form giày Lefus L020 với phần gót ôm cổ chân, lớp lót dày giúp hỗ trợ lực đà tốt cho các cú nhảy đập cầu, các bước di chuyển trơn tru hơn, uyển chuyển hơn.</li>
+        <li>Đặc biệt với hệ thống chống xoắn giày với công nghệ 3D Carbon cao cấp, lớp đế cao su non chống trơn trượt thiết kế kiểu hình lục giác Hexagrip Sole với độ bám, độ ma sát tốt cho đôi giày ổn định và chắc chắn khi di chuyển, khả năng chống xoắn giày khi bạn thực hiện những bước di chuyển nhanh, đột ngột khi chơi cầu.</li>
+        <li>Giày trang bị lưới thoáng khí cùng vải co dãn tăng tối đa khả năng khử mùi và ôm chân tuyệt đối. Không những vậy những chất liệu này còn cực dễ vệ sinh và nhanh khô. Lỗ xỏ dây chắc chắn cùng thiết kế chống rối, đem đến cho bạn những bước di chuyển tự tin.</li>
+        </ul>
+        <div class="max-w-4xl mx-auto p-4"></div>
+        <h1 class="text-3xl font-bold mb-4">4. Công nghệ áp dụng trên Giày cầu lông Lefus L020</h1>
+        <ul class="list-none pl-0 space-y-2">
+          <li><span class="highlight">– HEXAGRIP SOLE:</span> Thiết kế hình lục giác trên đế cao su non cung cấp độ bám sàn cao hơn 3% và nhẹ hơn 20% so với vật liệu đế tiêu chuẩn.</li>
+          <li><span class="highlight">– 3D CARBON:</span> Chính giữa đế giày đánh cầu lông Lefus L020 được chèn một tấm Carbon tăng cường độ ổn định tối đa trong mọi bước di chuyển.</li>
+      </ul>
+    </div>
+</div>
+ </body>
+</html>

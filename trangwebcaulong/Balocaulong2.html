@@ -1,0 +1,657 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+  </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <script>
+       document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+   </script>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="max-w-4xl mx-auto p-4"></div>
+  <div class="max-w-4xl mx-auto p-4"></div>
+  <div class="max-w-4xl mx-auto p-4"></div>
+  <main class="mt-4">
+   <div class="relative">
+    <div class="flex overflow-x-auto space-x-4">
+     <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-orange-500 text-white p-2 rounded-full z-10">
+      <i class="fas fa-chevron-left">
+      </i>
+     </button>
+     <img alt="Yonex bag" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/ofGIDCdnyaQqMiHuKj80KhCzXDRGTURVaotuvKrAiaAYC90JA.jpg" width="300"/>
+     <img alt="Yonex shoes and racket" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/CtMY66x5LJZxJVockfG5y8xeqizIyemc88ePsjxOW3EETonOB.jpg" width="300"/>
+     <img alt="Yonex bag" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/ofGIDCdnyaQqMiHuKj80KhCzXDRGTURVaotuvKrAiaAYC90JA.jpg" width="300"/>
+     <img alt="Yonex shuttlecock tube" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/QRUSms3UopYENBgVoIb8eeDew2JFuzYKu78MitLewQ9VTonOB.jpg" width="300"/>
+     <img alt="Yonex clothing" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/edfH6GpF24nARk3iXSnekZf4xfNj47pngSPdej98zBnpOhe0JA.jpg" width="300"/>
+     <img alt="Yonex racket" class="h-64 w-64 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/OAzgvTwe9U1OBafPUIRzanuBuCboXoBKeNFI2uFkhTgmJ0TnA.jpg" width="300"/>
+     <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-orange-500 text-white p-2 rounded-full z-10">
+      <i class="fas fa-chevron-right">
+      </i>
+     </button>
+    </div>
+   </div>
+  </main>
+  <div class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4">
+         Tất cả sản phẩm
+        </h1>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- First Product -->
+    <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+     <div class="relative">
+      <a href="B13.html"><img alt="Black Yonex BAG1851 backpack with multiple compartments" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://static.fbshop.vn/wp-content/uploads/2023/12/balo-cau-long-yonex-ba82012x-1-400x400.jpg" width="300"/></a>
+     </div>
+     <div class="mt-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+         <span class="text-yellow-500 text-sm">
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+         </span>
+         <span class="text-gray-500 text-sm ml-2">
+          (0)
+         </span>
+        </div>
+        <span class="bg-red-100 text-red-500 text-xs px-2 py-1 rounded">
+         Hết hàng
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+        <a href="B13.html">Balo cầu lông Yonex BA82012X | Đẳng cấp thời trang</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        680.000đ
+       </p>
+      </div>
+      <div class="flex justify-end">
+       <img alt="FBShop logo" class="h-8" height="50" src="https://storage.googleapis.com/a1aa/image/l7hCVwiLVKa7J1yoW6IpQvwhMlmnkUcaINwTQsKj82U0E56E.jpg" width="50"/>
+      </div>
+     </div>
+     <!-- Product 2 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+     <a href="B14.html"> <img alt="Red Yonex BA42112S backpack with a sporty design" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://static.fbshop.vn/wp-content/uploads/2023/12/balo-cau-long-yonex-ba42112s-1-400x400.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center">
+         <span class="text-yellow-500 text-sm">
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+         </span>
+         <span class="text-gray-500 text-sm ml-2">
+          (0)
+         </span>
+        </div>
+        <span class="bg-red-100 text-red-500 text-xs px-2 py-1 rounded">
+         Hết hàng
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+       <a href="B14.html"> Balo cầu lông Yonex BA42112S | Hậu duệ cho vợt thủ</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        690.000đ
+       </p>
+      </div>
+      <div class="flex justify-end">
+       <img alt="FBShop logo" class="h-8" height="50" src="https://storage.googleapis.com/a1aa/image/l7hCVwiLVKa7J1yoW6IpQvwhMlmnkUcaINwTQsKj82U0E56E.jpg" width="50"/>
+      </div>
+     </div>
+     <!-- Product 3 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+    <a href="B15.html">  <img alt="Yonex 1815 bag with multiple compartments and accessories" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://static.fbshop.vn/wp-content/uploads/2023/12/balo-yonex-18157-400x467.gif" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center">
+         <span class="text-yellow-500 text-sm">
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+         </span>
+         <span class="text-gray-500 text-sm ml-2">
+          (0)
+         </span>
+        </div>
+        <span class="bg-red-100 text-red-500 text-xs px-2 py-1 rounded">
+         Hết hàng
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+      <a href="B15.html">  Balo vợt Yonex 1815 | Tự tin ở mọi lúc, mọi nơi</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        Liên hệ
+       </p>
+      </div>
+      <div class="flex justify-end">
+       <img alt="FBShop logo" class="h-8" height="50" src="https://storage.googleapis.com/a1aa/image/l7hCVwiLVKa7J1yoW6IpQvwhMlmnkUcaINwTQsKj82U0E56E.jpg" width="50"/>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- First Product -->
+    <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+     <div class="relative">
+     <a href="B16.html"> <img alt="Black Yonex BAG1851 backpack with multiple compartments" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://static.fbshop.vn/wp-content/uploads/2023/12/BAG1851-Den-anh-dai-dien-400x400.jpg" width="300"/></a>
+      <div class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+       -19%
+      </div>
+     </div>
+     <div class="mt-4">
+      <div class="flex items-center justify-between">
+       <div class="text-red-500 text-sm font-semibold">
+        X Hết hàng
+       </div>
+       <div class="text-yellow-500 text-sm">
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <span class="text-gray-500">
+         (0)
+        </span>
+       </div>
+      </div>
+      <h2 class="text-lg font-bold mb-2">
+      <a href="B16.html"> Balo cầu lông Yonex BAG1851 Đen | Thiết kế đa năng toàn diện</a>
+      </h2>
+      <p class="mt-2 text-orange-500 text-xl font-bold">
+       650.000đ
+      </p>
+      <div class="text-gray-500 text-sm line-through">
+       800.000đ
+      </div>
+     </div>
+    </div>
+    <!-- Second Product -->
+    <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+     <div class="relative">
+     <a href="B17.html"> <img alt="Yonex Bag9403 badminton racket bag with a sleek design" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://static.fbshop.vn/wp-content/uploads/2023/12/balo-vot-cau-long-yonex-Bag9403-2-400x471.jpg" width="300"/></a>
+     </div>
+     <div class="mt-4">
+      <div class="flex items-center justify-between">
+       <div class="text-red-500 text-sm font-semibold">
+        X Hết hàng
+       </div>
+       <div class="text-yellow-500 text-sm">
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <span class="text-gray-500">
+         (0)
+        </span>
+       </div>
+      </div>
+      <h2 class="text-lg font-bold mb-2">
+      <a href="B17.html"> Bao vợt cầu lông yonex Bag9403 | Balo đa năng siêu đẹp</a>
+      </h2>
+      <p class="mt-2 text-orange-500 text-xl font-bold">
+       Liên hệ
+      </p>
+     </div>
+    </div>
+    <!-- Third Product -->
+    <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+     <div class="relative">
+     <a href="B18.html"> <img alt="Victor 3010 badminton backpack with multiple compartments" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://static.fbshop.vn/wp-content/uploads/2023/12/balo-cau-long-Victor-3010-3-400x471.jpg" width="300"/></a>
+     </div>
+     <div class="mt-4">
+      <div class="flex items-center justify-between">
+       <div class="text-red-500 text-sm font-semibold">
+        X Hết hàng
+       </div>
+       <div class="text-yellow-500 text-sm">
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <i class="fas fa-star">
+        </i>
+        <span class="text-gray-500">
+         (0)
+        </span>
+       </div>
+      </div>
+      <h2 class="text-lg font-bold mb-2">
+      <a href="B18.html"> Balo cầu lông Victor 3010 | Tiện dụng và đầy mới mẻ</a>
+      </h2>
+      <p class="mt-2 text-orange-500 text-xl font-bold">
+       Liên hệ
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="container mx-auto p-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+     <!-- Card 1 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+     <a href="B19.html"> <img alt="Green and black sports bag" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2023/12/bao-vot-cau-long-Lining-ABJJ-096-10-3-400x471.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center justify-between mb-2">
+        <span class="text-red-500">
+         <i class="fas fa-times-circle">
+         </i>
+         Hết hàng
+        </span>
+        <span class="text-orange-500 font-bold">
+         F
+        </span>
+       </div>
+       <div class="flex items-center mb-2">
+        <div class="flex text-yellow-400">
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+        </div>
+        <span class="text-gray-500 ml-2">
+         (0)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+       <a href="B19.html"> Bao vợt cầu lông Lining ABJJ 096-10 | Cá tính hơn mạnh mẽ hơn</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        Liên hệ
+       </p>
+      </div>
+     </div>
+     <!-- Card 2 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <a href="B20.html"><img alt="Red and gray sports backpack" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2023/12/balo-cau-long-Fozza-xam-do-1-400x471.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center justify-between mb-2">
+        <span class="text-red-500">
+         <i class="fas fa-times-circle">
+         </i>
+         Hết hàng
+        </span>
+        <span class="text-orange-500 font-bold">
+         F
+        </span>
+       </div>
+       <div class="flex items-center mb-2">
+        <div class="flex text-yellow-400">
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+        </div>
+        <span class="text-gray-500 ml-2">
+         (0)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+       <a href="B20.html"> Balo cầu lông Forza xám đỏ | Siêu độc siêu lạ</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        Liên hệ
+       </p>
+      </div>
+     </div>
+     <!-- Card 3 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+     <a href="B21.html"> <img alt="Blue and gray sports backpack" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2023/12/balo-cau-long-Forza-01-Xanh-1-400x471.jpg" width="300"/></a>
+      <div class="p-4">
+       <div class="flex items-center justify-between mb-2">
+        <span class="text-red-500">
+         <i class="fas fa-times-circle">
+         </i>
+         Hết hàng
+        </span>
+        <span class="text-orange-500 font-bold">
+         F
+        </span>
+       </div>
+       <div class="flex items-center mb-2">
+        <div class="flex text-yellow-400">
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+         <i class="fas fa-star">
+         </i>
+        </div>
+        <span class="text-gray-500 ml-2">
+         (0)
+        </span>
+       </div>
+       <h2 class="text-lg font-bold mb-2">
+       <a href="B21.html"> Balo cầu lông Forza 01 Xanh | Mang tới hình ảnh chuyên nghiệp</a>
+       </h2>
+       <p class="mt-2 text-orange-500 text-xl font-bold">
+        Liên hệ
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container mx-auto p-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+     <!-- Card 1 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <div class="flex justify-center">
+       <a href="B22.html"> <img alt="Blue and gray sports backpack" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2023/12/balo-cau-long-Forza-01-Do-1-400x471.jpg" width="300"/></a>
+      </div>
+      <div class="text-center mt-4">
+       <span class="text-sm text-gray-500">
+        Fbshop.vn
+       </span>
+      </div>
+      <div class="text-center mt-2">
+       <span class="bg-red-200 text-red-600 text-xs font-semibold px-2 py-1 rounded-full">
+        ✕ Hết hàng
+       </span>
+      </div>
+      <div class="text-center mt-2">
+       <div class="flex justify-center items-center">
+        <div class="flex items-center">
+         <i class="fas fa-star text-yellow-400">
+         </i>
+         <i class="fas fa-star text-yellow-400">
+         </i>
+         <i class="fas fa-star text-yellow-400">
+         </i>
+         <i class="fas fa-star text-yellow-400">
+         </i>
+         <i class="fas fa-star text-yellow-400">
+         </i>
+        </div>
+        <span class="text-gray-500 text-sm ml-2">
+         (0)
+        </span>
+       </div>
+      </div>
+      <h2 class="text-lg font-bold mb-2">
+      <a href="B22.html"> Balo cầu lông Forza 01 đỏ | Chưa bao giờ là lỗi mốt</a>
+      </h2>
+      <p class="mt-2 text-orange-500 text-xl font-bold">
+       Liên hệ
+      </p>
+     </div>
+     <!-- Card 2 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <div class="flex justify-center">
+        <a href="B23.html"><img alt="Blue and gray sports backpack" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2023/12/balo-cau-long-APACS-BG01-xanh-3-400x471.jpg" width="300"/></a>
+      </div>
+      <div class="text-center mt-4">
+       <span class="text-sm text-gray-500">
+        Fbshop.vn
+       </span>
+      </div>
+      <div class="text-center mt-2">
+       <span class="bg-red-200 text-red-600 text-xs font-semibold px-2 py-1 rounded-full">
+        ✕ Hết hàng
+       </span>
+      </div>
+      <div class="text-center mt-2">
+       <div class="flex justify-center items-center">
+        <div class="flex items-center">
+         <i class="fas fa-star text-yellow-400">
+         </i>
+         <i class="fas fa-star text-yellow-400">
+         </i>
+         <i class="fas fa-star text-yellow-400">
+         </i>
+         <i class="fas fa-star text-yellow-400">
+         </i>
+         <i class="fas fa-star text-yellow-400">
+         </i>
+        </div>
+        <span class="text-gray-500 text-sm ml-2">
+         (0)
+        </span>
+       </div>
+      </div>
+      <h2 class="text-lg font-bold mb-2">
+      <a href="B23.html"> Balo cầu lông APACS BG01 xanh | Phiên bản đặc biệt</a>
+      </h2>
+      <p class="mt-2 text-orange-500 text-xl font-bold">
+       Liên hệ
+      </p>
+     </div>
+     <!-- Card 3 -->
+     <div class="bg-white rounded-lg shadow p-4 p-4 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:bg-orange-300 hover:shadow-lg">
+      <div class="flex justify-center">
+       <a href="B24.html"> <img alt="Blue and gray sports backpack" class="w-full h-48 object-cover rounded-t-lg" height="200" src="https://static.fbshop.vn/wp-content/uploads/2023/12/balo-cau-long-APACS-BG01-do-2-400x471.jpg" width="300"/></a>
+      </div>
+      <div class="text-center mt-4">
+       <span class="text-sm text-gray-500">
+        Fbshop.vn
+       </span>
+      </div>
+      <div class="text-center mt-2">
+       <span class="bg-red-200 text-red-600 text-xs font-semibold px-2 py-1 rounded-full">
+        ✕ Hết hàng
+       </span>
+      </div>
+      <div class="text-center mt-2">
+       <div class="flex justify-center items-center">
+        <div class="flex items-center">
+         <i class="fas fa-star text-yellow-400">
+         </i>
+         <i class="fas fa-star text-yellow-400">
+         </i>
+         <i class="fas fa-star text-yellow-400">
+         </i>
+         <i class="fas fa-star text-yellow-400">
+         </i>
+         <i class="fas fa-star text-yellow-400">
+         </i>
+        </div>
+        <span class="text-gray-500 text-sm ml-2">
+         (0)
+        </span>
+       </div>
+      </div>
+      <h2 class="text-lg font-bold mb-2">
+     <a href="B24.html">  Balo cầu lông APACS BG01 đỏ | Đơn giản-tiện dụng-giá mềm</a>
+      </h2>
+      <p class="mt-2 text-orange-500 text-xl font-bold">
+       Liên hệ
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="flex justify-center mt-4">
+    <nav aria-label="Page navigation">
+     <ul class="inline-flex items-center -space-x-px">
+      <li>
+       <a class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700" href="#">
+        &lt;
+       </a>
+      </li>
+      <li>
+        <a class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700" href="Balocaulong.html">
+           1
+       </a>
+      </li>
+      <li>
+        <a class="px-3 py-2 leading-tight text-white bg-orange-500 border border-gray-300 hover:bg-orange-600 hover:text-white" href="Balocaulong2.html">
+           2
+       </a>
+      </li>
+      <li>
+        <a class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700" href="Balocaulong3.html">
+           3
+       </a>
+      </li>
+      <li>
+       <a class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700" href="#">
+        &gt;
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+ </body>
+</html>

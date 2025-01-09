@@ -1,0 +1,394 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+    body {
+             font-family: 'Roboto', sans-serif;
+         }
+         .hover-orange:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7f00;
+      color: white;
+      border-color: #ff7f00;
+    }
+    /* Add smooth transition for all interactive elements */
+    button, input[type="text"] {
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    /* Hover and active feedback for add to cart and buy now buttons */
+    .btn-action:hover {
+      background-color: #e06800;
+      transform: scale(1.05);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+    /* Focus and hover effects for quantity buttons */
+    .quantity-btn:focus, .quantity-btn:hover {
+      background-color: #f3f3f3;
+    }
+   </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="container mx-auto py-4">
+    <div class="text-sm text-gray-600">
+        <span>Trang chủ</span>
+        <span class="mx-2">/</span>
+        <span>Dụng cụ cầu lông chính hãng, đa dạng giá tốt tại Fbshop</span>
+        <span class="mx-2">/</span>
+        <span>Giày cầu lông</span>
+        <span class="mx-2">/</span>
+        <span class="text-orange-500">
+  Giày Yonex 88 Dial Wide NEW 2024 | Mang lại sự tự tin</span>
+    </div>
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+<div class="container mx-auto p-4">
+    <div class="flex flex-col md:flex-row">
+      <!-- Left Section: Image Gallery -->
+      <div class="w-full md:w-1/2">
+        <div class="relative">
+          <img alt="A pair of white Yonex Eclipsion Z3 Men 2024 shoes" class="w-full" height="400" src="https://static.fbshop.vn/wp-content/uploads/2024/04/Vot-cau-long-17.jpg" width="600"/>
+          <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-200">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-200">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="flex mt-4 space-x-2">
+          <img alt="Thumbnail of Yonex Eclipsion Z3 Men 2024 shoes" class="w-1/4 border-2 border-orange-500" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/04/Vot-cau-long-17.jpg" width="100"/>
+          <img alt="Thumbnail of Yonex Eclipsion Z3 Men 2024 shoes" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/04/Vot-cau-long-18.jpg" width="100"/>
+        </div>
+      </div>
+
+      <!-- Right Section: Product Details -->
+      <div class="w-full md:w-1/2 md:pl-8">
+        <h1 class="text-2xl font-bold">Giày Yonex 88 Dial Wide NEW 2024 </h1>
+        <h1 class="text-2xl font-bold">| Mang lại sự tự tin</h1>
+        <div class="flex items-center mt-2">
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="text-yellow-500"><i class="fas fa-star"></i></span>
+          <span class="ml-2 text-gray-600">0 đánh giá</span>
+          <span class="ml-2 text-gray-600">lượt mua</span>
+        </div>
+        <div class="mt-4">
+          <span class="text-3xl font-bold text-orange-500">2.750.000đ</span>
+      </div>
+        <div class="mt-4">
+          <span class="text-gray-600">Chọn Size:</span>
+          <div class="flex space-x-2 mt-2" id="size-options">
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">37</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">38</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">39</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">40</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">41</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">42</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">43</button>
+            <button class="border border-orange-500 text-orange-500 px-4 py-2 rounded hover-orange">44</button>
+          </div>
+        </div>
+        <div class="max-w-4xl mx-auto p-4">
+        <div class="text-lg mb-4">
+        <div class="flex items-center ml-4">
+            <span class="text-gray-700">
+                Số lượng:
+               </span>
+            <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="decreaseQuantity()">
+             -
+            </button>
+            <input class="w-12 text-center border border-gray-300 mx-2" id="quantity" type="text" value="01"/>
+            <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="increaseQuantity()">
+             +
+            </button>
+           </div>
+           </div>
+           
+           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <button class="btn-action bg-orange-500 text-white px-6 py-3 rounded"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart(' Giày Yonex 88 Dial Wide NEW 2024 | Mang lại sự tự tin','2.750.000đ')">Thêm vào giỏ</a></button>
+          </div>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+       <script src="js/scripts.js"></script>
+        </div>
+        <div class="bg-white border border-orange-300 rounded-lg p-6 shadow-md max-w-lg">
+          <h2 class="text-orange-500 font-bold text-lg mb-4">
+           Ưu đãi
+          </h2>
+          <ul class="space-y-3">
+           <li class="flex items-center">
+            <i class="fas fa-fire text-orange-500 mr-2">
+            </i>
+            <span>
+             Tặng tất cầu lông (tất dài hoặc ngắn)
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-gift text-orange-500 mr-2">
+            </i>
+            <span>
+             Bảo hành 1 tháng lỗi từ nhà sản xuất
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-shipping-fast text-orange-500 mr-2">
+            </i>
+            <span>
+             Ship toàn quốc, nhận hàng kiểm tra thanh toán
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-truck text-orange-500 mr-2">
+            </i>
+            <span>
+             Freeship khi chuyển khoản trước với đơn hàng trên 1 triệu
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-certificate text-orange-500 mr-2">
+            </i>
+            <span>
+             Cam kết sản phẩm chính hãng chất lượng
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-tags text-orange-500 mr-2">
+            </i>
+            <span>
+             Cơ hội nhận voucher cho những đơn hàng tiếp theo
+            </span>
+           </li>
+           <li class="flex items-center">
+            <i class="fas fa-phone-alt text-orange-500 mr-2">
+            </i>
+            <span>
+             Vô vàn các dịch vụ hỗ trợ miễn phí khác
+            </span>
+           </li>
+          </ul>
+          <div class="flex justify-end mt-6">
+           <img alt="Two badminton rackets" class="w-16 h-16" height="100" src="https://storage.googleapis.com/a1aa/image/MwwPXrMYmYaBFFJQN7KrrxZ7WBRC1o1xLNjmPq9SgKEJex2JA.jpg" width="100"/>
+          </div>
+         </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+       document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+    function increaseQuantity() {
+    var quantityInput = document.getElementById('quantity');
+    var currentValue = parseInt(quantityInput.value);
+    if (!isNaN(currentValue)) {
+      quantityInput.value = (currentValue + 1).toString().padStart(2, '0');
+    }
+  }
+
+  function decreaseQuantity() {
+    var quantityInput = document.getElementById('quantity');
+    var currentValue = parseInt(quantityInput.value);
+    if (!isNaN(currentValue) && currentValue > 1) {
+      quantityInput.value = (currentValue - 1).toString().padStart(2, '0');
+    }
+  }
+    document.addEventListener('DOMContentLoaded', function() {
+      const sizeButtons = document.querySelectorAll('#size-options button');
+      sizeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          sizeButtons.forEach(btn => btn.classList.remove('selected'));
+          this.classList.add('selected');
+          localStorage.setItem('selectedSize', this.innerText);
+        });
+      });
+
+      const selectedSize = localStorage.getItem('selectedSize');
+      if (selectedSize) {
+        sizeButtons.forEach(button => {
+          if (button.innerText === selectedSize) {
+            button.classList.add('selected');
+          }
+        });
+      }
+    });
+</script>
+<div class="bg-[#fceae8]">
+    <div class="max-w-4xl mx-auto p-4">
+        <div class="flex space-x-4 border-b-2 border-gray-200 pb-2">
+            <div class="text-xl font-bold text-[#f97316]">
+             Mô tả sản phẩm
+            </div>
+            <div class="text-xl font-bold text-[#1f2937]">
+             Đánh giá 5
+             <i class="fas fa-star text-[#f97316]">
+             </i>
+            </div>
+           </div>
+           <h1 class="text-2xl font-bold mb-4">
+            1. Giới thiệu Giày Yonex 88 Dial Wide 2024
+           </h1>
+           <p class="text-lg mb-4">
+            <span class="text-red-500 font-bold">
+             Giày Yonex 88 Dial Wide 2024
+            </span>
+            được thiết kế với sự chú trọng đến sự thoải mái và hiệu suất. Với công nghệ Dial 3 Wide, đôi giày này mang lại sự ôm chân tối ưu và khả năng tạo ra cảm giác ổn định trong mọi động tác di chuyển trên sân. Hãy cân nhắc đến Giày
+            <span class="text-red-500">
+             cầu lông
+            </span>
+            Yonex 88 Dial 3 Wide, một sản phẩm được đánh giá cao trong cộng đồng vận động viên cầu lông.
+           </p>
+           <div class="flex justify-center">
+            <img alt="White Yonex 88 Dial Wide 2024 shoe with orange inner lining and green sole" class="rounded-lg" height="400" src="https://static.fbshop.vn/wp-content/uploads/2024/04/Vot-cau-long-18.jpg" width="400"/>
+           </div>
+           <div class="max-w-4xl mx-auto p-4"></div>
+           <h2 class="text-2xl font-bold">2. Thông số kỹ thuật Giày Yonex 88 Dial Wide 2024</h2>
+            <ul class="mt-2 space-y-1">
+                <li>– Upper: Da nhân tạo cao cấp</li>
+                <li>– Midsole: Nhựa tổng hợp cao cấp</li>
+                <li>– Outsole: Đế cao su mới siêu bám sân</li>
+                <li>– Size giày: 35 – 45</li>
+            </ul>
+            <div class="max-w-4xl mx-auto p-4"></div>
+            <h2 class="text-2xl font-bold">3. Công nghệ nổi bật trên Giày cầu lông Yonex 88 Dial 3 Wide</h2>
+            <div class="mt-2">
+                <h3 class="font-bold">HỆ THỐNG BOA® FIT:</h3>
+                <p>Hệ thống BOA®* không có dây buộc cố định vào ngón chân và mắt cá chân của bạn để mang lại sự vừa vặn tuyệt vời.</p>
+            </div>
+            <div class="mt-2">
+                <h3 class="font-bold">Power Cushion:</h3>
+                <p>Một loại vật liệu nhẹ, hấp thụ va đập được phát triển độc lập bởi Yonex, nhanh chóng trở lại hình dạng ban đầu sau khi nhận tải trọng va đập, chuyển đổi năng lượng xung kích thành năng lượng để di chuyển chân nhanh và nhẹ.</p>
+            </div>
+            <div class="mt-2">
+                <h3 class="font-bold">Power Cushion+:</h3>
+                <p>Một quả trứng sống có thể được thả từ độ cao 12 mét so với tấm thảm POWER CUSHION+, này lên độ cao 6 mét mà không bị vỡ. **Được kiểm nghiệm bởi YONEX** POWER CUSHION™ là nhãn hiệu của Yonex Co., Ltd. *Nghiên cứu của Hiệp hội Kiểm định Xe Nhật Bản & Đánh giá Chất lượng Boken (dựa trên tiêu chuẩn JIS) so với vật liệu đệm thông thường (EVA).</p>
+            </div>
+            <div class="text-base text-gray-800 mb-4">
+              <span class="font-bold">Power Graphite Lite:</span> Tăng tính ổn định Cải thiện độ ổn định và giảm độ xoắn khi hạ cánh.
+          </div>
+          <div class="text-base text-gray-800 mb-4">
+              <span class="font-bold">Đế trong Synchro-Fit:</span> Bước chân nhanh hơn Giảm khoảng cách giữa bàn chân và giày với sự hỗ trợ bổ sung quanh gót chân, mang lại độ bám, sự thoải mái và hiệu suất tối đa.
+          </div>
+          <h2 class="text-2xl font-bold">4. Đánh giá và cảm nhận thực tế Giày cầu lông Yonex 88 Dial 3 Wide</h2>
+         <p>– Với vật liệu chất lượng cao và công nghệ sản xuất tiên tiến, Yonex 88 Dial 3 Wide không chỉ mang lại sự thoải mái mà còn đảm bảo độ bền và tính linh hoạt. Điều này giúp bạn tự tin di chuyển trên sân mà không phải lo lắng về việc hỏng hóc hoặc trượt chân.</p>
+        <p>– Ngoài ra, với thiết kế trẻ trung và hiện đại, giày cầu lông Yonex 88 Dial 3 Wide còn là một phần của phong cách thời trang của bạn. Với nhiều màu sắc và kiểu dáng để lựa chọn, bạn có thể dễ dàng tạo ra phong cách riêng biệt trên sân cầu lông.</p>
+        <p>– Lớp đệm độc quyền Power Cushion+ dĩ nhiên không thể thiếu trong siêu phẩm giày cầu lông Yonex 88 Dial 3 Wide với việc hồi phục lực trở lại sau mỗi bước di chuyển giúp các lông thủ bay nhảy nhanh nhẹn hơn trên sân đấu.</p>
+        <p>– Giày cầu lông Yonex 88 Dial 3 Wide hứa hẹn sẽ là một quả bom tấn bùng nổ trên toàn thế giới. Đặc biệt với phiên bản nội địa sẽ càng cao cấp hơn về chất lượng. Nếu bạn đang tìm cho mình một đôi giày để đồng hành cùng bạn trên sân thì Yonex 88 Dial 3 Wide này sẽ không thể vắng mặt trong danh sách giày cầu lông.</p>
+    </div>
+</div>
+ </body>
+</html>

@@ -1,0 +1,396 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+    body {
+             font-family: 'Roboto', sans-serif;
+         }
+         .hover-orange:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7f00;
+      color: white;
+      border-color: #ff7f00;
+    }
+    /* Add smooth transition for all interactive elements */
+    button, input[type="text"] {
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    /* Hover and active feedback for add to cart and buy now buttons */
+    .btn-action:hover {
+      background-color: #e06800;
+      transform: scale(1.05);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+    /* Focus and hover effects for quantity buttons */
+    .quantity-btn:focus, .quantity-btn:hover {
+      background-color: #f3f3f3;
+    }
+   </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="container mx-auto py-4">
+    <div class="text-sm text-gray-600">
+        <span>Trang chủ</span>
+        <span class="mx-2">/</span>
+        <span>Dụng cụ cầu lông chính hãng, đa dạng giá tốt tại Fbshop</span>
+        <span class="mx-2">/</span>
+        <span>Vợt cầu lông</span>
+        <span class="mx-2">/</span>
+        <span class="text-orange-500">Vợt cầu lông Kumpoo PC-77 Xanh | Diện mạo cuốn hút</span>
+    </div>
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+<div class="max-w-6xl mx-auto p-4">
+  <div class="flex">
+   <!-- Left Section -->
+   <div class="w-1/2">
+    <div class="mb-4">
+     <img alt="Close-up of a badminton racket with a store background" class="w-full h-auto rounded-lg" height="600" src="https://static.fbshop.vn/wp-content/uploads/2024/08/384999832_166448519839836_701642273998211309_n.jpg" width="600"/>
+    </div>
+    <div class="flex space-x-2">
+     <img alt="Thumbnail of a badminton racket" class="w-1/3 h-auto rounded-lg" height="150" src="https://static.fbshop.vn/wp-content/uploads/2024/08/384999832_166448519839836_701642273998211309_n.jpg" width="150"/>
+     <img alt="Thumbnail of a badminton racket" class="w-1/3 h-auto rounded-lg" height="150" src="https://static.fbshop.vn/wp-content/uploads/2024/08/384986791_166448456506509_7173123005350269234_n.jpg" width="150"/>
+     <img alt="Thumbnail of a badminton racket" class="w-1/3 h-auto rounded-lg" height="150" src="https://static.fbshop.vn/wp-content/uploads/2024/08/382384459_166448533173168_1539917532535300680_n.jpg" width="150"/>
+    </div>
+   </div>
+   <!-- Right Section -->
+   <div class="w-1/2 pl-8">
+    <h1 class="text-3xl font-bold text-gray-800">
+     Vợt cầu lông Kumpoo PC-77 Xanh | Diện mạo cuốn hút
+    </h1>
+    <div class="flex items-center mt-2">
+     <div class="flex items-center">
+      <i class="fas fa-star text-gray-300">
+      </i>
+      <i class="fas fa-star text-gray-300">
+      </i>
+      <i class="fas fa-star text-gray-300">
+      </i>
+      <i class="fas fa-star text-gray-300">
+      </i>
+      <i class="fas fa-star text-gray-300">
+      </i>
+     </div>
+     <span class="ml-2 text-gray-500">
+      0 đánh giá
+     </span>
+     <span class="ml-2 text-gray-500">
+      lượt mua
+     </span>
+    </div>
+    <div class="mt-4">
+     <span class="text-orange-500 text-2xl font-bold">
+      Liên hệ
+     </span>
+     <div class="max-w-4xl mx-auto p-4"></div>
+     <div class="max-w-4xl mx-auto p-4">
+      <div class="text-lg mb-4">
+      <div class="flex items-center ml-4">
+          <span class="text-gray-700">
+              Số lượng:
+             </span>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="decreaseQuantity()">
+           -
+          </button>
+          <input class="w-12 text-center border border-gray-300 mx-2" id="quantity" type="text" value="01"/>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="increaseQuantity()">
+           +
+          </button>
+         </div>
+         </div>
+         
+         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <button class="btn-action bg-orange-500 text-white px-6 py-3 rounded"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('  Vợt cầu lông Kumpoo PC-77 Xanh | Diện mạo cuốn hút',' 880.000đ')">Thêm vào giỏ</a></button>
+        </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="js/scripts.js"></script>
+      </div>
+    <div class="mt-8 p-4 border border-orange-500 rounded-lg bg-white">
+     <h2 class="text-xl font-bold text-orange-500">
+      Ưu đãi
+     </h2>
+     <ul class="mt-4 space-y-2">
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng cước và căng cước vợt cầu lông miễn phí
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng bao nhung/bao đơn bảo vệ vợt cầu lông
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng quấn cán vợt cầu lông
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Freeship khi chuyển khoản trước với đơn hàng trên 1 triệu
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Yên tâm với quy trình nhận hàng kiểm tra trước thanh toán sau
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Bảo hành vợt 90 ngày lỗi 1 đổi 1 lỗi nhà sản xuất
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Cơ hội nhận voucher cho các đơn hàng tiếp theo
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Vô vàn dịch vụ hỗ trợ miễn phí khác
+      </li>
+     </ul>
+     <div class="mt-4 flex justify-end">
+      <img alt="Illustration of badminton rackets" class="w-16 h-16" height="100" src="https://storage.googleapis.com/a1aa/image/ytuEMef2jKgw7k14YFlAQqbPQmN02cz3Me0yZVVCN8GCqWYnA.jpg" width="100"/>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <script>
+     document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+  function increaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue)) {
+    quantityInput.value = (currentValue + 1).toString().padStart(2, '0');
+  }
+}
+
+function decreaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue) && currentValue > 1) {
+    quantityInput.value = (currentValue - 1).toString().padStart(2, '0');
+  }
+}
+  document.addEventListener('DOMContentLoaded', function() {
+    const sizeButtons = document.querySelectorAll('#size-options button');
+    sizeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        sizeButtons.forEach(btn => btn.classList.remove('selected'));
+        this.classList.add('selected');
+        localStorage.setItem('selectedSize', this.innerText);
+      });
+    });
+
+    const selectedSize = localStorage.getItem('selectedSize');
+    if (selectedSize) {
+      sizeButtons.forEach(button => {
+        if (button.innerText === selectedSize) {
+          button.classList.add('selected');
+        }
+      });
+    }
+  });
+</script>
+<div class="max-w-4xl mx-auto p-4"></div>
+ <div class="bg-[#fceae4]">
+ <div class="max-w-4xl mx-auto p-4">
+  <div class="flex space-x-4 border-b-2 border-gray-200 pb-2">
+   <a class="text-orange-500 font-bold text-lg border-b-4 border-orange-500 pb-2" href="#">
+    Mô tả sản phẩm
+   </a>
+   <a class="text-gray-800 font-bold text-lg" href="#">
+    Video review
+   </a>
+   <a class="text-gray-800 font-bold text-lg" href="#">
+    Thông số kỹ thuật
+   </a>
+   <a class="text-gray-800 font-bold text-lg" href="#">
+    Đánh giá 0
+    <i class="fas fa-star text-yellow-500">
+    </i>
+   </a>
+  </div>
+  <div class="mt-4">
+   <h1 class="text-2xl font-bold">
+    1. Giới thiệu Vợt cầu lông Kumpoo PC-77 Xanh
+   </h1>
+   <p class="mt-2 text-gray-800">
+    Vợt cầu lông Kumpoo PC-77 phiên bản màu xanh mới được
+    <span class="text-orange-500">
+     thương hiệu Kumpoo
+    </span>
+    cho ra mắt mang đến một diện mạo bắt mắt và cuốn hút không kém gì so với cây
+    <span class="text-red-500">
+     Kumpoo PC-77 hồng
+    </span>
+    . Với 2 phiên bản màu sắc để lựa chọn, bạn có thể tìm thấy sự phù hợp với phong cách của riêng mình. Ngoài ra, cây vợt có sự kết hợp hoàn hảo giữa giá cả và chất lượng tuyệt vời,
+    <span class="text-red-500">
+     vợt cầu lông
+    </span>
+    Kumpoo PC-77 là một sự lựa chọn đáng chú ý cho cả những người chơi mới và những vận động viên chuyên nghiệp.
+   </p>
+   <div class="mt-4">
+    <img alt="Two Kumpoo PC-77 badminton rackets displayed with shoes in the background" class="w-full rounded-lg shadow-md" height="400" src="https://static.fbshop.vn/wp-content/uploads/2024/08/384999832_166448519839836_701642273998211309_n-768x1079.jpg" width="600"/>
+   </div>
+  </div>
+ </div>
+ </div>
+ <div class="bg-[#fceae4]">
+ <div class="max-w-4xl mx-auto p-8">
+  <h2 class="text-2xl font-semibold mb-4">2. Thông số kỹ thuật Vợt cầu lông Kumpoo PC-77</h2>
+  <ul class="list-none space-y-2">
+      <li>– Thương hiệu: Kumpoo</li>
+      <li>– Chất liệu khung vợt: Carbon Fiber</li>
+      <li>– Chất liệu thân vợt: Carbon Fiber</li>
+      <li>– Độ cân bằng: 295 ± 5mm (Hơi nặng đầu)</li>
+      <li>– Độ cứng: Trung bình</li>
+      <li>– Chiều dài vợt: 675 mm</li>
+      <li>– Hệ thống 76 lỗ gen trên mặt vợt</li>
+      <li>– Trọng lượng: 4U</li>
+      <li>– Chu vi cán vợt: G5</li>
+      <li>– Mức căng: 20 – 24Lbs</li>
+  </ul>
+</div>
+</div>
+<div class="bg-[#fceae4]">
+  <div class="max-w-4xl mx-auto p-8">
+   <h2 class="text-2xl font-semibold mb-4">3. Mô tả chi tiết Vợt cầu lông Kumpoo PC-77 Xanh</h2>
+   <div class="max-w-4xl mx-auto p-4">
+    <ul class="list-disc pl-5 space-y-2">
+        <li>Với 2 phiên bản màu sắc để lựa chọn, bạn có thể tìm thấy sự phù hợp với phong cách của riêng mình. Hơn nữa, khung vợt làm từ chất liệu Carbon chất lượng cao giúp vợt có khả năng chịu căng lên đến 24 lbs (~11kg), đáp ứng mức căng phổ biến trong cầu lông và tăng khả năng tấn công mạnh mẽ.</li>
+        <li>Với khung vợt chắc chắn, vợt Kumpoo PC-77 mang đến sự ổn định và độ bền cao trong quá trình sử dụng. Khung vợt được thiết kế để tăng điểm ngọt, giúp bạn dễ dàng đánh những cú đập mạnh mà không lo mất kiểm soát. Bên cạnh đó, khớp chữ T chống xoắn được tích hợp hiệu quả, giúp duy trì sự ổn định sau mỗi cú đánh, đồng thời giảm thiểu các rủi ro về lực xoắn.</li>
+        <li>Với đầu vợt mỏng, vợt cầu lông <strong>Kumpoo PC-77</strong> giúp hạn chế lực cản trong quá trình di chuyển và đánh bóng. Cán cầm của vợt được thiết kế vừa vặn cho bàn tay, mang lại cảm giác thoải mái và linh hoạt trong việc điều khiển vợt.</li>
+        <li>Với cảm giác đánh linh hoạt, trọng lượng 4U cùng đầu vợt có độ cứng vừa phải mang đến các pha điều cầu, phản tạt, thủ cầu dễ dàng. Ngoài ra, những người chơi nữ hoặc người chơi có cổ tay yếu có thể chơi cây này bởi phần đầu trợ lực giúp ít tốn sức hơn trong những pha đánh đập đi cắm và uy lực hơn.</li>
+    </ul>
+    <div class="max-w-4xl mx-auto p-4"></div>
+    <h2 class="text-2xl font-semibold mb-4">4. Công nghệ nổi bật Vợt cầu lông Kumpoo PC-77 Xanh</h2>
+    <ul class="list-disc pl-5 space-y-2">
+        <li><strong>– HIGHER HIT RATE TECHNOLOGY:</strong> Thiết kế diện tích điểm ngọt lớn mang đến khả năng điều cầu vượt trội và gia tăng tỉ lệ đánh cầu chuẩn xác.</li>
+        <li><strong>– SWORD FRAME:</strong> Công nghệ vát hình hộp trên mặt khung vợt kết hợp với hệ thống 76 lỗ gen giúp ổn định mặt vợt và khả năng chống xoắn khi đánh cầu. Khớp nối phần khung và đầu vợt được thiết kế để cải thiện độ ổn định và chắc chắn, chống xoắn tối đa sau mỗi cú đánh cầu.</li>
+        <li><strong>– HIGH QUALITY CARBON:</strong> Vật liệu carbon siêu bền được sử dụng cho khung vợt, duy trì độ ổn định đến hiệu quả cao, không bị biến dạng khi đàn ở mức căng cao. Ngoài ra vật liệu này còn giúp cây vợt cầu lông Kumpoo PC-77 – Trắng tối ưu trọng lượng mang lại cảm giác đánh linh hoạt và thoải mái.</li>
+    </ul>
+</div>
+   </div>
+   </div>
+ </body>
+</html>

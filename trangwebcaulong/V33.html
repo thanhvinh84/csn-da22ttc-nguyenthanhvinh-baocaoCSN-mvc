@@ -1,0 +1,408 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   FBShop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+      .hover-underline-animation {
+      position: relative;
+      color: #e3342f;
+      transition: color 0.25s ease-out;
+    }
+    .hover-underline-animation::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f97316;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .hover-underline-animation:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .hover-underline-animation:active::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #f97316;
+      z-index: -1;
+      transition: background-color 0.25s ease-out;
+    }
+    .hover-underline-animation:active {
+      color: white;
+    }
+    body {
+             font-family: 'Roboto', sans-serif;
+         }
+         .hover-orange:hover {
+      background-color: #ff7f00;
+      color: white;
+    }
+    .selected {
+      background-color: #ff7f00;
+      color: white;
+      border-color: #ff7f00;
+    }
+    /* Add smooth transition for all interactive elements */
+    button, input[type="text"] {
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    /* Hover and active feedback for add to cart and buy now buttons */
+    .btn-action:hover {
+      background-color: #e06800;
+      transform: scale(1.05);
+    }
+    .btn-action:active {
+      transform: scale(0.98);
+    }
+    /* Focus and hover effects for quantity buttons */
+    .quantity-btn:focus, .quantity-btn:hover {
+      background-color: #f3f3f3;
+    }
+   </style>
+ </head>
+ <body class="bg-white">
+  <header class="flex items-center justify-between p-4 bg-white shadow-md">
+   <div class="flex items-center">
+    <img alt="FBShop logo" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/cGPWGHTN5xY5IVOeSMlvw8qxgEa3DEwM30WqKAeh2a64E6pTA.jpg" width="50"/>
+    <nav class="ml-6">
+      <ul class="flex space-x-6 text-orange-700">
+       <li>
+        <a href="trangwebcaulong.html" class="hover-underline-animation">TRANG CHỦ</a>
+        </a>
+       </li>
+       <li class="relative">
+        <a href="#" id="product-link" class="hover-underline-animation">
+            SẢN PHẨM
+        </a>
+        <ul id="dropdown-menu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg hidden">
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Votcaulong.html" class="hover-underline-animation">Vợt cầu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Giaycaulong.html" class="hover-underline-animation">Giày cẩu lông</a>
+          </li>
+          <li class="px-4 py-2 hover:bg-gray-100">
+              <a href="Balocaulong.html" class="hover-underline-animation">Balo cầu lông</a>
+          </li>
+      </ul>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="muakhoahoc.html" class="hover-underline-animation">ĐÀO TẠO</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="tradonhang.html" class="hover-underline-animation">TRA CỨU ĐƠN HÀNG</a>
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-orange-800" href="#">
+         <a href="lienhe.html" class="hover-underline-animation"> LIÊN HỆ</a>
+        </a>
+       </li>
+      </ul>
+     </nav>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-search text-gray-700">
+    </i>
+    <i class="fas fa-heart text-gray-700">
+    </i>
+    <i class="fas fa-user text-gray-700">
+    </i>
+    <form class="d-flex" action="Giohang.html">
+      <button class="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg" type="submit">
+        <i class="fas fa-shopping-cart">
+        </i>
+          Giỏ Hàng
+          <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+      </button>
+  </form>
+   </div>
+  </header>
+  <div class="container mx-auto py-4">
+    <nav class="text-sm">
+        <span class="text-gray-600">Trang chủ</span>
+        <span class="text-gray-600"> / </span>
+        <span class="text-gray-600">Dụng cụ cầu lông chính hãng, đa dạng giá tốt tại Fbshop</span>
+        <span class="text-gray-600"> / </span>
+        <span class="text-gray-600">Vợt cầu lông</span>
+        <span class="text-gray-600"> / </span>
+        <span class="text-orange-600">Vợt Victor Iron Man Metallic GB 2024 | Đỉnh cao thiết kế</span>
+    </nav>
+</div>
+<div class="max-w-4xl mx-auto p-4"></div>
+<div class="container mx-auto p-4">
+  <div class="flex">
+   <!-- Left Section -->
+   <div class="w-1/2">
+    <div class="relative">
+     <img alt="Iron Man themed product image" class="w-full" height="800" src="https://static.fbshop.vn/wp-content/uploads/2024/05/d7293ac5581ff941a00e.jpg" width="600"/>
+     <button class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md">
+      <i class="fas fa-chevron-left">
+      </i>
+     </button>
+     <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md">
+      <i class="fas fa-chevron-right">
+      </i>
+     </button>
+    </div>
+    <div class="flex mt-4 space-x-2">
+      <img alt="Thumbnail 1" class="w-1/4 border-2 border-orange-500" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/05/eb749744f59e54c00d8f.jpg" width="100"/>
+      <img alt="Thumbnail 2" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/05/b7245fd73d0d9c53c51c.jpg" width="100"/>
+      <img alt="Thumbnail 3" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/05/6a5c365f5485f5dbac94.jpg" width="100"/>
+      <img alt="Thumbnail 4" class="w-1/4" height="100" src="https://static.fbshop.vn/wp-content/uploads/2024/05/8d38824ee19440ca1985.jpg" width="100"/>
+     </div>
+   </div>
+   <!-- Right Section -->
+   <div class="w-1/2 pl-8">
+    <h1 class="text-3xl font-bold">
+     Vợt Victor Iron Man Metallic GB 2024 | Đỉnh cao thiết kế
+    </h1>
+    <div class="flex items-center mt-2">
+     <div class="flex items-center">
+      <span class="text-yellow-500">
+       <i class="fas fa-star">
+       </i>
+      </span>
+      <span class="text-yellow-500">
+       <i class="fas fa-star">
+       </i>
+      </span>
+      <span class="text-yellow-500">
+       <i class="fas fa-star">
+       </i>
+      </span>
+      <span class="text-yellow-500">
+       <i class="fas fa-star">
+       </i>
+      </span>
+      <span class="text-yellow-500">
+       <i class="fas fa-star">
+       </i>
+      </span>
+     </div>
+     <span class="ml-2 text-gray-500">
+      0 đánh giá | lượt mua
+     </span>
+    </div>
+    <div class="text-4xl text-orange-500 font-bold mt-4">
+     4.800.000đ
+    </div>
+    <div class="text-red-500 mt-2">
+     Chương trình giảm giá mừng sinh nhật Fbshop
+    </div>
+    <div class="max-w-4xl mx-auto p-4">
+      <div class="text-lg mb-4">
+      <div class="flex items-center ml-4">
+          <span class="text-gray-700">
+              Số lượng:
+             </span>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="decreaseQuantity()">
+           -
+          </button>
+          <input class="w-12 text-center border border-gray-300 mx-2" id="quantity" type="text" value="01"/>
+          <button class="bg-gray-200 text-gray-600 px-2 py-1" onclick="increaseQuantity()">
+           +
+          </button>
+         </div>
+         </div>
+         
+         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <button class="btn-action bg-orange-500 text-white px-6 py-3 rounded"><a class="btn btn-outline-dark mt-auto" href="#" onclick="addToCart('  Vợt Victor Iron Man Metallic GB 2024 | Đỉnh cao thiết kế',' 4.800.000đ')">Thêm vào giỏ</a></button>
+        </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="js/scripts.js"></script>
+      </div>
+    <div class="mt-6 border border-orange-500 p-4 rounded">
+     <h2 class="text-xl font-bold text-orange-500">
+      Ưu đãi
+     </h2>
+     <ul class="mt-2 space-y-2">
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng cước và căng cước vợt cầu lông miễn phí
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng bao nhung/bao đơn bảo vệ vợt cầu lông
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Tặng quấn cán vợt cầu lông
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Freeship khi chuyển khoản trước với đơn hàng trên 1 triệu
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Yên tâm với quy trình nhận hàng kiểm tra trước thanh toán sau
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Bảo hành vợt 90 ngày lỗi 1 đổi 1 lỗi nhà sản xuất
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Cơ hội nhận voucher cho các đơn hàng tiếp theo
+      </li>
+      <li class="flex items-center">
+       <i class="fas fa-fire text-orange-500 mr-2">
+       </i>
+       Vô vàn dịch vụ hỗ trợ miễn phí khác
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </div>
+ <script>
+     document.addEventListener('DOMContentLoaded', function () {
+            const productLink = document.getElementById('product-link');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            productLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                dropdownMenu.classList.toggle('hidden');
+            });
+        });
+  function increaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue)) {
+    quantityInput.value = (currentValue + 1).toString().padStart(2, '0');
+  }
+}
+
+function decreaseQuantity() {
+  var quantityInput = document.getElementById('quantity');
+  var currentValue = parseInt(quantityInput.value);
+  if (!isNaN(currentValue) && currentValue > 1) {
+    quantityInput.value = (currentValue - 1).toString().padStart(2, '0');
+  }
+}
+  document.addEventListener('DOMContentLoaded', function() {
+    const sizeButtons = document.querySelectorAll('#size-options button');
+    sizeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        sizeButtons.forEach(btn => btn.classList.remove('selected'));
+        this.classList.add('selected');
+        localStorage.setItem('selectedSize', this.innerText);
+      });
+    });
+
+    const selectedSize = localStorage.getItem('selectedSize');
+    if (selectedSize) {
+      sizeButtons.forEach(button => {
+        if (button.innerText === selectedSize) {
+          button.classList.add('selected');
+        }
+      });
+    }
+  });
+</script>
+ <div class="bg-[#fceae4]">
+  <div class="max-w-4xl mx-auto p-4">
+   <div class="flex space-x-4 border-b-2 border-gray-200 pb-2 mb-4">
+    <a class="text-orange-600 font-bold text-lg border-b-4 border-orange-600 pb-2" href="#">
+     Mô tả sản phẩm
+    </a>
+    <a class="text-gray-800 font-bold text-lg pb-2" href="#">
+     Video review
+    </a>
+    <a class="text-gray-800 font-bold text-lg pb-2" href="#">
+     Đánh giá 0
+     <i class="fas fa-star text-yellow-500">
+     </i>
+    </a>
+   </div>
+   <div>
+    <h1 class="text-2xl font-bold mb-4">
+     1. Giới thiệu Vợt Victor Iron Man Metallic GB 2024
+    </h1>
+    <p class="text-lg mb-4">
+     <span class="text-red-600 font-bold">
+      Vợt Victor
+     </span>
+     Iron Man Metallic GB 2024 lấy cảm hứng từ siêu anh hùng Marvel – Iron Man, “Iron Man Limited Bộ vợt của VICTOR” bao gồm một vợt cầu lông, một vợt túi đựng vợt, một gói cán vợt và dây. Vợt được phủ lên mình nước sơn nhám đẹp mắt được lấy cảm hứng từ nhân vật siêu anh hùng siêu anh hùng Marve nổi tiếng mang lại sự mạnh mẽ và bí ẩn người chơi sở hữu cây vợt này trên sân. Nếu bạn là người yêu thích siêu anh hùng siêu anh hùng Marve và đang tìm kiếm một cây vợt cao cấp dễ chơi, trợ lực tốt thì siêu phẩm Iron Man Metallic GB 2024 là một lựa chọn không thể bỏ qua. Cùng
+     <span class="text-red-600 font-bold">
+      Fbshop
+     </span>
+     khám phá các thông tin của cây vợt nha
+    </p>
+    <div class="flex justify-center">
+    <img alt="FBShop with Victor Iron Man Metallic GB 2024 racket" class="rounded-lg" height="400" src="https://static.fbshop.vn/wp-content/uploads/2024/05/eb749744f59e54c00d8f.jpg" width="600"/>
+   </div>
+   <div class="max-w-4xl mx-auto p-4"></div>
+   <h2 class="text-2xl font-bold mb-4">2. Thông số Vợt Victor Iron Man Metallic GB 2024</h2>
+   <p class="mb-2">Khối lượng 4U/G5 ( 84.5 gram)</p>
+   <p class="mb-2">Swing: 83 kg/cm2</p>
+   <p class="mb-4">Điểm cân bằng: 295mm</p>
+   <p class="font-bold mb-4">Sức căng tối đa ≤ 28 lbs (12.5kg)</p>
+   <p class="mb-2">Frame Material : High Resilience Modulus Graphite+Nano Resin+METALLIC CARBON FIBER</p>
+   <p>Shaft Material: High Resilience Modulus Graphite+Nano Resin</p>
+   <div class="max-w-4xl mx-auto p-4"></div>
+   <h2 class="text-2xl font-bold mb-4">3. Mô tả sản phẩm Vợt Victor Iron Man Metallic GB 2024</h2>
+   <p class="mb-4">
+    Vợt Victor Iron Man Metallic cho khả năng tấn công ấn tượng cùng những quả phản tạt, chém cầu khá ngọt, điểm cân bằng 295 giúp vợt có thể dễ dàng xoay chuyển linh hoạt các đường cầu có hiệu quả cao, ổn định và chính xác
+</p>
+<p>
+    Victor Iron Man Metallic  tổng thể khoác lên mình nước sơn đỏ ánh kim kết hợp với các chi tiết màu vàng đem lại sự ma mị và huyền bí. Điều đáng chú ý và được mong chờ nhất nằm ở công nghệ METALLIC, công nghệ này phủ một lớp kim loại từ phần mũ chụp cho lên đến phần khớp nối chữ T của khung và mặt vợt. Lớp phủ này được hãng kiểm nghiệm và cho ra kết quả tích cực khi giúp tăng khả năng tấn công và độ chính xác trong từng đường cầu. Ngoài ra thì METALLIC còn giúp giảm triệt độ độ rung trong mỗi quả đánh, giúp lực truyền từ cánh tay vào quả cầu được hấp thụ tối đa.
+</p>
+<p class="mb-4">
+    Bên cạnh công nghệ mới thì cây vợt cầu lông Victor Iron Man Metallic chính hãng còn được trang bị thêm các công nghệ tiên tiến khác để tạo nên một siêu phẩm trong năm 2023 này. Còn chần chừ gì nữa mà không cho ngay cây vợt này vào danh sách tham khảo của mình để có những trải nghiệm thú vị trên sân
+</p>
+<h2 class="text-2xl font-bold mb-4">4. Công nghệ Vợt Victor Iron Man</h2>
+<p>
+    Vợt Cầu Lông Victor IRON MAN METALLIC GB 2024 Bộ độc quyền này bao gồm một vợt cầu lông, một tay nắm và một gói dây được trang trí với các yếu tố mang tính biểu tượng của #IronMan.Cây vợt được chế tác với công nghệ cán tổng hợp FREECORE và có khung DynamicHex được bổ sung MetallicCarbonFiber, mang đến cho người chơi sự cân bằng tối ưu giữa sức mạnh tấn công và khả năng kiểm soát.
+</p>
+<p class="text-[#4a4a4a] text-lg leading-relaxed">
+    Sự kết hợp giữa tấm kim loại mỏng và sợi cacbon cường độ cao hợp nhất thành sợi cacbon kim loại. Điều này đảm bảo cảm giác độc đáo và đàn hồi, đảm bảo trải nghiệm đánh tuyệt vời. Việc đưa Sợi Carbon kim loại vào khung giúp tăng cường sức mạnh cho những cú va chạm và độ bền của khung. Việc đưa Sợi Carbon kim loại vào trục mang lại cảm giác đánh đàn hồi cao và truyền lực tốt hơn. Nâng cao tốc độ bắn và khả năng định hướng chính xác.
+</p>
+<p class="text-[#4a4a4a] text-lg leading-relaxed mt-4">
+    Thiết kế hình hộp giúp tăng cường độ ổn định và chống mô-men xoắn hiệu quả, có thể chịu được độ căng dây cao hơn.
+</p>
+<p class="text-[#4a3f35] text-base font-sans">
+    <strong>FREE-CORE:</strong> Được thiết kế bằng mô phỏng máy tính và được hỗ trợ với việc áp dụng kỹ thuật ép phun, kiểu tay cầm mạng tính cách mạng này cho phép trục di chuyển tự do hơn, điều này không chỉ có thể làm cho cây vợt mượt mà hơn mà còn cải thiện trải nghiệm xử lý tổng thể.
+</p>
+<p class="text-[#4a3f35] text-base font-sans mt-2">
+    Thiết kế phân lớp sợi carbon cải tiến đã cải thiện hiệu suất chống xoắn, hơn nữa giúp vợt uốn cong nhanh hơn với khả năng truyền lực tốt hơn. Là một định nghĩa lại về “hiệu ứng roi”, WES 2.0 cho phép người chơi lái quả cầu theo một góc nhọn hướng xuống khi tấn công.
+</p>
+<p class="text-[#4A4A4A] font-sans text-base mb-4">
+    CAPAULT STRUCTURE (cấu trúc máy phóng): lưu trữ và phát ra năng lượng tốt nhất lúc đập để có hiệu quả tối đa tạo ra hiệu ứng giống như máy bắn đá bùng cầu mạnh vào đối thủ với 9.75% lực cộng thêm.
+</p>
+<p class="text-[#4A4A4A] font-sans text-base mb-4">
+    SEVEN-SIX76: Cấu trúc các lỗ gen được sản xuất theo dạng đơn làm giảm ma sát giữa các lỗ gen, điều này giúp tăng thêm thời gian sử dụng những lỗ gen.
+</p>
+<p class="text-[#4A4A4A] font-sans text-base">
+    NANO TEC: Phân phối đồng đều các hạt có kích thước nano trong khoảng trống giữa các bó sợi carbon, điều này tăng độ cứng tổng thể của sợi tổng hợp carbon và giảm độ méo của khung.
+</p>
+   </div>
+  </div>
+  </div>
+ </body>
+</html>
